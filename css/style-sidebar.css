@@ -32,7 +32,7 @@
 
 body{
   background: var(--blanco-cloud);
-  font-family: var(--fuente-texto);
+  font-family: var(--fuente-texto) !important;
   color: var(--negro-gato);
 }
 
