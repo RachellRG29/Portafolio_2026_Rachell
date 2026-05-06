@@ -1,0 +1,143 @@
+
+
+/* =========================================
+   ANIMACIONES 
+========================================= */
+.scale-up-tl {
+	-webkit-animation: scale-up-tl 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-tl 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+@keyframes scale-up-tl {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+  }
+}
+
+
+/* =========================================
+   animaciones de habilidades tecnicas
+========================================= */
+
+/* estado inicial */
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.reveal-fade{
+  opacity: 0;
+  transition: opacity .8s ease, transform .8s ease, filter .8s ease;
+  will-change: transform, opacity;
+  filter: blur(6px);
+}
+
+.reveal-up{
+  transform: translateY(55px);
+}
+
+.reveal-left{
+  transform: translateX(-60px);
+}
+
+.reveal-right{
+  transform: translateX(60px);
+}
+
+.reveal-scale{
+  transform: scale(.88);
+}
+
+.reveal-fade{
+  transform: translateY(18px);
+}
+
+/* estado visible */
+.reveal-up.show,
+.reveal-left.show,
+.reveal-right.show,
+.reveal-scale.show,
+.reveal-fade.show{
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* delays */
+.delay-1{ transition-delay: .10s; }
+.delay-2{ transition-delay: .20s; }
+.delay-3{ transition-delay: .30s; }
+.delay-4{ transition-delay: .40s; }
+.delay-5{ transition-delay: .50s; }
+.delay-6{ transition-delay: .60s; }
+
+/* animación inicial solo al cargar */
+.intro-pop{
+  opacity: 0;
+  transform: translateY(30px) scale(.96);
+  filter: blur(8px);
+  transition: opacity .9s ease, transform .9s ease, filter .9s ease;
+}
+
+.intro-pop.show{
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* pequeño float para la imagen derecha */
+@keyframes floatSoft {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.img-prov.anim-floating{
+  animation: floatSoft 4.5s ease-in-out infinite;
+}
+
+/* barras de skill con entrada */
+.skill-bar span{
+  transform-origin: left center;
+}
+
+.skill-card.reveal-scale.show .skill-bar span{
+  animation: fillBar .9s ease forwards;
+}
+
+@keyframes fillBar{
+  from{
+    transform: scaleX(0);
+  }
+  to{
+    transform: scaleX(1);
+  }
+}
+
+/* accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-fade,
+  .intro-pop{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .img-prov.anim-floating{
+    animation: none !important;
+  }
+}

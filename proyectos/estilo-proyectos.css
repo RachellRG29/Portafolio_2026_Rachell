@@ -1,0 +1,471 @@
+::selection{
+    background: #91A7D0; 
+    color: #FEFEFF;     
+}
+
+::-moz-selection{
+    background: #91A7D0;
+    color: #FEFEFF;
+}
+
+:root {
+
+  /* COLORES */
+  --blanco-cloud: #F0EEE9;
+  --negro-gato: #30313B;
+  --peach: #FEBE98;
+  --serenity: #91A7D0;
+  --royal-blue: #3965DC;
+
+  /* TIPOGRAFÍAS */
+  --fuente-titulo: 'Bricolage Grotesque', sans-serif;
+  --fuente-texto: 'Rethink Sans', sans-serif;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  /*outline: 1px solid green;*/
+}
+
+body{
+  background: var(--blanco-cloud);
+  font-family: var(--fuente-texto);
+  color: var(--negro-gato);
+}
+
+.contenido {
+    padding: 40px 40px 80px 40px; /* Espacio para sidebar e indicador */
+    max-width: 1200px;
+    margin: 0 auto;
+    display: block;
+    position: relative;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    position: fixed;
+    left:0;
+    top:0;
+    width:90px;
+    height:100vh;
+    background: transparent;
+    /*background: var(--blanco-cloud);*/
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    padding:30px 0;
+    z-index: 9999 !important;
+    box-sizing: content-box;
+}
+
+.logo{
+    font-family: var(--fuente-titulo);
+    font-weight:600;
+    font-size: 20px;
+}
+
+.logo-nav{
+    width: 120px;
+    height: auto;
+    margin-left: 80px;
+    margin-bottom: -40px;
+}
+
+.btn-idioma{
+    position: fixed;
+    top: 30px !important;
+    right: 30px !important;
+    padding: 10px 15px;
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    display: flex;
+    z-index: 9999;
+    cursor: pointer;
+    
+    overflow: hidden;
+    color: var(--negro-gato);
+}
+
+/* Fondo animado */
+.btn-idioma::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(#3965DC, #FEBE98);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+/* Animación al hover */
+.btn-idioma:hover::after{
+    width: 100%;
+    right: 0;
+    background: linear-gradient(#3964dc6c, #febd986d);
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+}
+
+.icono{
+    width:40px;
+    height:40px;
+    background:#dcdad6eb;
+    color: #30313B;
+    font-weight: bold;
+    backdrop-filter: blur(20px);
+
+    border-radius:10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.icono svg{
+    fill: #30313bbb;
+}
+
+.icono.icono.activo svg{
+    fill: #30313B;
+}
+
+.icono:hover svg{
+    fill: #30313be3;
+}
+
+.icono.activo{
+    background: #febd98c9;
+}
+
+/*tooltip*/
+.icono .tooltip-sb{
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  transform: translateX(50%);
+  font-weight: 600;
+  font-size: 17px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  width: 80px;
+  text-align: center;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.icono:hover .tooltip-sb {
+  opacity: 1;
+  visibility: visible;
+  top: 6px;
+  color: #30313bbb;
+  background-color: #dcdad68e;
+  backdrop-filter: blur(20px);
+}
+
+.icono.activo .tooltip-sb{
+    background: #febd9870;
+    backdrop-filter: blur(20px);
+}
+
+/* ================= INDICADOR VERTICAL ================= */
+
+.indicador-parallax{
+    position:fixed;
+    right:40px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    z-index:100;
+}
+
+/* Línea */
+.linea{
+    position:relative;
+    width:2px;
+    height:300px;
+    background:var(--negro-gato);
+}
+
+/* Círculo móvil */
+.circulo{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translate(-50%, 0);
+    width:14px;
+    height:14px;
+    background:var(--negro-gato);
+    border-radius:50%;
+    transition:top 0.4s ease;
+}
+
+/* Texto 2026 vertical */
+.anio{
+    font-family: var(--fuente-texto);
+    font-size:0.9rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing:3px;
+    color:var(--negro-gato);
+}
+
+/*-----------------------------------------------------------*/
+/* Hero Section */
+.proyecto-hero {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.proyecto-titulo {
+    font-family: var(--fuente-titulo);
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.proyecto-meta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.tag-categoria {
+    background: var(--negro-gato);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.meta-anio {
+    font-family: var(--fuente-texto);
+    font-weight: 300;
+    color: var(--negro-gato);
+}
+
+.proyecto-slogan {
+    font-style: italic;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.mockup-bg {
+    background: #C4C4C4; /* Gris de tus capturas */
+    border-radius: 30px;
+}
+
+.imagen-principal {
+    width: 100%;
+    aspect-ratio: 16 / 8;
+    margin-bottom: 30px;
+    object-fit: cover;
+}
+
+.proyecto-descripcion-corta {
+    max-width: 1000px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.2rem;
+}
+
+
+/*--------------------------------------------------------------*/
+/* subtitulo */
+.label-figma {
+    width: fit-content;
+    min-width: 300px;
+    margin: 0 auto 34px;
+    text-align: center;
+    padding: 13px 28px;
+    color: var(--royal-blue);
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 6px;
+    position: relative;
+    background: rgba(240,238,233,.35);
+}
+
+.sq {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 1px;
+    background: var(--royal-blue);
+    border: 1.5px solid var(--royal-blue);
+}
+
+.sq.tl {
+    top: -7px;
+    left: -7px;
+}
+
+.sq.tr {
+    top: -7px;
+    right: -7px;
+}
+
+.sq.bl {
+    bottom: -7px;
+    left: -7px;
+}
+
+.sq.br {
+    bottom: -7px;
+    right: -7px;
+}
+
+/* Re-estilo de los cuadros de Figma para que coincidan con la captura */
+.label-figma .marco-subtitulo {
+    display: inline-block;
+    border: 1.5px solid var(--serenity);
+    padding: 8px 20px;
+    position: relative;
+    font-family: var(--fuente-texto);
+    color: var(--royal-blue);
+}
+
+
+
+/* Sección de Detalles / Figma Style */
+.proyecto-detalles {
+    margin-bottom: 100px;
+}
+
+.tags-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 50px;
+    font-family: 'Rethink Sans';
+}
+
+.pill {
+    background: var(--negro-gato);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.pill-dark {
+    background: #30313B;
+}
+
+.texto-resultados {
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Grilla de Imágenes Final */
+.grid-galeria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.item-grande {
+    grid-column: 1 / span 2;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.item-mediano{
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.item-mediano-video{
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.item-mediano-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.item-pequeno {
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+/* TODAS LAS IMÁGENES */
+.item-grande img,
+.item-pequeno img,
+.item-mediano img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 🔥 clave */
+    transition: transform 0.4s ease;
+}
+
+/* Hover pro */
+.item-grande:hover img,
+.item-pequeno:hover img,
+.item-mediano:hover img {
+    transform: scale(1.05);
+}
+
+/* Botón encima */
+.btn-visitar {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(
+        90deg,
+        #3965DC 0%,
+        #91A7D0 100%
+    );
+    color: white;
+    padding: 10px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all ease-in;
+}
+
+.btn-visitar:hover {
+    transform: scale(1.05);
+    border-color: #f4f5f2;
+}
+

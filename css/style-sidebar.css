@@ -1,0 +1,269 @@
+::selection{
+    background: #91A7D0; 
+    color: #FEFEFF;     
+}
+
+::-moz-selection{
+    background: #91A7D0;
+    color: #FEFEFF;
+}
+
+
+:root {
+
+  /* COLORES */
+  --blanco-cloud: #F0EEE9;
+  --negro-gato: #30313B;
+  --peach: #FEBE98;
+  --serenity: #91A7D0;
+  --royal-blue: #3965DC;
+
+  /* TIPOGRAFÍAS */
+  --fuente-titulo: 'Bricolage Grotesque', sans-serif;
+  --fuente-texto: 'Rethink Sans', sans-serif;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  /*outline: 1px solid green;*/
+}
+
+body{
+  background: var(--blanco-cloud);
+  font-family: var(--fuente-texto);
+  color: var(--negro-gato);
+}
+
+.grupo{
+  display: none;
+}
+
+.grupo-activo{
+  display: block;
+}
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    position: fixed;
+    left:0;
+    top:0;
+    width:90px;
+    height:100vh;
+    background: transparent;
+    /*background: var(--blanco-cloud);*/
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-between;
+    padding:30px 0;
+    z-index: 9999 !important;
+}
+
+.footer-header{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+}
+
+.logo-wrapper{
+    position: relative;
+    width: 160px; /* ajusta según tu logo */
+    height: auto;
+    cursor: pointer;
+}
+
+/* ambos logos encima uno del otro */
+.logo-footer{
+    width: 70px;
+    height: auto;
+    margin-left: 60px;
+    height: auto;
+    display: block;
+    transition: all 0.4s ease;
+    margin-bottom: -40px;
+}
+
+/* logo base */
+.logo-footer.base{
+    position: relative;
+    z-index: 1;
+}
+
+/* outline encima pero invisible */
+.logo-footer.outline{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.4s ease;
+}
+
+/* hover efecto */
+.logo-wrapper:hover .logo-footer.outline{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* opcional: suaviza el logo base al hover */
+.logo-wrapper:hover .logo-footer.base{
+    opacity: 0.85;
+}
+
+
+
+.btn-idioma{
+    position: fixed;
+    top: 30px !important;
+    right: 30px !important;
+    padding: 10px 15px;
+    font-family: var(--fuente-titulo);
+    font-weight: 600;
+    display: flex;
+    z-index: 9999;
+    cursor: pointer;
+    
+    overflow: hidden;
+    color: var(--negro-gato);
+}
+
+/* Fondo animado */
+.btn-idioma::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(#3965DC, #FEBE98);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+/* Animación al hover */
+.btn-idioma:hover::after{
+    width: 100%;
+    right: 0;
+    background: linear-gradient(#3964dc6c, #febd986d);
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+}
+
+.icono{
+    width:40px;
+    height:40px;
+    background:#dcdad6eb;
+    backdrop-filter: blur(20px);
+
+    border-radius:10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
+
+.icono svg{
+    fill: #30313bbb;
+}
+
+.icono.icono.activo svg{
+    fill: #30313B;
+}
+
+.icono:hover svg{
+    fill: #30313be3;
+}
+
+.icono.activo{
+    background: #febd98c9;
+}
+
+/*tooltip*/
+.icono .tooltip-sb{
+  position: absolute;
+  top: -10px;
+  left: 5px;
+  transform: translateX(50%);
+  font-weight: 600;
+  font-size: 17px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  width: 80px;
+  text-align: center;
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.icono:hover .tooltip-sb {
+  opacity: 1;
+  visibility: visible;
+  top: 6px;
+  color: #30313bbb;
+  background-color: #dcdad68e;
+  backdrop-filter: blur(20px);
+}
+
+.icono.activo .tooltip-sb{
+    background: #febd9870;
+    backdrop-filter: blur(20px);
+}
+
+/* ================= INDICADOR VERTICAL ================= */
+
+.indicador-parallax{
+    position:fixed;
+    right:40px;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    z-index:100;
+}
+
+/* Línea */
+.linea{
+    position:relative;
+    width:2px;
+    height:300px;
+    background:var(--negro-gato);
+}
+
+/* Círculo móvil */
+.circulo{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translate(-50%, 0);
+    width:14px;
+    height:14px;
+    background:var(--negro-gato);
+    border-radius:50%;
+    transition:top 0.4s ease;
+}
+
+/* Texto 2026 vertical */
+.anio{
+    font-family: var(--fuente-texto);
+    font-size:0.9rem;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    letter-spacing:3px;
+    color:var(--negro-gato);
+}

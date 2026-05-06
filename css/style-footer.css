@@ -1,0 +1,210 @@
+
+.footer-divider {
+    border: none;
+    border-top: 1px solid var(--negro-gato);
+    margin: 20px 0;
+    opacity: 0.8;
+}
+
+.footer-bottom {
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0.7;
+}
+
+
+.logo-nav{
+    width: 60px;
+    height: auto;
+}
+
+.footer-container {
+    background-color: var(--blanco-cloud);
+    color: var(--negro-gato);
+    font-family: var(--fuente-texto);
+
+    padding: 40px 5vw 50px; 
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    margin-top: 20px;
+
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-header h2 {
+    font-family: var(--fuente-titulo);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.footer-banner {
+    height: 250px;
+    /* Imagen de fondo agregada */
+    background: url('/images/bg-footer.png'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+/* --- Lógica de la Carpeta --- */
+.folder-wrapper {
+    position: relative;
+    width: 200px;
+    height: 140px;
+    margin-bottom: -10px;
+    cursor: pointer;
+}
+
+.folder-back {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #d1d5db;
+    border-radius: 10px 10px 0 0;
+    clip-path: polygon(0% 20%, 35% 20%, 45% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 1;
+}
+
+.glass-folder {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 85%; /* Un poco más baja para ver el contenido */
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px 10px 0 0;
+    z-index: 3;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05);
+}
+
+/* --- Iconos y Animación --- */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* Entre las dos capas de la carpeta */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    width: 60px;
+    bottom: 20px;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Quita el .folder-wrapper:hover y usa esto */
+.footer-container.abierto .icon {
+    opacity: 1;
+}
+
+.footer-container.abierto .ai { transform: translate(-60px, -80px) rotate(-15deg); }
+.footer-container.abierto .canva { transform: translate(-20px, -110px) rotate(5deg); }
+.footer-container.abierto .blender { transform: translate(25px, -85px) rotate(-10deg); }
+.footer-container.abierto .figma { transform: translate(65px, -105px) rotate(12deg); }
+
+/* Ajuste opcional: que los iconos no se vean nada si no está abierto */
+.icon {
+    position: absolute;
+    width: 60px;
+    bottom: 20px;
+    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    pointer-events: none; /* Para que no estorben al hacer click en otra cosa */
+}
+
+/* --- Resto del diseño --- */
+.footer-links {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--negro-gato);
+    margin: 0 10px;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover { opacity: 0.6; }
+
+
+
+/* Estado base más limpio */
+.icon {
+    transform: translateY(40px);
+}
+
+.links-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap; /* ✅ permite que bajen */
+    justify-content: flex-end;
+}
+
+.links-left span{
+    font-weight: 600;
+
+}
+
+.links-right a {
+    display: flex;
+    align-items: center;      /* centra vertical */
+    justify-content: center;  /* centra horizontal */
+    gap: 8px;                 /* espacio entre svg y texto */
+    
+    font-weight: 700;
+    background-color: #30313B;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #d1d5db;
+    
+    text-decoration: none;
+}
+
+/* importante para evitar desalineaciones raras */
+.links-right svg {
+    display: block;
+}
+
+.footer-links a {
+    text-decoration: none;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        padding: 30px 20px;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .links-right {
+        justify-content: center;
+    }
+}

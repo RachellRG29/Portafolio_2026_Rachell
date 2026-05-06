@@ -1,0 +1,452 @@
+
+/* ================= CONTENIDO ================= */
+
+.contenido{
+    margin-left:90px;
+}
+
+/* ================= INICIO ================= */
+
+/*.inicio{
+  height:100vh;
+  display:flex;
+  justify-content:space-between;
+  padding:0 0 0 80px; solo izquierda 
+}*/
+
+.inicio{
+  min-height:100vh;
+  display:flex;
+  justify-content:space-between;
+  padding:0 0 0 80px;
+}
+
+
+.columna-izquierda{
+  width:50%;
+  padding-top: 8rem;
+}
+
+.titulo-principal{
+  font-family: var(--fuente-titulo);
+  font-size:2.5rem;
+  transition: scale-up-tl 3s all;
+}
+
+.subtitulo-estu{
+  font-size:1.5rem;
+  margin-top: 10px;
+}
+
+.linea-decorativa{
+  width:180px;
+  height:4px;
+  margin-top:20px;
+  background: linear-gradient(90deg, var(--royal-blue), var(--peach));
+  border-radius:10px;
+}
+
+/* Efecto vidrio */
+.slogan-vidrio{
+  position: relative;
+  margin-top: 150px;
+  padding:30px;
+  width:800px;
+  background: rgba(255, 255, 255, 0.226) !important;
+  backdrop-filter: blur(20px);
+  border-radius:30px;
+  border:1px solid #30313b70;
+  font-size:1.5rem;
+  z-index: 30;
+}
+
+.quote{
+  position: relative;
+  display: block;
+  fill: var(--serenity);
+}
+
+.comillasc{
+  right: 0;
+  display: block;
+  position: relative;
+  transform: rotate(180deg);
+}
+
+/*----------------------------------------------------*/
+/*scroll*/
+.scrolldown {
+  --sizeX: 30px;
+  --sizeY: 50px;
+  display: block;
+  position: relative;
+  width: var(--sizeX);
+  height: var(--sizeY);
+  margin-left: var(sizeX / 2);
+  margin-top: -30px;
+  border: calc(var(--sizeX) / 10) solid var(--royal-blue);
+  border-radius: 50px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  margin-left: 20px;
+  cursor: default;
+  z-index: 40;
+}
+
+.scrolldown::before {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  margin-left: -3px;
+  background-color: var(--royal-blue);
+  border-radius: 100%;
+  animation: scrolldown-anim 2s infinite;
+  box-sizing: border-box;
+  box-shadow: 0px -5px 3px 1px #91A7D066;
+}
+
+@keyframes scrolldown-anim {
+  0% {
+    opacity: 0;
+    height: 6px;
+  }
+
+  40% {
+    opacity: 1;
+    height: 10px;
+  }
+
+  80% {
+    transform: translate(0, 20px);
+    height: 10px;
+    opacity: 0;
+  }
+
+  100% {
+    height: 3px;
+    opacity: 0;
+  }
+}
+
+.chevrons {
+  padding: 6px 0 0 0;
+  margin-left: -3px;
+  margin-top: 48px;
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chevrondown {
+  margin-top: -6px;
+  position: relative;
+  border: solid var(--royal-blue);
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  transform: rotate(45deg);
+}
+
+.chevrondown:nth-child(odd) {
+  animation: pulse54012 500ms ease infinite alternate;
+}
+
+.chevrondown:nth-child(even) {
+  animation: pulse54012 500ms ease infinite alternate 250ms;
+}
+
+@keyframes pulse54012 {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
+
+/*---------------------------------------------------------*/
+
+
+/**BOTONES CONTACTO*/
+.botones-contacto{
+  margin-top:25px;
+  display:flex;
+  gap:15px;
+}
+
+/*------------------------------------------------------*/
+/*boton linkedin*/
+.btn-linkedin {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-linkedin .svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 1px; /* Adjusted letter spacing */
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.btn-linkedin .BG {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: var(--royal-blue);
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.btn-linkedin:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow effect */
+}
+
+.btn-linkedin:hover .BG {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.btn-linkedin:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+
+
+/*----------------------------------------------------*/
+/*boton linkedin*/
+.btn-github {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-github .svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 1px; /* Adjusted letter spacing */
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.btn-github .BG-black {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.btn-github:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow effect */
+}
+
+.btn-github:hover .BG-black {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.btn-github:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+
+/*----------------------------------------------------*/
+/*boton gmail*/
+.btn-gmail {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-gmail .svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  letter-spacing: 1px; /* Adjusted letter spacing */
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+}
+
+.btn-gmail .BG-red {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #EA4335;
+  z-index: -1;
+  border-radius: 9px;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.btn-gmail:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow effect */
+}
+
+.btn-gmail:hover .BG-red {
+  transform: rotate(35deg);
+  transform-origin: bottom;
+}
+
+.btn-gmail:hover .svgContainer {
+  background-color: rgba(156, 156, 156, 0.466);
+}
+
+
+
+/* ================= COLUMNA DERECHA ================= */
+
+.columna-derecha{
+  width:30%;
+  height:100vh;
+  position:relative;
+  margin:0;
+  padding:0;
+  overflow:visible;
+}
+
+/* Imagen pegada arriba y derecha */
+.columna-derecha::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:0;
+  width:100%;
+  height:100%;
+  background-image:url("../images/img-inicio-vidrio.png");
+  background-size:cover;
+  background-position:top right;
+  background-repeat:no-repeat;
+}
+
+/* Elementos encima */
+.texto-uiux{
+  position:absolute;
+  top:180px;
+  right:120px;
+  font-family: var(--fuente-titulo);
+  font-size:2rem;
+  color: var(--royal-blue);
+  border:2px solid var(--royal-blue);
+  padding:10px 30px;
+  background:rgba(255,255,255,0.2);
+  backdrop-filter:blur(6px);
+}
+
+.elementos-superpuestos{
+  position: relative;
+  display: block;
+}
+
+#anim-ui-ux{
+  position: absolute;
+  top: 250px;
+  right: 160px;
+  width: 500px;
+  height: 100px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/*img provisional*/
+.img-prov{
+  position: absolute;
+  top: 190px;
+  right: 240px;
+  display: flex;
+  width: 300px;
+  height: auto;
+}
+
+/*elemento 3d*/
+.pc3d{
+  position: absolute;
+  top: 200px !important;
+  width: 500px !important;
+  height: 400px;
+  right: 100px;
+  display: flex;
+  z-index: 1;
+}
+
+#modelo-3d{
+  position: relative;
+  top: 20px;
+  width: 830px;
+  height: 600px;
+  background: transparent;
+  z-index: 30;
+  pointer-events: auto;
+}
+
+
+/*----------------------RESPONSIVIDAD---------------------*/
+@media (max-width: 480px){
+  .inicio{
+    display:block;
+  }
+
+  .columna-derecha{
+    display: block;
+  }
+
+  .columna-izquierda{
+    display: block;
+  }
+
+}
