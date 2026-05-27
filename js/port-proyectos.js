@@ -8,6 +8,6 @@ if (btnRegresar) {
     localStorage.setItem("ultimaSeccion", "proyectos");
 
     // redirigir
-    window.location.href = "/index.html";
+    window.location.href = "index.html";
   });
 }
