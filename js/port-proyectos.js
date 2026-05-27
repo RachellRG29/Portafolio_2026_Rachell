@@ -1,13 +1,13 @@
 const btnRegresar = document.getElementById("btnRegresar");
 
 if (btnRegresar) {
-    btnRegresar.addEventListener("click", function (e) {
-        e.preventDefault();
+  btnRegresar.addEventListener("click", function (e) {
+    e.preventDefault();
 
-        // guardar última sección visitada
-        localStorage.setItem("ultimaSeccion", "proyectos");
+    // guardar última sección visitada
+    localStorage.setItem("ultimaSeccion", "proyectos");
 
-        // redirigir
-        window.location.href = "/portafolio-index.html";
-    });
+    // redirigir
+    window.location.href = "/index.html";
+  });
 }
