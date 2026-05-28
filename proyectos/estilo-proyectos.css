@@ -30,7 +30,7 @@
 
 body {
   background: var(--blanco-cloud);
-  font-family: var(--fuente-texto);
+  font-family: var(--fuente-texto) !important;
   color: var(--negro-gato);
 }
 
@@ -293,6 +293,7 @@ body {
   margin: 0 auto;
   line-height: 1.6;
   font-size: 1.2rem;
+  font-family: var(--fuente-texto);
 }
 
 /*--------------------------------------------------------------*/
@@ -360,7 +361,7 @@ body {
   justify-content: center;
   gap: 15px;
   margin-bottom: 50px;
-  font-family: "Rethink Sans";
+  font-family: var(--fuente-texto);
 }
 
 .pill {
@@ -382,6 +383,7 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   font-size: 1.1rem;
+  font-family: var(--fuente-texto);
 }
 
 /* Grilla de Imágenes Final */
@@ -447,6 +449,7 @@ body {
 /* Botón encima */
 .btn-visitar {
   position: absolute;
+  font-family: var(--fuente-texto);
   bottom: 20px;
   right: 20px;
   background: linear-gradient(90deg, #3965dc 0%, #91a7d0 100%);
