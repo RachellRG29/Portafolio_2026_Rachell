@@ -50,7 +50,7 @@ function initFooter() {
     icons.forEach((icon, index) => {
       const factor = (index + 1) * 2;
 
-      // ✅ SOLO transform dinámico (no acumula)
+      //SOLO transform dinámico (no acumula)
       icon.style.transform = `translate(${moveX / factor}px, ${moveY / factor}px)`;
     });
   });

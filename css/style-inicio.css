@@ -1,8 +1,7 @@
-
 /* ================= CONTENIDO ================= */
 
-.contenido{
-    margin-left:90px;
+.contenido {
+  margin-left: 90px;
 }
 
 /* ================= INICIO ================= */
@@ -14,59 +13,60 @@
   padding:0 0 0 80px; solo izquierda 
 }*/
 
-.inicio{
-  min-height:100vh;
-  display:flex;
-  justify-content:space-between;
-  padding:0 0 0 80px;
+.inicio {
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 0 80px;
 }
 
-
-.columna-izquierda{
-  width:50%;
+.columna-izquierda {
+  width: 50%;
   padding-top: 8rem;
 }
 
-.titulo-principal{
+.titulo-principal {
   font-family: var(--fuente-titulo);
-  font-size:2.5rem;
+  font-weight: 600;
+  margin-left: 6rem;
+  font-size: 2.5rem;
   transition: scale-up-tl 3s all;
 }
 
-.subtitulo-estu{
-  font-size:1.5rem;
+.subtitulo-estu {
+  font-size: 1.5rem;
   margin-top: 10px;
 }
 
-.linea-decorativa{
-  width:180px;
-  height:4px;
-  margin-top:20px;
+.linea-decorativa {
+  width: 180px;
+  height: 4px;
+  margin-top: 20px;
   background: linear-gradient(90deg, var(--royal-blue), var(--peach));
-  border-radius:10px;
+  border-radius: 10px;
 }
 
 /* Efecto vidrio */
-.slogan-vidrio{
+.slogan-vidrio {
   position: relative;
   margin-top: 150px;
-  padding:30px;
-  width:800px;
+  padding: 30px;
+  width: 800px;
   background: rgba(255, 255, 255, 0.226) !important;
   backdrop-filter: blur(20px);
-  border-radius:30px;
-  border:1px solid #30313b70;
-  font-size:1.5rem;
+  border-radius: 30px;
+  border: 1px solid #30313b70;
+  font-size: 1.5rem;
   z-index: 30;
 }
 
-.quote{
+.quote {
   position: relative;
   display: block;
   fill: var(--serenity);
 }
 
-.comillasc{
+.comillasc {
   right: 0;
   display: block;
   position: relative;
@@ -105,7 +105,7 @@
   border-radius: 100%;
   animation: scrolldown-anim 2s infinite;
   box-sizing: border-box;
-  box-shadow: 0px -5px 3px 1px #91A7D066;
+  box-shadow: 0px -5px 3px 1px #91a7d066;
 }
 
 @keyframes scrolldown-anim {
@@ -170,15 +170,13 @@
   }
 }
 
-
 /*---------------------------------------------------------*/
 
-
 /**BOTONES CONTACTO*/
-.botones-contacto{
-  margin-top:25px;
-  display:flex;
-  gap:15px;
+.botones-contacto {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
 }
 
 /*------------------------------------------------------*/
@@ -235,7 +233,6 @@
 .btn-linkedin:hover .svgContainer {
   background-color: rgba(156, 156, 156, 0.466);
 }
-
 
 /*----------------------------------------------------*/
 /*boton linkedin*/
@@ -327,7 +324,7 @@
   content: "";
   width: 100%;
   height: 100%;
-  background: #EA4335;
+  background: #ea4335;
   z-index: -1;
   border-radius: 9px;
   pointer-events: none;
@@ -347,53 +344,51 @@
   background-color: rgba(156, 156, 156, 0.466);
 }
 
-
-
 /* ================= COLUMNA DERECHA ================= */
 
-.columna-derecha{
-  width:30%;
-  height:100vh;
-  position:relative;
-  margin:0;
-  padding:0;
-  overflow:visible;
+.columna-derecha {
+  width: 30%;
+  height: 100vh;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
 }
 
 /* Imagen pegada arriba y derecha */
-.columna-derecha::before{
-  content:"";
-  position:absolute;
-  top:0;
-  right:0;
-  width:100%;
-  height:100%;
-  background-image:url("../images/img-inicio-vidrio.png");
-  background-size:cover;
-  background-position:top right;
-  background-repeat:no-repeat;
+.columna-derecha::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/img-inicio-vidrio.png");
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
 }
 
 /* Elementos encima */
-.texto-uiux{
-  position:absolute;
-  top:180px;
-  right:120px;
+.texto-uiux {
+  position: absolute;
+  top: 180px;
+  right: 120px;
   font-family: var(--fuente-titulo);
-  font-size:2rem;
+  font-size: 2rem;
   color: var(--royal-blue);
-  border:2px solid var(--royal-blue);
-  padding:10px 30px;
-  background:rgba(255,255,255,0.2);
-  backdrop-filter:blur(6px);
+  border: 2px solid var(--royal-blue);
+  padding: 10px 30px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
 }
 
-.elementos-superpuestos{
+.elementos-superpuestos {
   position: relative;
   display: block;
 }
 
-#anim-ui-ux{
+#anim-ui-ux {
   position: absolute;
   top: 250px;
   right: 160px;
@@ -404,7 +399,7 @@
 }
 
 /*img provisional*/
-.img-prov{
+.img-prov {
   position: absolute;
   top: 190px;
   right: 240px;
@@ -414,7 +409,7 @@
 }
 
 /*elemento 3d*/
-.pc3d{
+.pc3d {
   position: absolute;
   top: 200px !important;
   width: 500px !important;
@@ -424,7 +419,7 @@
   z-index: 1;
 }
 
-#modelo-3d{
+#modelo-3d {
   position: relative;
   top: 20px;
   width: 830px;
@@ -434,19 +429,17 @@
   pointer-events: auto;
 }
 
-
 /*----------------------RESPONSIVIDAD---------------------*/
-@media (max-width: 480px){
-  .inicio{
-    display:block;
-  }
-
-  .columna-derecha{
+@media (max-width: 480px) {
+  .inicio {
     display: block;
   }
 
-  .columna-izquierda{
+  .columna-derecha {
     display: block;
   }
 
+  .columna-izquierda {
+    display: block;
+  }
 }
