@@ -28,7 +28,6 @@
 .titulo-principal {
   font-family: var(--fuente-titulo);
   font-weight: 600;
-  margin-left: 6rem;
   font-size: 2.5rem;
   transition: scale-up-tl 3s all;
 }

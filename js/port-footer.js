@@ -1,28 +1,38 @@
 // =============================
-// DETECTAR RUTA BASE AUTOMÁTICA
-// =============================
+// OBTENER RUTA BASE DEL REPO
+
 function obtenerRutaFooter() {
   const path = window.location.pathname;
 
-  // Github Pages normalmente:
-  // /PORTAFOLIO_2026_RACHELL/index.html
+  // /PORTAFOLIO_2026_RACHELL/proyectos/educativos/tulip.html
 
   const partes = path.split("/").filter(Boolean);
 
   // nombre del repo
   const repo = partes[0];
 
-  // ruta absoluta al footer
   return `/${repo}/footer.html`;
 }
 
-// =============================
 // CARGAR FOOTER
-// =============================
 fetch(obtenerRutaFooter())
   .then((res) => res.text())
   .then((data) => {
-    document.getElementById("footer-container").innerHTML = data;
+    const container = document.getElementById("footer-container");
+
+    container.innerHTML = data;
+
+    // CORREGIR IMÁGENES AUTOMÁTICAMENTE
+    const repo = window.location.pathname.split("/")[1];
+
+    container.querySelectorAll("img").forEach((img) => {
+      const src = img.getAttribute("src");
+
+      // evita modificar imágenes externas o absolutas
+      if (src && !src.startsWith("http") && !src.startsWith("/")) {
+        img.src = `/${repo}/${src}`;
+      }
+    });
 
     initFooter();
 
@@ -30,19 +40,17 @@ fetch(obtenerRutaFooter())
       aplicarIdioma();
     }
   })
-  .catch((err) => console.error("Error cargando footer:", err));
+  .catch((err) => {
+    console.error("Error cargando footer:", err);
+  });
 
-// =============================
 // FUNCIONES FOOTER
-// =============================
 function initFooter() {
   const footer = document.querySelector(".footer-container");
 
   if (!footer) return;
 
-  // =============================
-  // SCROLL
-  // =============================
+  // SCROLL (abre y reinicia)
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -58,9 +66,7 @@ function initFooter() {
 
   observer.observe(footer);
 
-  // =============================
-  // ANIMACIÓN MOUSE
-  // =============================
+  // MOUSE ANIMATION
   const wrapper = footer.querySelector(".folder-wrapper");
   const icons = footer.querySelectorAll(".icon");
 
