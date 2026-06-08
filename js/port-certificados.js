@@ -1,14 +1,4 @@
-/* =========================================================
-   CERTIFICADOS — Sliders + Modal  (versión optimizada)
-
-   Cambios clave vs versión anterior:
-   ▸ Un único mousemove / mouseup en document (no N por slider)
-   ▸ Un único delegador de clics para botones scroll, ver y modal
-   ▸ Array.from(cards) sólo una vez en openModal
-   ▸ groupImages construido desde data-modal-src (sin querySelector)
-   ▸ showImage sin setTimeout para el fade (usa CSS transition directo)
-   ▸ traducirTitulosGrupos correrá solo una vez al iniciar
-   ========================================================= */
+/*CERTIFICADOS — Sliders + Modal  */
 
 (function () {
   "use strict";

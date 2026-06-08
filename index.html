@@ -7,6 +7,26 @@
     <title>Portafolio 2026</title>
     <link rel="icon" href="images/logo/logo2-ico-negro.png" />
 
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://unpkg.com" crossorigin />
+
+    <!-- ── Precarga la imagen LCP (la foto de Rachell, primera visible) ── -->
+    <link
+      rel="preload"
+      as="image"
+      href="images/img-foto-rachell.jpeg"
+      fetchpriority="high"
+    />
+
+    <link
+      rel="preload"
+      as="font"
+      href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/font/Phosphor.woff2"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- Tipografías -->
     <link
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Rethink+Sans:wght@300;400;500&display=swap"
@@ -18,24 +38,87 @@
       type="text/css"
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     />
+
+    <style>
+      @font-face {
+        font-family: "Phosphor";
+        src: url("https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/font/Phosphor.woff2")
+          format("woff2");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap; /* ← texto visible mientras carga la fuente */
+      }
+    </style>
+    <!-- Luego carga solo el CSS de clases  -->
     <link
       rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+      href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.css"
+      media="print"
+      onload="this.media = 'all'"
     />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/css/icons.css"
+      />
+    </noscript>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="css/style-sidebar.css" />
     <link rel="stylesheet" href="css/style-inicio.css" />
-    <link rel="stylesheet" href="css/style-acercami.css" />
-    <link rel="stylesheet" href="css/s-acerca-htecnicas.css" />
-    <link rel="stylesheet" href="css/s-acerca-hblandas.css" />
-    <link rel="stylesheet" href="css/style-proyectos.css" />
-    <link rel="stylesheet" href="css/style-certificados.css" />
-    <link rel="stylesheet" href="css/style-footer.css" />
-
-    <link rel="stylesheet" href="css/style-animations.css" />
-    <link rel="stylesheet" href="css/responsividad.css" />
+    <link
+      rel="stylesheet"
+      href="css/style-certificados.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-proyectos.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-footer.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-sidebar.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-acercami.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/s-acerca-htecnicas.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/s-acerca-hblandas.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-animations.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/responsividad.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
   </head>
 
   <body>
@@ -586,12 +669,16 @@
                 <img
                   src="images/img-portafolio-carpeta.png"
                   alt="Decoración portafolio"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
 
               <div class="imagen-principal">
                 <img
                   src="images/img-foto-rachell.jpeg"
+                  loading="eager"
+                  fetchpriority="high"
                   alt="Foto de Cindy Rachell Ramírez García"
                 />
 
@@ -1104,6 +1191,8 @@
               <img
                 src="proyectos/educativos/veganimo/img-veg.png"
                 alt="Veganimo"
+                loading="lazy"
+                decoding="async"
               />
 
               <h3 class="titulo">Vegánimo</h3>
@@ -1117,6 +1206,8 @@
               <img
                 src="proyectos/educativos/consolexpress/img-cons-exp.png"
                 alt="ConsoleXpress"
+                loading="lazy"
+                decoding="async"
               />
               <h3 class="titulo">ConsoleXpress</h3>
               <span class="proy-anio">2024</span>
@@ -1126,7 +1217,12 @@
               href="proyectos/educativos/tulip/tulip.html"
               class="proyecto-item div3"
             >
-              <img src="proyectos/educativos/tulip/img-tulip.png" alt="Tulip" />
+              <img
+                src="proyectos/educativos/tulip/img-tulip.png"
+                loading="lazy"
+                decoding="async"
+                alt="Tulip"
+              />
               <h3 class="titulo">Tulip</h3>
               <span class="proy-anio">2024</span>
             </a>
@@ -1138,6 +1234,8 @@
               <img
                 src="proyectos/educativos/alquimia/img-alquimia.png"
                 alt="Alquimia"
+                loading="lazy"
+                decoding="async"
               />
               <h3 class="titulo" data-es="Animación 3D" data-en="3D Animation">
                 Animación 3D
@@ -1150,8 +1248,10 @@
               class="proyecto-item div5"
             >
               <img
-                src="proyectos/educativos/banners/bazzite.png"
+                src="proyectos/educativos/banners/bazzite.webp"
                 alt="Banners"
+                loading="lazy"
+                decoding="async"
               />
               <h3
                 class="titulo"
@@ -1170,6 +1270,8 @@
               <img
                 src="proyectos/educativos/app-cont/img-app-contabilidad.png"
                 alt="App contabilidad"
+                loading="lazy"
+                decoding="async"
               />
               <h3 class="titulo" data-es="Contabilidad" data-en="Accounting">
                 Contabilidad
@@ -1184,6 +1286,8 @@
               <img
                 src="proyectos/educativos/quintessence/img-quintessence.png"
                 alt="Quintessence"
+                loading="lazy"
+                decoding="async"
               />
               <h3 class="titulo">Quintessence</h3>
               <span class="proy-anio">2025</span>
@@ -1223,20 +1327,18 @@
     <!-- footer.html -->
     <div id="footer-container"></div>
 
-    <!-- Librería Lottie -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
     <!-- Librería Animacion 3d -->
     <script
       type="module"
       src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
     ></script>
 
-    <script src="js/port-navegacion.js"></script>
-    <script src="js/port-indicador.js"></script>
-    <script src="js/port-index.js"></script>
-    <script src="js/port-idioma.js"></script>
+    <script defer src="js/port-navegacion.js"></script>
+    <script defer src="js/port-indicador.js"></script>
+    <script defer src="js/port-index.js"></script>
+    <script defer src="js/port-idioma.js"></script>
 
-    <script src="js/port-ind-habilidades.js"></script>
-    <script src="js/port-footer.js"></script>
+    <script defer src="js/port-ind-habilidades.js"></script>
+    <script defer src="js/port-footer.js"></script>
   </body>
 </html>
