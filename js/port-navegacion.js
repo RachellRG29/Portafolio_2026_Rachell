@@ -7,6 +7,7 @@ const grupos = {
   "sobre-mi": "grupo-sobremi",
   proyectos: "grupo-proyectos",
   certificados: "grupo-certificados",
+  contacto: "grupo-contacto",
 };
 
 const allGrupos = document.querySelectorAll(".grupo");

@@ -27,8 +27,10 @@
 .marco-subtitulo-cert {
   top: -22px;
   right: 34px;
-  min-width: 320px;
+  min-width: 310px;
+  width: 330px;
   height: 54px;
+  margin: 40px 0 20px 0;
   padding: 0 24px;
   display: flex;
   align-items: center;
@@ -107,9 +109,12 @@
 .cert-capsule {
   width: 100%;
   height: 460px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 30px;
-  border: none;
   overflow: hidden;
+  background-color: #fff;
 }
 
 .soft-num-cert {
@@ -140,6 +145,12 @@
   object-fit: cover;
 }
 
+.cert-capsule .badge-img {
+  width: 450px;
+  height: 450px;
+  object-fit: contain;
+}
+
 .cert-scroll,
 .cert-scroll * {
   user-select: none;
@@ -150,6 +161,67 @@
 .cert-scroll img {
   -webkit-user-drag: none;
   /* user-drag: none;*/
+  pointer-events: none;
+}
+
+/* ── Botón "ver completo" — aparece en hover ── */
+.cert-ver-btn {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  z-index: 25;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(30, 30, 40, 0.72);
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(6px);
+  transition:
+    opacity 0.22s ease,
+    transform 0.22s ease,
+    background 0.18s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none; /* se activa solo en hover */
+}
+
+.cert-capsule:hover .cert-ver-btn {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.cert-ver-btn:hover {
+  background: rgba(30, 30, 40, 0.92);
+}
+.cert-ver-btn:active {
+  transform: scale(0.94);
+}
+
+/* En táctil siempre visible */
+@media (hover: none) {
+  .cert-ver-btn {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
+
+/* arrastrar */
+.cert-scroll,
+.cert-scroll * {
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.cert-scroll img {
   pointer-events: none;
 }
 
@@ -191,4 +263,230 @@
 
 .scroll-cert:active {
   transform: scale(0.96);
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+.cert-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* oculto por defecto */
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* estado activo */
+.cert-modal.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ── Fondo oscuro ── */
+.cert-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(16, 16, 22, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.cert-modal.is-open .cert-modal__backdrop {
+  opacity: 1;
+}
+
+/* ── Caja de contenido ── */
+.cert-modal__box {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transform: scale(0.88) translateY(20px);
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.cert-modal.is-open .cert-modal__box {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ── Imagen ── */
+.cert-modal__img-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.55);
+  max-width: 88vw;
+  max-height: 86vh;
+  display: flex;
+}
+.cert-modal__img {
+  max-width: 88vw;
+  max-height: 86vh;
+  object-fit: contain;
+  display: block;
+  border-radius: 18px;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Cerrar ── */
+.cert-modal__close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(30, 30, 40, 0.7);
+  color: #fff;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background 0.2s ease,
+    transform 0.18s ease;
+  z-index: 10;
+}
+.cert-modal__close:hover {
+  background: rgba(30, 30, 40, 0.95);
+}
+
+/* ── Navegación prev / next ── */
+.cert-modal__nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  background: rgba(30, 30, 40, 0.65);
+  color: #fff;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    background 0.2s ease,
+    transform 0.18s ease;
+  z-index: 10;
+}
+.cert-modal__nav--prev {
+  left: 18px;
+}
+.cert-modal__nav--next {
+  right: 18px;
+}
+
+.cert-modal__nav:active {
+  transform: translateY(-50%) scale(0.94);
+}
+
+/* ocultar navegación si sólo hay 1 imagen */
+.cert-modal.solo .cert-modal__nav {
+  display: none;
+}
+
+/* ── Contador 1 / N ── */
+.cert-modal__counter {
+  position: fixed;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 40, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 5px 18px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  gap: 4px;
+  z-index: 10;
+}
+
+/* ───────────────────────────────────────────────
+   MÓVIL PEQUEÑO  (≤ 768px)
+─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .marco-subtitulo-cert {
+    top: -22px;
+    right: 34px;
+    min-width: 300px;
+    width: 280px;
+    height: 54px;
+    margin: 40px 0 20px 0;
+    padding: 0 24px;
+  }
+
+  /* ── CERTIFICADOS ── */
+  .certificados {
+    padding: 40px 24px 60px;
+  }
+
+  .cert-card {
+    flex: 0 0 calc(85% - 15px);
+  }
+
+  .cert-capsule {
+    height: 340px;
+  }
+  .cert-modal__nav--prev {
+    left: 8px;
+  }
+  .cert-modal__nav--next {
+    right: 8px;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   MÓVIL PEQUEÑO  (≤ 480px)
+─────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .marco-subtitulo-cert {
+    top: -22px;
+    right: 34px;
+    min-width: 300px;
+    width: 280px;
+    height: 54px;
+    margin: 40px 0 20px 0;
+    padding: 0 24px;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   MÓVIL MUY PEQUEÑO  (≤ 360px)
+─────────────────────────────────────────────── */
+@media (max-width: 360px) {
+  .marco-subtitulo-cert {
+    top: -22px;
+    right: 34px;
+    min-width: 280px;
+    width: 250px;
+    height: 54px;
+    margin: 40px 0 20px 0;
+    padding: 0 24px;
+  }
 }

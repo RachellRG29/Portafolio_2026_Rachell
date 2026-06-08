@@ -1,0 +1,156 @@
+<div class="grupo" id="grupo-certificados">
+        <section class="certificados" id="certificados">
+          <div class="secctitulo-certificados">
+            <h2
+              class="titulo-seccion"
+              data-es="Certificados "
+              data-en="Certificates "
+            ></h2>
+            <div class="linea-gradiente"></div>
+          </div>
+
+          <!-- subtitulos de certificados -->
+          <div class="label-subtitulos-izq">
+            <div class="label-cert">
+              <div class="marco-subtitulo-cert">
+                <span id="titulo-certificado"></span>
+
+                <i class="sq tl"></i>
+                <i class="sq tr"></i>
+                <i class="sq bl"></i>
+                <i class="sq br"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="cert-scroll" id="slider-cert">
+            <article
+              class="cert-card"
+              data-cert-es="Certificados de Diseño Web"
+              data-cert-en="Web Design Certificates"
+            >
+              <div class="cert-capsule">
+                <span class="soft-num-cert">1</span>
+                <img
+                  src="images/certificados/platzi-curso_frontend_developer.png"
+                  alt=""
+                />
+              </div>
+            </article>
+
+            <article
+              class="cert-card"
+              data-cert-es="Certificados de Diseño Web"
+              data-cert-en="Web Design Certificates"
+            >
+              <div class="cert-capsule">
+                <span class="soft-num-cert">2</span>
+                <img
+                  src="images/certificados/diploma-animaciones-css-practico.jpg"
+                  alt=""
+                />
+              </div>
+            </article>
+
+            <article
+              class="cert-card"
+              data-cert-es="Certificados de Programación"
+              data-cert-en="Programming Certificate"
+            >
+              <div class="cert-capsule">
+                <span class="soft-num-cert">3</span>
+                <img
+                  src="images/certificados/diploma-tercer-lugar-automatizacion-y-robotica-progra3.png"
+                  alt=""
+                />
+              </div>
+            </article>
+
+            <article
+              class="cert-card"
+              data-cert-es="Certificado de FLISOL"
+              data-cert-en="FLISOL Certificates"
+            >
+              <div class="cert-capsule">
+                <span class="soft-num-cert">4</span>
+                <img
+                  src="images/certificados/DIPLOMA-FINAL-FLISOL-CINDY-RAMIREZ.jpg"
+                  alt=""
+                />
+              </div>
+            </article>
+
+            <article
+              class="cert-card"
+              data-cert-es="Certificados de CCNA"
+              data-cert-en="CCNA Certificates"
+            >
+              <div class="cert-capsule">
+                <span class="soft-num-cert">5</span>
+                <img
+                  src="images/certificados/CCNA_Switching_Routing_and_Wireless_Essentials_certificate_usss028723.jpg"
+                  alt=""
+                />
+              </div>
+            </article>
+
+            <article
+              class="cert-card"
+              data-cert-es="Certificado de Electrónica"
+              data-cert-en="Electronics Certificate"
+            >
+              <div class="cert-capsule">
+                <span class="soft-num-cert">6</span>
+                <img
+                  src="images/certificados/UC-Certificado_electrónica_basica.jpg"
+                  alt=""
+                />
+              </div>
+            </article>
+
+            <article
+              class="cert-card"
+              data-cert-es="Certificado de Gestión Ambiental"
+              data-cert-en="Environmental Management Certificate"
+            >
+              <div class="cert-capsule">
+                <span class="soft-num-cert">7</span>
+                <img
+                  src="images/certificados/Certificado_Gestion_Ambiental.jpg"
+                  alt=""
+                />
+              </div>
+            </article>
+          </div>
+
+          <!-- botones -->
+          <div class="skills-cert">
+            <button
+              class="scroll-cert"
+              data-target="slider-cert"
+              data-dir="-1"
+              aria-label="Retroceder"
+            >
+              <i class="ph ph-arrow-left"></i>
+            </button>
+
+            <button
+              class="scroll-cert"
+              data-target="slider-cert"
+              data-dir="1"
+              aria-label="Avanzar"
+            >
+              <i class="ph ph-arrow-right"></i>
+            </button>
+          </div>
+        </section>
+
+        <!-- indicador pagina -->
+        <div class="indicador-parallax">
+          <div class="linea">
+            <div class="circulo"></div>
+          </div>
+
+          <div class="anio">2026</div>
+        </div>
+      </div>
