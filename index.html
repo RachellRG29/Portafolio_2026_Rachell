@@ -19,17 +19,9 @@
       fetchpriority="high"
     />
 
-    <link
-      rel="preload"
-      as="font"
-      href="https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/font/Phosphor.woff2"
-      type="font/woff2"
-      crossorigin
-    />
-
     <!-- Tipografías -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Rethink+Sans:wght@300;400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700&family=Rethink+Sans:wght@300;400;500&display=optional"
       rel="stylesheet"
     />
 
@@ -39,16 +31,6 @@
       href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
     />
 
-    <style>
-      @font-face {
-        font-family: "Phosphor";
-        src: url("https://cdn.jsdelivr.net/npm/phosphor-icons@1.4.2/src/font/Phosphor.woff2")
-          format("woff2");
-        font-weight: 400;
-        font-style: normal;
-        font-display: swap; /* ← texto visible mientras carga la fuente */
-      }
-    </style>
     <!-- Luego carga solo el CSS de clases  -->
     <link
       rel="stylesheet"
@@ -113,9 +95,35 @@
       media="print"
       onload="this.media = 'all'"
     />
+
+    <!-- RESPONSIVIDAD -->
     <link
       rel="stylesheet"
-      href="css/responsividad.css"
+      href="css/responsividad/r-inicio.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/responsividad/r-acerca-mi.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/responsividad/r-proyectos.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/responsividad/r-certificados.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/responsividad/r-footer.css"
       media="print"
       onload="this.media = 'all'"
     />

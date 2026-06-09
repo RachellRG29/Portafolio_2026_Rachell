@@ -1,0 +1,373 @@
+/* LAPTOP  (≤ 1440px) */
+
+@media (max-width: 1440px) {
+  .columna-izquierda {
+    width: 50%;
+    padding-top: 6rem;
+  }
+
+  .columna-derecha {
+    width: 50%;
+    right: 0 !important;
+  }
+
+  .slogan-vidrio {
+    width: 100%;
+    max-width: 920px;
+    margin-top: 80px;
+    font-size: 1.2rem;
+  }
+
+  .pc3d {
+    right: 20px;
+  }
+
+  #modelo-3d {
+    width: 800px;
+  }
+
+  #anim-ui-ux {
+    width: 380px;
+  }
+}
+
+/* LAPTOP  (≤ 1024px) */
+
+@media (max-width: 1024px) {
+  .inicio {
+    padding: 0 0 0 40px;
+  }
+
+  .columna-izquierda {
+    width: 55%;
+    padding-top: 6rem;
+  }
+
+  .columna-derecha {
+    width: 45%;
+  }
+
+  .slogan-vidrio {
+    width: 100%;
+    max-width: 560px;
+    margin-top: 80px;
+    font-size: 1.2rem;
+  }
+  .pc3d {
+    width: 400px !important;
+    right: 20px;
+  }
+
+  #modelo-3d {
+    width: 650px;
+    height: 500px;
+  }
+
+  #anim-ui-ux {
+    right: 60px;
+    width: 380px;
+  }
+}
+
+/* TABLET (≤ 768px) */
+
+@media (max-width: 768px) {
+  /* SIDEBAR → barra inferior */
+  .sidebar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    top: auto;
+    width: 100%;
+    height: 64px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 16px;
+    background: rgba(240, 238, 233, 0.92);
+    backdrop-filter: blur(16px);
+    border-top: 1px solid rgba(48, 49, 59, 0.12);
+    z-index: 9999;
+  }
+
+  .footer-header {
+    display: none;
+  }
+
+  .menu {
+    flex-direction: row;
+    gap: 0;
+    width: 100%;
+    justify-content: space-around;
+    margin: 0;
+  }
+
+  .icono {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+  }
+
+  /* Tooltip → encima del icono */
+  .icono .tooltip-sb {
+    top: auto;
+    bottom: 52px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 110px;
+  }
+
+  .icono:hover .tooltip-sb {
+    top: auto;
+    bottom: 52px;
+  }
+
+  /* Indicador vertical → oculto en tablet/móvil */
+  .indicador-parallax {
+    display: none;
+  }
+
+  /* Botón idioma */
+  .btn-idioma {
+    top: 16px !important;
+    right: 16px !important;
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+
+  /* Contenido principal */
+  .contenido {
+    margin-left: 0;
+    margin-bottom: 64px; /* espacio para barra inferior */
+  }
+
+  /* ── INICIO: layout tablet ── */
+  .inicio {
+    flex-direction: column;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .columna-izquierda {
+    width: 100%;
+    padding: 6rem 28px 0 28px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .titulo-principal {
+    font-size: 2.2rem;
+  }
+
+  .subtitulo-estu {
+    font-size: 1.2rem;
+  }
+
+  /* Columna derecha: fondo decorativo */
+  .columna-derecha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .pc3d {
+    position: absolute;
+    top: 170px !important;
+    right: 10px;
+    width: 360px !important;
+    height: 320px;
+  }
+
+  #modelo-3d {
+    width: 580px;
+    height: 480px;
+  }
+
+  #anim-ui-ux {
+    top: 200px;
+    right: 10px;
+    width: 280px;
+    height: 80px;
+  }
+
+  .slogan-vidrio {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 15rem;
+    font-size: 1.1rem;
+    padding: 20px 22px;
+    border-radius: 20px;
+  }
+
+  .contenedor-slogan-scroll {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .scrolldown {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .botones-contacto {
+    margin-top: 20px;
+    gap: 12px;
+  }
+}
+
+/* MOVIL (≤ 480px) */
+
+@media (max-width: 480px) {
+  /* ── SIDEBAR ── */
+  .icono {
+    width: 40px;
+    height: 40px;
+  }
+
+  .inicio {
+    flex-direction: column;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .columna-izquierda {
+    width: 100%;
+    padding: 5rem 22px 0 22px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .subtitulo-estu {
+    font-size: 1.1rem;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .linea-decorativa {
+    width: 140px;
+    height: 3px;
+    margin-top: 14px;
+  }
+
+  .botones-contacto {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  /* Columna derecha: fondo decorativo semitransparente */
+  .columna-derecha {
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 60%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .pc3d {
+    position: absolute !important;
+    top: 10rem !important;
+    right: -80px;
+    width: 300px !important;
+    height: 280px;
+  }
+
+  #modelo-3d {
+    width: 480px;
+    height: 400px;
+  }
+
+  #anim-ui-ux {
+    top: 16rem;
+    right: 20px;
+    width: 220px;
+    height: 70px;
+  }
+
+  /* Slogan e scroll al fondo de la columna izquierda */
+  .contenedor-slogan-scroll {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 14px;
+    margin-top: 0;
+  }
+
+  .slogan-vidrio {
+    flex: 1;
+    width: auto;
+    top: 10rem !important;
+    max-width: 100%;
+    margin-top: 40px;
+    font-size: 1rem;
+    padding: 18px 18px;
+    border-radius: 18px;
+  }
+
+  .scrolldown {
+    margin-top: 40px;
+    margin-left: 0;
+    flex-shrink: 0;
+    align-self: flex-end;
+    margin-bottom: 4px;
+  }
+}
+
+/* MOVIL PEQUEÑO (≤ 360px) */
+
+@media (max-width: 360px) {
+  .columna-izquierda {
+    padding: 4.5rem 16px 0 16px;
+  }
+
+  .titulo-principal {
+    font-size: 1.75rem;
+  }
+
+  .subtitulo-estu {
+    font-size: 1rem;
+  }
+
+  .slogan-vidrio {
+    font-size: 0.9rem;
+    padding: 14px 14px;
+    border-radius: 14px;
+    top: 12rem !important;
+  }
+
+  .contenedor-slogan-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: 20rem !important;
+  }
+
+  .pc3d {
+    top: 10rem !important;
+    right: 20px;
+  }
+  #modelo-3d {
+    width: 480px;
+    height: 420px;
+  }
+
+  #anim-ui-ux {
+    top: 16rem !important;
+  }
+}

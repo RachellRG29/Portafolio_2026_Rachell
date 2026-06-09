@@ -1,0 +1,68 @@
+/* LAPTOP  (≤ 1440px) */
+@media (max-width: 1440px) {
+}
+
+/* LAPTOP  (≤ 1024px) */
+@media (max-width: 1024px) {
+}
+
+/* TABLET (≤ 768px) */
+@media (max-width: 768px) {
+  /* ── PROYECTOS ── */
+  .proyectos {
+    padding: 40px 24px 60px;
+  }
+
+  .titulo-seccion {
+    text-align: center;
+  }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 14px;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7 {
+    grid-area: auto;
+    height: 220px;
+  }
+}
+
+/* MOVIL (≤ 480px) */
+@media (max-width: 480px) {
+  /* ── PROYECTOS ── */
+  .proyectos {
+    padding: 30px 18px 50px;
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7 {
+    height: 190px;
+  }
+
+  .titulo {
+    font-size: 0.88rem;
+    padding: 8px 12px;
+  }
+  .proy-anio {
+    font-size: 0.72rem;
+  }
+}
+
+/* MOVIL PEQUEÑO (≤ 360px) */
+@media (max-width: 360px) {
+}

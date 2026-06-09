@@ -1,0 +1,258 @@
+/* LAPTOP  (≤ 1440px) */
+@media (max-width: 1440px) {
+}
+
+/* LAPTOP  (≤ 1024px) */
+@media (max-width: 1024px) {
+  /* ── SOBRE MI ── */
+  .sobre-mi {
+    padding: 60px 40px;
+  }
+
+  .contenedor-sobremi {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imagenes-sobremi,
+  .texto-sobremi {
+    width: 100%;
+  }
+
+  .imagenes-sobremi {
+    max-width: 440px;
+    height: 460px;
+  }
+
+  .rol-jr {
+    position: static;
+    display: inline-block;
+    margin-top: 14px;
+    right: auto !important;
+  }
+
+  /* ── PROYECTOS ── */
+  .proyectos {
+    padding: 40px 40px;
+  }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 14px;
+    padding: 0;
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7 {
+    grid-area: auto;
+    height: 240px;
+  }
+}
+
+/* TABLET (≤ 768px) */
+@media (max-width: 768px) {
+  /* ── SOBRE MI ── */
+  .sobre-mi {
+    padding: 50px 24px 60px;
+  }
+
+  .titulo-seccion {
+    font-size: 2.2rem;
+  }
+
+  .secctitulo-acercademi {
+    align-items: center;
+    text-align: center;
+  }
+
+  .rol-jr {
+    position: static;
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 1rem;
+    padding: 8px 18px;
+    right: auto !important;
+  }
+
+  .contenedor-sobremi {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 24px;
+  }
+
+  .imagenes-sobremi {
+    width: 100%;
+    max-width: 340px;
+    height: 400px;
+    margin: 0 auto;
+  }
+
+  .imagen-atras img {
+    width: 280px;
+    height: 320px;
+    border-radius: 20px;
+  }
+
+  .imagen-principal img {
+    width: 220px;
+    height: 290px;
+    left: 28px;
+    top: 30px;
+    border-radius: 20px;
+  }
+
+  .btn-descv {
+    left: 10%;
+    bottom: -50px;
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  .texto-sobremi {
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .texto-sobremi h3 {
+    font-size: 1.4rem;
+  }
+  .texto-sobremi p {
+    font-size: 1rem;
+  }
+
+  /* Bloques académicos */
+  .bloques-academicos {
+    padding: 30px 24px;
+    gap: 32px;
+  }
+
+  .marco-subtitulo {
+    position: relative;
+    top: 0;
+    right: auto;
+    min-width: unset;
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 1rem;
+  }
+
+  .glass-card {
+    padding: 24px 20px;
+    border-radius: 22px;
+  }
+  .glass-card p {
+    font-size: 0.97rem;
+  }
+
+  /* Habilidades */
+  .habilidades-tecnicas,
+  .habilidades-blandas {
+    padding: 50px 24px 60px;
+  }
+
+  .encabezado-habilidad {
+    margin-bottom: 10px;
+  }
+
+  /* Skills slider */
+  .skills-slider-wrap {
+    width: 100%;
+  }
+
+  .skill-card {
+    min-width: 120px;
+  }
+
+  .skill-capsule {
+    width: 110px;
+    height: 130px;
+  }
+
+  /* Habilidades blandas */
+  .soft-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+/* MOVIL (≤ 480px) */
+@media (max-width: 480px) {
+  /* ── SOBRE MI ── */
+  .sobre-mi {
+    padding: 40px 18px 50px;
+  }
+
+  .titulo-seccion {
+    font-size: 1.9rem;
+  }
+
+  .imagenes-sobremi {
+    max-width: 300px;
+    height: 360px;
+  }
+
+  .imagen-atras img {
+    width: 240px;
+    height: 280px;
+  }
+
+  .imagen-principal img {
+    width: 190px;
+    height: 260px;
+    left: 22px;
+    top: 28px;
+  }
+  .btn-descv {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -52px;
+    white-space: nowrap;
+  }
+
+  .texto-sobremi {
+    margin-top: 60px;
+  }
+
+  /* Bloques académicos */
+  .bloques-academicos {
+    padding: 24px 18px;
+    gap: 28px;
+  }
+
+  .glass-card p {
+    font-size: 0.93rem;
+  }
+
+  /* Habilidades */
+  .habilidades-tecnicas,
+  .habilidades-blandas {
+    padding: 40px 18px 50px;
+  }
+
+  .soft-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* Skill cards ligeramente más pequeñas */
+  .skill-capsule {
+    width: 100px;
+    height: 120px;
+  }
+
+  .skill-card {
+    min-width: 108px;
+  }
+}
+
+/* MOVIL PEQUEÑO (≤ 360px) */
+@media (max-width: 360px) {
+}
