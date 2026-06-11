@@ -104,9 +104,14 @@
   position: absolute;
   width: 60px;
   bottom: 20px;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   opacity: 0;
   pointer-events: none;
+  /* transición suave para apertura y mousemove */
+  transition:
+    opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* estado base: escondido hacia abajo */
+  transform: translateY(40px);
 }
 
 /* Quita el .folder-wrapper:hover y usa esto */
@@ -125,16 +130,6 @@
 }
 .footer-container.abierto .figma {
   transform: translate(65px, -105px) rotate(12deg);
-}
-
-/* Ajuste opcional: que los iconos no se vean nada si no está abierto */
-.icon {
-  position: absolute;
-  width: 60px;
-  bottom: 20px;
-  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: 0;
-  pointer-events: none; /* Para que no estorben al hacer click en otra cosa */
 }
 
 /* --- Resto del diseño --- */
@@ -157,16 +152,11 @@
   opacity: 0.6;
 }
 
-/* Estado base más limpio */
-.icon {
-  transform: translateY(40px);
-}
-
 .links-right {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex-wrap: wrap; /* ✅ permite que bajen */
+  flex-wrap: wrap; /* permite que bajen */
   justify-content: flex-end;
 }
 
