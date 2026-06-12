@@ -1,28 +1,42 @@
-/*CERTIFICADOS — Sliders + Modal  */
-
+/* CERTIFICADOS — Sliders + Modal
+   Sin dependencia de Phosphor. Iconos vía CSS (ver certificados.css).
+   ------------------------------------------------------------------ */
 (function () {
   "use strict";
 
-  /* ── Estado global de drag ── */
-  let dragSlider = null; // slider que se está arrastrando
-  let dragStartX = 0;
-  let dragScrollL = 0;
-
-  /* ── Estado global del modal ── */
+  /* ── Referencias al modal ── */
   const modal = document.getElementById("cert-modal");
-  const mImg = modal?.querySelector(".cert-modal__img");
-  const mCur = modal?.querySelector(".cert-modal__counter-cur");
-  const mTot = modal?.querySelector(".cert-modal__counter-tot");
+  if (!modal) return; // guard: si el HTML no está aún, salir
 
-  let gallery = []; // [{src, alt}, ...]
+  const mImg = modal.querySelector(".cert-modal__img");
+  const mCur = modal.querySelector(".cert-modal__counter-cur");
+  const mTot = modal.querySelector(".cert-modal__counter-tot");
+  const mBackdrop = modal.querySelector(".cert-modal__backdrop");
+  const mClose = modal.querySelector(".cert-modal__close");
+  const mPrev = modal.querySelector(".cert-modal__nav--prev");
+  const mNext = modal.querySelector(".cert-modal__nav--next");
+
+  /* ── Estado del modal ── */
+  let gallery = []; // [{ src, alt }, …]
   let gIdx = 0;
   let isOpen = false;
 
-  /* =========================================================
-     UTILIDADES
-     ========================================================= */
+  /* ── Estado drag (mouse) ── */
+  let dragSlider = null;
+  let dragStartX = 0;
+  let dragScrollL = 0;
 
-  /** Scroll de un slider en la dirección dada (±1). Circular. */
+  /* ── Estado swipe (touch sliders) ── */
+  let touchSlider = null;
+  let touchStartX = 0;
+  let touchScrollL = 0;
+
+  /* ── Estado swipe (touch modal) ── */
+  let modalTouchX = 0;
+
+  /* ==========================================================
+     SCROLL DEL SLIDER — circular
+     ========================================================== */
   function scrollSlider(slider, dir) {
     const max = slider.scrollWidth - slider.clientWidth;
     const step = slider.clientWidth;
@@ -36,7 +50,9 @@
     slider.scrollTo({ left: next, behavior: "smooth" });
   }
 
-  /** Muestra la imagen del modal en posición idx (circular). Sin setTimeout. */
+  /* ==========================================================
+     MODAL — mostrar imagen
+     ========================================================== */
   function showImage(idx) {
     gIdx = (idx + gallery.length) % gallery.length;
     mImg.src = gallery[gIdx].src;
@@ -44,7 +60,9 @@
     mCur.textContent = gIdx + 1;
   }
 
-  /** Abre el modal con las tarjetas del grupo y foco en la clickeada. */
+  /* ==========================================================
+     MODAL — abrir
+     ========================================================== */
   function openModal(cards, clickedCard) {
     gallery = cards.map((c) => ({
       src: c.dataset.modalSrc || "",
@@ -55,33 +73,39 @@
     if (gIdx < 0) gIdx = 0;
 
     mTot.textContent = gallery.length;
-    modal.classList.toggle("solo", gallery.length <= 1);
+
+    /* Ocultar flechas cuando solo hay 1 imagen */
+    const solo = gallery.length <= 1;
+    modal.classList.toggle("solo", solo);
+    mPrev.hidden = solo;
+    mNext.hidden = solo;
 
     showImage(gIdx);
     modal.classList.add("is-open");
     document.body.style.overflow = "hidden";
     isOpen = true;
-    modal.querySelector(".cert-modal__close")?.focus();
+    mClose.focus();
   }
 
-  /** Cierra el modal. */
+  /* ==========================================================
+     MODAL — cerrar
+     ========================================================== */
   function closeModal() {
     if (!isOpen) return;
     modal.classList.remove("is-open");
     document.body.style.overflow = "";
     isOpen = false;
-    /* Limpiar src solo tras la animación CSS (300 ms) */
+    /* Limpiar src solo después de la transición CSS */
     setTimeout(() => {
       if (!isOpen) mImg.src = "";
     }, 340);
   }
 
-  /* =========================================================
-     DELEGACIÓN DE CLICS — un único listener en document
-     Maneja: .scroll-cert  /  .cert-ver-btn  /  modal controls
-     ========================================================= */
+  /* ==========================================================
+     DELEGACIÓN DE CLICS
+     ========================================================== */
   document.addEventListener("click", (e) => {
-    /* ── Botones ← → del slider ── */
+    /* Botones ← → del slider */
     const scrollBtn = e.target.closest(".scroll-cert");
     if (scrollBtn) {
       const slider = document.getElementById(scrollBtn.dataset.target);
@@ -89,7 +113,7 @@
       return;
     }
 
-    /* ── Botón "ver completo" de una tarjeta ── */
+    /* Botón "ver completo" */
     const verBtn = e.target.closest(".cert-ver-btn");
     if (verBtn) {
       const card = verBtn.closest(".cert-card");
@@ -101,16 +125,14 @@
       return;
     }
 
-    /* ── Cerrar: backdrop o botón X ── */
-    if (
-      e.target.closest(".cert-modal__backdrop") ||
-      e.target.closest(".cert-modal__close")
-    ) {
+    /* Click en la imagen del modal también abre nada nuevo,
+       pero permite cerrar si se hace clic fuera del box */
+    if (e.target === mBackdrop || e.target.closest(".cert-modal__close")) {
       closeModal();
       return;
     }
 
-    /* ── Navegación prev / next del modal ── */
+    /* Nav del modal */
     if (e.target.closest(".cert-modal__nav--prev")) {
       showImage(gIdx - 1);
       return;
@@ -121,9 +143,9 @@
     }
   });
 
-  /* =========================================================
-     DRAG CON MOUSE — un único par de listeners en document
-     ========================================================= */
+  /* ==========================================================
+     DRAG CON MOUSE
+     ========================================================== */
   document.addEventListener(
     "mousedown",
     (e) => {
@@ -149,14 +171,9 @@
     dragSlider = null;
   });
 
-  /* =========================================================
-     TOUCH / SWIPE — sliders
-     Un único listener en document, identifica el slider tocado
-     ========================================================= */
-  let touchSlider = null;
-  let touchStartX = 0;
-  let touchScrollL = 0;
-
+  /* ==========================================================
+     TOUCH — sliders
+     ========================================================== */
   document.addEventListener(
     "touchstart",
     (e) => {
@@ -186,12 +203,10 @@
     { passive: true },
   );
 
-  /* =========================================================
-     SWIPE EN EL MODAL
-     ========================================================= */
-  let modalTouchX = 0;
-
-  modal?.addEventListener(
+  /* ==========================================================
+     TOUCH — modal (swipe izq/der para navegar)
+     ========================================================== */
+  modal.addEventListener(
     "touchstart",
     (e) => {
       modalTouchX = e.touches[0].clientX;
@@ -199,7 +214,7 @@
     { passive: true },
   );
 
-  modal?.addEventListener(
+  modal.addEventListener(
     "touchend",
     (e) => {
       if (!isOpen) return;
@@ -210,9 +225,9 @@
     { passive: true },
   );
 
-  /* =========================================================
+  /* ==========================================================
      TECLADO
-     ========================================================= */
+     ========================================================== */
   document.addEventListener("keydown", (e) => {
     if (!isOpen) return;
     if (e.key === "Escape") closeModal();
@@ -220,19 +235,19 @@
     if (e.key === "ArrowRight") showImage(gIdx + 1);
   });
 
-  /* =========================================================
+  /* ==========================================================
      TRADUCCIÓN DE TÍTULOS DE GRUPO
-     ========================================================= */
+     ========================================================== */
   function traducirTitulosGrupos(lang) {
     document.querySelectorAll(".titulo-grupo-cert").forEach((span) => {
       span.textContent = span.dataset[lang] || span.dataset.es || "";
     });
   }
 
-  /* Exponer para que tu sistema i18n pueda llamarla */
+  /* Exponer para el sistema i18n externo */
   window.traducirTitulosGrupos = traducirTitulosGrupos;
 
-  /* Inicializar al cargar */
+  /* Inicializar con el idioma actual */
   const initLang = document.documentElement.lang === "en" ? "en" : "es";
   if (document.readyState === "loading") {
     document.addEventListener(

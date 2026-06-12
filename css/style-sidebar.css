@@ -1,39 +1,3 @@
-::selection {
-  background: #91a7d0;
-  color: #fefeff;
-}
-
-::-moz-selection {
-  background: #91a7d0;
-  color: #fefeff;
-}
-
-:root {
-  /* COLORES */
-  --blanco-cloud: #f0eee9;
-  --negro-gato: #30313b;
-  --peach: #febe98;
-  --serenity: #91a7d0;
-  --royal-blue: #3965dc;
-
-  /* TIPOGRAFÍAS */
-  --fuente-titulo: "Bricolage Grotesque", sans-serif;
-  --fuente-texto: "Rethink Sans", sans-serif;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  /*outline: 1px solid green;*/
-}
-
-body {
-  background: var(--blanco-cloud);
-  font-family: var(--fuente-texto) !important;
-  color: var(--negro-gato);
-}
-
 .grupo {
   display: none;
 }
@@ -66,50 +30,32 @@ body {
 }
 
 .logo-wrapper {
+  width: 160px;
+  height: 70px;
   position: relative;
-  width: 160px; /* ajusta según tu logo */
-  height: auto;
-  cursor: pointer;
 }
 
 /* ambos logos encima uno del otro */
 .logo-footer {
+  position: absolute;
+  top: 0;
+  left: 60px;
+
   width: 70px;
   height: auto;
-  margin-left: 60px;
-  height: auto;
+
   display: block;
-  transition: all 0.4s ease;
-  margin-bottom: -40px;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+
+  margin: 0;
 }
 
 /* logo base */
 .logo-footer.base {
   position: relative;
   z-index: 1;
-}
-
-/* outline encima pero invisible */
-.logo-footer.outline {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 2;
-
-  opacity: 0;
-  transform: scale(0.95);
-  transition: all 0.4s ease;
-}
-
-/* hover efecto */
-.logo-wrapper:hover .logo-footer.outline {
-  opacity: 1;
-  transform: scale(1);
-}
-
-/* opcional: suaviza el logo base al hover */
-.logo-wrapper:hover .logo-footer.base {
-  opacity: 0.85;
 }
 
 .btn-idioma {
@@ -188,22 +134,39 @@ body {
 }
 
 /*tooltip*/
+.tooltip-sb {
+  width: 90px;
+  min-height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  white-space: nowrap;
+  border-radius: 10px;
+}
+
 .icono .tooltip-sb {
   position: absolute;
-  top: -10px;
-  left: 5px;
-  transform: translateX(50%);
-  font-weight: 600;
-  font-size: 17px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-  width: 80px;
-  text-align: center;
-  border-radius: 8px;
+
+  top: 6px;
+  left: 1px;
+
+  transform: translateX(50%) translateY(0);
+
   opacity: 0;
   visibility: hidden;
-  font-size: 14px;
-  transition: all 0.3s ease;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.icono:hover .tooltip-sb {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateX(50%) translateY(0);
 }
 
 .icono:hover .tooltip-sb {

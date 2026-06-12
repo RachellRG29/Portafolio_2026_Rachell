@@ -6,6 +6,7 @@
 
 .titulo-seccion {
   font-family: var(--fuente-titulo);
+  font-weight: 800 !important;
   font-size: 3rem;
   text-align: center;
 }

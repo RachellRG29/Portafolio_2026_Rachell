@@ -192,6 +192,13 @@
   pointer-events: none; /* se activa solo en hover */
 }
 
+.cert-ver-btn::before {
+  content: "⛶"; /* U+26F6 — cuadrado con esquinas marcadas  */
+  font-size: 18px;
+  color: #fefeff;
+  line-height: 1;
+}
+
 .cert-capsule:hover .cert-ver-btn {
   opacity: 1;
   transform: translateY(0);
@@ -243,7 +250,7 @@
   background: var(--blanco-cloud);
   color: var(--negro-gato);
   font-size: 1.5rem;
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -252,6 +259,22 @@
     background 0.2s ease,
     border-color 0.2s ease;
   /* box-shadow: 0 6px 16px rgba(0,0,0,.15);*/
+}
+
+/* Flecha izquierda: data-dir="-1" */
+.scroll-cert[data-dir="-1"]::before {
+  content: "˂";
+  font-size: 28px;
+  line-height: 1;
+  display: block;
+}
+
+/* Flecha derecha: data-dir="1" */
+.scroll-cert[data-dir="1"]::before {
+  content: "˃";
+  font-size: 28px;
+  line-height: 1;
+  display: block;
 }
 
 .scroll-cert:hover {
@@ -368,6 +391,13 @@
   background: rgba(30, 30, 40, 0.95);
 }
 
+.cert-modal__close::before {
+  content: "×";
+  font-size: 28px;
+  line-height: 1;
+  display: block;
+}
+
 /* ── Navegación prev / next ── */
 .cert-modal__nav {
   position: fixed;
@@ -397,7 +427,18 @@
 .cert-modal__nav--next {
   right: 18px;
 }
-
+.cert-modal__nav--prev::before {
+  content: "‹";
+  font-size: 26px;
+  line-height: 1;
+  display: block;
+}
+.cert-modal__nav--next::before {
+  content: "›";
+  font-size: 26px;
+  line-height: 1;
+  display: block;
+}
 .cert-modal__nav:active {
   transform: translateY(-50%) scale(0.94);
 }
