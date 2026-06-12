@@ -49,24 +49,6 @@
     <link rel="stylesheet" href="css/style-inicio.css" />
     <link
       rel="stylesheet"
-      href="css/style-certificados.css"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <link
-      rel="stylesheet"
-      href="css/style-proyectos.css"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <link
-      rel="stylesheet"
-      href="css/style-footer.css"
-      media="print"
-      onload="this.media = 'all'"
-    />
-    <link
-      rel="stylesheet"
       href="css/style-sidebar.css"
       media="print"
       onload="this.media = 'all'"
@@ -86,6 +68,31 @@
     <link
       rel="stylesheet"
       href="css/s-acerca-hblandas.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-proyectos.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-certificados.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link
+      rel="stylesheet"
+      href="css/style-contacto.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
+
+    <link
+      rel="stylesheet"
+      href="css/style-footer.css"
       media="print"
       onload="this.media = 'all'"
     />
@@ -564,6 +571,7 @@
                 </span>
 
                 <p
+                  class="lbl-descripcion"
                   data-es="Diseñando experiencias a través de la creatividad."
                   data-en="Designing experiences through creativity."
                 >
@@ -1171,9 +1179,9 @@
         <section class="proyectos" id="proyectos">
           <div class="encabezado-habilidad">
             <h2
-              class="titulo-seimg-portafolio-carpetaion"
-              data-es='Proyectos <br> <span style: color=""> Educativos </span>'
-              data-en='Educational <br> <span style: color=""> Projects </span>'
+              class="titulo-seccion"
+              data-es='Proyectos <span style="color: #91A7D0"> Educativos</span>'
+              data-en='Educational <span style="color: #91A7D0"> Projects</span>'
             ></h2>
 
             <div class="flecha">
@@ -1328,8 +1336,176 @@
           });
       </script>
 
-      <!-- ================== ÇONTACTO ================== -->
-      <div class="grupo" id="grupo-contacto"></div>
+      <!-- ================== CONTACTO ================== -->
+      <div class="grupo" id="grupo-contacto">
+        <!-- Contacto -->
+        <section class="contacto" id="contacto">
+          <div class="contacto__info">
+            <span class="contacto__badge">
+              <span class="contacto__badge-dot"></span>
+              Diseñadora UI/UX
+            </span>
+            <h2 class="contacto__titulo">Contacto</h2>
+            <p class="contacto__desc">
+              ¿Tienes un proyecto en mente?<br />
+              Escríbeme y con gusto conversamos.
+            </p>
+
+            <div class="contacto__imagen-wrapper">
+              <img
+                src="images/bg-fondo-rect.png"
+                alt=""
+                class="contacto__imagen"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+
+          <div class="contacto__form-wrapper">
+            <form
+              class="contacto__form"
+              id="formContacto"
+              action="https://formsubmit.co/achellramirez369@gmail.com"
+              method="POST"
+              novalidate
+            >
+              <!-- Configuración FormSubmit -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="Nuevo mensaje desde tu portafolio ✨"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input
+                type="text"
+                name="_honey"
+                style="display: none"
+                tabindex="-1"
+                autocomplete="off"
+              />
+
+              <div class="contacto__fila">
+                <div class="contacto__grupo">
+                  <label for="nombre" class="contacto__label">Nombre</label>
+                  <input
+                    type="text"
+                    id="nombre"
+                    name="nombre"
+                    class="contacto__input"
+                    placeholder="Tu nombre completo"
+                    autocomplete="name"
+                    maxlength="80"
+                  />
+                  <span class="contacto__error" id="error-nombre"></span>
+                </div>
+
+                <div class="contacto__grupo">
+                  <label for="correo" class="contacto__label">Correo</label>
+                  <input
+                    type="email"
+                    id="correo"
+                    name="correo"
+                    class="contacto__input"
+                    placeholder="tu@correo.com"
+                    autocomplete="email"
+                    maxlength="120"
+                  />
+                  <span class="contacto__error" id="error-correo"></span>
+                </div>
+              </div>
+
+              <div class="contacto__grupo">
+                <label for="asunto" class="contacto__label">Asunto</label>
+                <select id="asunto" name="asunto" class="contacto__input">
+                  <option value="" disabled selected>
+                    Selecciona un servicio...
+                  </option>
+                  <optgroup label="Diseño">
+                    <option value="Diseño UI/UX">Diseño UI/UX</option>
+                    <option value="Diseño gráfico freelance">
+                      Diseño gráfico freelance
+                    </option>
+                    <option value="Diseño de identidad visual / branding">
+                      Diseño de identidad visual / branding
+                    </option>
+                  </optgroup>
+                  <optgroup label="Desarrollo">
+                    <option value="Desarrollo Front-End">
+                      Desarrollo Front-End
+                    </option>
+                    <option value="Aplicación web">Aplicación web</option>
+                    <option value="Landing page / sitio web">
+                      Landing page / sitio web
+                    </option>
+                  </optgroup>
+                  <optgroup label="Animación">
+                    <option value="Animación 3D básica">
+                      Animación 3D básica
+                    </option>
+                    <option value="Animaciones e interacciones web">
+                      Animaciones e interacciones web
+                    </option>
+                  </optgroup>
+                  <optgroup label="Otro">
+                    <option value="Consultoría / asesoría">
+                      Consultoría / asesoría
+                    </option>
+                    <option value="Colaboración o proyecto conjunto">
+                      Colaboración o proyecto conjunto
+                    </option>
+                    <option value="Otro">Otro</option>
+                  </optgroup>
+                </select>
+                <span class="contacto__error" id="error-asunto"></span>
+              </div>
+
+              <div class="contacto__grupo">
+                <label for="mensaje" class="contacto__label">Mensaje</label>
+                <textarea
+                  id="mensaje"
+                  name="mensaje"
+                  class="contacto__textarea"
+                  placeholder="Cuéntame sobre tu proyecto..."
+                  rows="5"
+                  maxlength="1000"
+                ></textarea>
+                <span class="contacto__error" id="error-mensaje"></span>
+              </div>
+
+              <button type="submit" class="contacto__btn" id="btnEnviar">
+                <span class="contacto__btn-texto">Enviar mensaje</span>
+                <svg
+                  class="contacto__btn-icon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+
+              <div
+                class="contacto__feedback"
+                id="formFeedback"
+                role="alert"
+                aria-live="polite"
+              ></div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Reseñas -->
+        <section class="reseña"></section>
+      </div>
     </main>
 
     <!-- footer.html -->
@@ -1345,6 +1521,7 @@
     <script defer src="js/port-indicador.js"></script>
     <script defer src="js/port-index.js"></script>
     <script defer src="js/port-idioma.js"></script>
+    <script defer src="js/port-contacto.js"></script>
 
     <script defer src="js/port-ind-habilidades.js"></script>
     <script defer src="js/port-footer.js"></script>
