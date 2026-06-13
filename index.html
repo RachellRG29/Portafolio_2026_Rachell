@@ -590,30 +590,21 @@
 
               <!-- <div class="img-prov"><img src="/images/cristal-glow 2.png" alt=""></div>-->
 
-              <div class="pc3d">
-                <model-viewer
-                  id="modelo-3d"
-                  src="3d/glb-port2026-prueba2.glb"
-                  poster="images/poster-modelo.webp"
-                  reveal="auto"
-                  auto-rotate
-                  camera-controls
-                  disable-pan
-                  autoplay
-                >
-                </model-viewer>
+              <div class="pc3d" id="contenedor-3d">
+                <img
+                  src="images/poster-modelo.webp"
+                  alt="Modelo 3D portafolio"
+                  id="poster-3d"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    cursor: pointer;
+                  "
+                />
               </div>
             </div>
           </div>
-
-          <script>
-            const viewer = document.querySelector("#modelo-3d");
-
-            viewer.addEventListener("load", () => {
-              viewer.animationName = "kirbyAction";
-              viewer.play();
-            });
-          </script>
 
           <!-- indicador pagina -->
           <div class="indicador-parallax">
@@ -1513,12 +1504,6 @@
     <!-- footer.html -->
     <div id="footer-container"></div>
 
-    <!-- Librería Animacion 3d -->
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
-
     <script defer src="js/port-navegacion.js"></script>
     <script defer src="js/port-indicador.js"></script>
     <script defer src="js/port-index.js"></script>
@@ -1527,5 +1512,6 @@
 
     <script defer src="js/port-ind-habilidades.js"></script>
     <script defer src="js/port-footer.js"></script>
+    <script defer src="js/port-3d.js"></script>
   </body>
 </html>
