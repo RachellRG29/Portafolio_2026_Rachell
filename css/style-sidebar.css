@@ -13,6 +13,7 @@
   top: 0;
   width: 90px;
   height: 100vh;
+  flex-shrink: 0;
   background: transparent;
   /*background: var(--blanco-cloud);*/
   display: flex;

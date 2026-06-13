@@ -1,18 +1,4 @@
-/* =========================================================
-   port-index.js — VERSIÓN OPTIMIZADA
-   Cambios:
-   ▸ Lottie carga diferida con IntersectionObserver
-   ▸ Animaciones intro con CSS classes, sin setTimeout en cadena
-   ▸ revealMap usa un solo observer con WeakSet para no re-observar
-   ▸ Lectura del DOM (querySelectorAll) una sola vez
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", () => {
-  /* =========================================================
-     1. ANIMACIONES DE ENTRADA (intro-pop)
-        Se disparan con CSS animation-delay calculado via
-        --delay custom property, sin setTimeout por elemento.
-     ========================================================= */
   const INTRO_SELECTORS = [
     ".sidebar",
     ".titulo-principal",
@@ -30,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!el) return;
     // El delay se maneja en CSS con animation-delay: var(--delay)
     el.style.setProperty("--delay", `${120 + i * 120}ms`);
-    el.classList.add("intro-pop");
     // requestAnimationFrame garantiza que el navegador ya aplicó el estilo
     // antes de añadir 'show', evitando que la transición se salte
     requestAnimationFrame(() =>
