@@ -72,76 +72,6 @@
 /* TABLET (≤ 768px) */
 
 @media (max-width: 768px) {
-  /* SIDEBAR → barra inferior */
-  .sidebar {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    top: auto;
-    width: 100%;
-    height: 64px;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 16px;
-    background: rgba(240, 238, 233, 0.92);
-    backdrop-filter: blur(16px);
-    border-top: 1px solid rgba(48, 49, 59, 0.12);
-    z-index: 9999;
-  }
-
-  .footer-header {
-    display: none;
-  }
-
-  .menu {
-    flex-direction: row;
-    gap: 0;
-    width: 100%;
-    justify-content: space-around;
-    margin: 0;
-  }
-
-  .icono {
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-  }
-
-  /* Tooltip → encima del icono */
-  .icono .tooltip-sb {
-    top: auto;
-    bottom: 52px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: max-content;
-    max-width: 110px;
-  }
-
-  .icono:hover .tooltip-sb {
-    top: auto;
-    bottom: 52px;
-  }
-
-  /* Indicador vertical → oculto en tablet/móvil */
-  .indicador-parallax {
-    display: none;
-  }
-
-  /* Botón idioma */
-  .btn-idioma {
-    top: 16px !important;
-    right: 16px !important;
-    padding: 8px 12px;
-    font-size: 0.85rem;
-  }
-
-  /* Contenido principal */
-  .contenido {
-    margin-left: 0;
-    margin-bottom: 64px; /* espacio para barra inferior */
-  }
-
   /* ── INICIO: layout tablet ── */
   .inicio {
     flex-direction: column;
@@ -241,12 +171,6 @@
 /* MOVIL (≤ 480px) */
 
 @media (max-width: 480px) {
-  /* ── SIDEBAR ── */
-  .icono {
-    width: 40px;
-    height: 40px;
-  }
-
   .inicio {
     flex-direction: column;
     padding: 0;

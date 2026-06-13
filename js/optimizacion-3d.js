@@ -1,30 +1,56 @@
 (function () {
-  const esEscritorio = window.matchMedia("(min-width: 769px)").matches;
+  "use strict";
 
   const modelViewer = document.getElementById("modelo-3d");
   const imgEstatica = document.querySelector(".modelo-3d-static");
 
   if (!modelViewer) return;
 
-  // MÓVIL
-  if (!esEscritorio) {
-    modelViewer.style.display = "none";
+  function mostrarModelo() {
+    if (imgEstatica) imgEstatica.style.display = "none";
+    modelViewer.style.visibility = "visible";
+    modelViewer.style.opacity = "1";
+    modelViewer.style.pointerEvents = "auto";
+  }
 
-    if (imgEstatica) {
-      imgEstatica.style.display = "block";
+  function mostrarImagen() {
+    modelViewer.style.visibility = "hidden";
+    modelViewer.style.opacity = "0";
+    modelViewer.style.pointerEvents = "none";
+    if (imgEstatica) imgEstatica.style.display = "block";
+  }
+
+  function actualizarPorResolucion() {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      /*console.log("💻 Escritorio: modelo 3D");*/
+      mostrarModelo();
+    } else {
+      /*console.log("📱 Móvil: imagen estática");*/
+      mostrarImagen();
     }
-
-    return;
   }
 
-  // ESCRITORIO
-  if (imgEstatica) {
-    imgEstatica.style.display = "none";
-  }
+  window.addEventListener("resize", actualizarPorResolucion);
+  actualizarPorResolucion();
 
-  modelViewer.style.display = "block";
+  modelViewer.addEventListener("load", () => {
+    /*console.log("🎬 Modelo 3D cargado");*/
 
-  setTimeout(() => {
-    modelViewer.src = modelViewer.dataset.src;
-  }, 450);
+    setTimeout(() => {
+      if (modelViewer.availableAnimations?.length > 0) {
+        modelViewer.animationName = modelViewer.availableAnimations[0];
+        modelViewer.autoplay = true;
+      }
+
+      try {
+        const r = modelViewer.play?.();
+        if (r?.catch) r.catch(() => {});
+      } catch (_) {}
+    }, 100);
+  });
+
+  modelViewer.addEventListener("error", () => {
+    /*console.error("❌ Error cargando modelo 3D");*/
+    mostrarImagen();
+  });
 })();

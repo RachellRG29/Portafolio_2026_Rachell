@@ -1,3 +1,51 @@
+::selection {
+  background: #91a7d0;
+  color: #fefeff;
+}
+
+::-moz-selection {
+  background: #91a7d0;
+  color: #fefeff;
+}
+
+:root {
+  /* COLORES */
+  --blanco-cloud: #f0eee9;
+  --negro-gato: #30313b;
+  --peach: #febe98;
+  --serenity: #91a7d0;
+  --royal-blue: #3965dc;
+
+  /* TIPOGRAFÍAS */
+  --fuente-titulo: "Bricolage Grotesque";
+  --fuente-texto: "Rethink Sans";
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("../fonts/bricolage-grotesque-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Rethink Sans";
+  src: url("../fonts/rethink-sans-regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*outline: 1px solid green;*/
+}
+
+body {
+  background: var(--blanco-cloud);
+  font-family: var(--fuente-texto) !important;
+  color: var(--negro-gato);
+}
+
 .grupo {
   display: none;
 }
@@ -314,15 +362,6 @@
   .contenido {
     margin-left: 0;
     margin-bottom: 64px; /* espacio para barra inferior */
-  }
-
-  /* ── INICIO: layout tablet ── */
-  .inicio {
-    flex-direction: column;
-    padding: 0;
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
   }
 }
 
