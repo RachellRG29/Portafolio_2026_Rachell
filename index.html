@@ -26,6 +26,13 @@
       content="https://portafolio-cindy-ramirez-2026.it.com"
     />
 
+    <link
+      rel="preload"
+      as="image"
+      href="images/img-inicio-vidrio.webp"
+      fetchpriority="high"
+    />
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/style-inicio.css" />
     <link rel="stylesheet" href="css/paleta-colores.css" />
@@ -596,13 +603,14 @@
             <div class="elementos-superpuestos">
               <!-- <div class="texto-uiux">UI/UX</div> -->
 
+              <!-- poster="images/poster-modelo.png" -->
+
               <div id="anim-ui-ux"></div>
 
               <div class="pc3d">
                 <model-viewer
                   id="modelo-3d"
-                  src="3d/glb-port2026-prueba2.glb"
-                  poster="images/poster-modelo.webp"
+                  src="3d/glb-port2026-animat-compressed.glb"
                   reveal="auto"
                   auto-rotate
                   camera-controls
