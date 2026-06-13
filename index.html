@@ -617,14 +617,26 @@
               <div id="anim-ui-ux"></div>
 
               <div class="pc3d">
+                <!-- Imagen estática para móvil -->
+                <img
+                  src="images/poster-modelo.png"
+                  alt="Modelo 3D de computadora - versión estática"
+                  class="modelo-3d-static"
+                  loading="lazy"
+                  width="600"
+                  height="500"
+                  fetchpriority="low"
+                />
+
+                <!-- Modelo 3D interactivo (oculto en móvil) -->
                 <model-viewer
                   id="modelo-3d"
-                  src="3d/glb-port2026-animat-compressed.glb"
-                  reveal="auto"
-                  auto-rotate
+                  data-src="3d/glb-port2026-animat-compressed.glb"
                   camera-controls
                   disable-pan
                   autoplay
+                  loading="lazy"
+                  class="modelo-3d-dynamic"
                 >
                 </model-viewer>
               </div>
@@ -1599,6 +1611,8 @@
     <script defer src="js/port-navegacion.js"></script>
     <script defer src="js/port-indicador.js"></script>
     <script defer src="js/port-index.js"></script>
+    <script defer src="js/performance.js"></script>
+    <script defer src="js/optimizacion-3d.js"></script>
     <script defer src="js/port-idioma.js"></script>
     <script defer src="js/port-contacto.js"></script>
 

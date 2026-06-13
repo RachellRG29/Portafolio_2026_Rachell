@@ -177,12 +177,27 @@
     pointer-events: none;
   }
 
+  .modelo-3d-dynamic {
+    display: none !important;
+  }
+
+  .modelo-3d-static {
+    display: block !important; /* Visible en tablet */
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+
   .pc3d {
-    position: absolute;
+    position: absolute !important;
     top: 170px !important;
     right: 10px;
     width: 360px !important;
-    height: 320px;
+    height: auto;
+    min-height: 280px;
+    pointer-events: none; /* La imagen no necesita interacción */
   }
 
   #modelo-3d {
@@ -277,12 +292,26 @@
     pointer-events: none;
   }
 
+  .modelo-3d-dynamic {
+    display: none !important;
+  }
+
+  .modelo-3d-static {
+    display: block !important;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    object-fit: contain;
+  }
+
   .pc3d {
     position: absolute !important;
     top: 10rem !important;
-    right: 20px;
-    width: 300px !important;
-    height: 280px;
+    right: 10px;
+    width: 260px !important;
+    height: auto;
+    min-height: 240px;
+    pointer-events: none;
   }
 
   #modelo-3d {
@@ -356,9 +385,14 @@
     top: 20rem !important;
   }
 
+  .modelo-3d-static {
+    max-width: 220px;
+  }
+
   .pc3d {
-    top: 10rem !important;
-    right: 20px;
+    width: 200px !important;
+    right: 5px;
+    top: 12rem !important;
   }
   #modelo-3d {
     width: 480px;
