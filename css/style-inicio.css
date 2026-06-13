@@ -430,6 +430,7 @@
   background: transparent;
   z-index: 30;
   pointer-events: auto;
+  contain: layout paint size;
 }
 
 /*----------------------RESPONSIVIDAD---------------------*/

@@ -7,14 +7,6 @@
     <title>Portafolio 2026</title>
     <link rel="icon" href="images/logo/logo2-ico-negro.png" />
 
-    <!-- ── Precarga la imagen LCP (la foto de Rachell, primera visible) ── -->
-    <link
-      rel="preload"
-      as="image"
-      href="images/img-foto-rachell.jpeg"
-      fetchpriority="high"
-    />
-
     <!-- CSS -->
     <link rel="stylesheet" href="css/style-inicio.css" />
     <link
@@ -601,17 +593,18 @@
               <div class="pc3d">
                 <model-viewer
                   id="modelo-3d"
-                  src="3d/glb-port2026-animado2.glb"
-                  alt="Modelo 3D"
+                  src="3d/glb-port2026-prueba2.glb"
+                  poster="images/poster-modelo.webp"
+                  reveal="auto"
                   auto-rotate
                   camera-controls
                   disable-pan
-                  autoplay
                   animation-name="Animation"
                   tone-mapping="aces"
                   exposure="1.5"
                   shadow-intensity="1"
                   environment-image="neutral"
+                  autoplay
                 >
                 </model-viewer>
               </div>
