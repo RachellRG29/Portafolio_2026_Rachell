@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const INTRO_SELECTORS = [
-    ".sidebar",
     ".titulo-principal",
     ".subtitulo-estu",
     ".linea-decorativa",

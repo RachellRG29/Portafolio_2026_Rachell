@@ -17,8 +17,8 @@
   --royal-blue: #3965dc;
 
   /* TIPOGRAFÍAS */
-  --fuente-titulo: "Bricolage Grotesque", sans-serif;
-  --fuente-texto: "Rethink Sans", sans-serif;
+  --fuente-titulo: "Bricolage Grotesque";
+  --fuente-texto: "Rethink Sans";
 }
 
 @font-face {
