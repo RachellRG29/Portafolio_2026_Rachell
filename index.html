@@ -97,11 +97,6 @@
       media="print"
       onload="this.media = 'all'"
     />
-
-    <link rel="preconnect" href="https://unpkg.com" crossorigin />
-    <link rel="preconnect" href="https://www.gstatic.com" crossorigin />
-    <link rel="dns-prefetch" href="https://unpkg.com" />
-    <link rel="dns-prefetch" href="https://www.gstatic.com" />
   </head>
 
   <body>
@@ -595,18 +590,18 @@
 
               <!-- <div class="img-prov"><img src="/images/cristal-glow 2.png" alt=""></div>-->
 
-              <div class="pc3d" id="contenedor-3d">
-                <img
-                  src="images/poster-modelo.webp"
-                  alt="Modelo 3D portafolio"
-                  id="poster-3d"
-                  style="
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                    cursor: pointer;
-                  "
-                />
+              <div class="pc3d">
+                <model-viewer
+                  id="modelo-3d"
+                  src="3d/glb-port2026-prueba2.glb"
+                  poster="images/poster-modelo.webp"
+                  reveal="auto"
+                  auto-rotate
+                  camera-controls
+                  disable-pan
+                  autoplay
+                >
+                </model-viewer>
               </div>
             </div>
           </div>
@@ -1320,18 +1315,51 @@
       </div>
 
       <!-- ================== CERTIFICADOS ================== -->
-      <div id="cert-root"></div>
+      <div
+        id="cert-root"
+        data-lazy-template="templates/certificados.html"
+      ></div>
 
       <script>
-        fetch("templates/certificados.html")
-          .then((r) => r.text())
-          .then((html) => {
-            document.getElementById("cert-root").innerHTML = html;
-            // Cargar el JS de certificados después de inyectar el HTML
-            const s = document.createElement("script");
-            s.src = "js/port-certificados.js";
-            document.body.appendChild(s);
-          });
+        (function () {
+          var certRoot = document.getElementById("cert-root");
+          if (!certRoot) return;
+
+          var cargado = false;
+
+          function cargarCertificados() {
+            if (cargado) return;
+            cargado = true;
+
+            fetch("templates/certificados.html")
+              .then(function (r) {
+                return r.text();
+              })
+              .then(function (html) {
+                certRoot.innerHTML = html;
+                var s = document.createElement("script");
+                s.src = "js/port-certificados.js";
+                document.body.appendChild(s);
+              });
+          }
+
+          if ("IntersectionObserver" in window) {
+            var observer = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (entry) {
+                  if (entry.isIntersecting) {
+                    cargarCertificados();
+                    observer.disconnect();
+                  }
+                });
+              },
+              { rootMargin: "400px" },
+            );
+            observer.observe(certRoot);
+          } else {
+            window.addEventListener("load", cargarCertificados);
+          }
+        })();
       </script>
 
       <!-- ================== CONTACTO ================== -->
@@ -1509,6 +1537,12 @@
     <!-- footer.html -->
     <div id="footer-container"></div>
 
+    <!-- Librería Animacion 3d -->
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+
     <script defer src="js/port-navegacion.js"></script>
     <script defer src="js/port-indicador.js"></script>
     <script defer src="js/port-index.js"></script>
@@ -1517,6 +1551,5 @@
 
     <script defer src="js/port-ind-habilidades.js"></script>
     <script defer src="js/port-footer.js"></script>
-    <script defer src="js/port-3d.js"></script>
   </body>
 </html>
