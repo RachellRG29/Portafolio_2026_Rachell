@@ -45,7 +45,7 @@
 .footer-banner {
   height: 250px;
   /* Imagen de fondo agregada */
-  background: url("../images/bg-footer.jpg");
+  background: url("../images/bg-footer.webp");
   background-size: cover;
   background-position: center;
   position: relative;

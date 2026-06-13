@@ -393,7 +393,7 @@
   left: 0 !important;
 
   /* Fondo de la sección */
-  background: url(../images/bg-fondo-rect.png) no-repeat center center;
+  background: url(../images/bg-fondo-rect.webp) no-repeat center center;
   background-size: 100% 100%; /* Fondo ajustado al bloque */
   width: 100%; /* Asegura que ocupe el 100% del ancho de su contenedor */
   height: auto; /* El tamaño se ajusta al contenido del bloque */

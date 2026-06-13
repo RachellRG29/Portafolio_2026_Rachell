@@ -599,17 +599,21 @@
                   auto-rotate
                   camera-controls
                   disable-pan
-                  animation-name="Animation"
-                  tone-mapping="aces"
-                  exposure="1.5"
-                  shadow-intensity="1"
-                  environment-image="neutral"
                   autoplay
                 >
                 </model-viewer>
               </div>
             </div>
           </div>
+
+          <script>
+            const viewer = document.querySelector("#modelo-3d");
+
+            viewer.addEventListener("load", () => {
+              viewer.animationName = "kirbyAction";
+              viewer.play();
+            });
+          </script>
 
           <!-- indicador pagina -->
           <div class="indicador-parallax">
@@ -1351,7 +1355,7 @@
 
             <div class="contacto__imagen-wrapper">
               <img
-                src="images/bg-fondo-rect.png"
+                src="images/bg-fondo-rect.webp"
                 alt=""
                 class="contacto__imagen"
                 aria-hidden="true"
@@ -1363,7 +1367,7 @@
             <form
               class="contacto__form"
               id="formContacto"
-              action="https://formsubmit.co/achellramirez369@gmail.com"
+              action="https://formsubmit.co/rachellramirez369@gmail.com"
               method="POST"
               novalidate
             >
