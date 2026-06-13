@@ -6,13 +6,6 @@
 
 /* ================= INICIO ================= */
 
-/*.inicio{
-  height:100vh;
-  display:flex;
-  justify-content:space-between;
-  padding:0 0 0 80px; solo izquierda 
-}*/
-
 .inicio {
   min-height: 100vh;
   display: flex;
@@ -415,7 +408,7 @@
   top: 200px !important;
   width: 780px !important;
   height: 600px;
-  right: 10px;
+  right: 5px;
   display: flex;
   z-index: 1;
   pointer-events: auto; /* Permite interacción en escritorio */
@@ -424,11 +417,11 @@
 .modelo-3d-dynamic {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 780 / 600; /* Mantiene proporción */
   background: transparent;
   z-index: 30;
   pointer-events: auto;
-  /* Oculto visualmente pero con dimensiones reales */
   visibility: hidden;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -443,7 +436,7 @@
   border-radius: 12px;
   z-index: 30;
   filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
-  /* Visible por defecto, JS lo oculta en escritorio */
+  transition: transform 0.3s ease;
 }
 
 .modelo-3d-static:hover {
@@ -460,26 +453,372 @@
   pointer-events: auto;
 }
 
-/* Laptop (≤ 1024px) */
-@media (max-width: 1024px) {
-  .pc3d {
-    width: 500px !important;
-    height: 450px;
-    right: 20px;
-  }
-}
+/*  RESPONSIVIDAD */
 
-/*----------------------RESPONSIVIDAD---------------------*/
-@media (max-width: 480px) {
-  .inicio {
-    display: block;
+/* LAPTOP  (≤ 1440px) */
+@media (max-width: 1440px) {
+  .columna-izquierda {
+    width: 50%;
+    padding-top: 6rem;
   }
 
   .columna-derecha {
-    display: block;
+    width: 50%;
+    right: 0 !important;
+  }
+
+  .slogan-vidrio {
+    width: 100%;
+    max-width: 920px;
+    margin-top: 80px;
+    font-size: 1.2rem;
+  }
+
+  .pc3d {
+    right: 20px;
+    max-width: 700px;
+    min-height: 450px;
+  }
+
+  #modelo-3d {
+    width: 750px;
+  }
+
+  #anim-ui-ux {
+    width: 380px;
+  }
+}
+
+/* LAPTOP  (≤ 1024px) */
+@media (max-width: 1024px) {
+  .inicio {
+    padding: 0 0 0 40px;
   }
 
   .columna-izquierda {
+    width: 55%;
+    padding-top: 6rem;
+  }
+
+  .columna-derecha {
+    width: 45%;
+  }
+
+  .pc3d {
+    max-width: 550px;
+    min-height: 400px;
+    right: 20px;
+  }
+
+  #modelo-3d {
+    width: 550px;
+  }
+
+  #anim-ui-ux {
+    right: 60px;
+    width: 380px;
+  }
+}
+
+/* TABLET (≤ 768px) */
+@media (max-width: 768px) {
+  /* ── INICIO: layout tablet ── */
+  .inicio {
+    flex-direction: column;
+    padding: 0;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .columna-izquierda {
+    width: 100%;
+    padding: 6rem 28px 0 28px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .titulo-principal {
+    font-size: 2.2rem;
+  }
+
+  .subtitulo-estu {
+    font-size: 1.2rem;
+  }
+
+  /* Columna derecha: fondo decorativo */
+  .columna-derecha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .modelo-3d-dynamic {
+    display: none !important;
+  }
+
+  .modelo-3d-static {
+    display: block !important;
+    width: auto;
+    height: auto;
+    max-width: 320px;
+    object-fit: contain;
+  }
+
+  .pc3d {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-width: 300px;
+    min-height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  #modelo-3d {
+    margin-top: -40px !important;
+  }
+
+  .slogan-vidrio {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 21rem;
+    font-size: 1.1rem;
+    padding: 20px 22px;
+    border-radius: 20px;
+  }
+
+  .contenedor-slogan-scroll {
+    display: flex;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .scrolldown {
+    margin-top: 0;
+    flex-shrink: 0;
+  }
+
+  .botones-contacto {
+    margin-top: 20px;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  .pc3d {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-width: 300px;
+    min-height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  #modelo-3d {
+    width: 580px;
+    height: 480px;
+  }
+
+  #anim-ui-ux {
+    top: 250px;
+    right: 10px;
+    width: 280px;
+    height: 80px;
+  }
+}
+
+/* MOVIL (≤ 480px) */
+
+@media (max-width: 480px) {
+  .inicio {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .columna-izquierda {
+    width: 100%;
+    padding: 4.5rem 20px 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .titulo-principal {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .subtitulo-estu {
+    font-size: 1.1rem;
+    margin-top: 8px;
+    line-height: 1.4;
+  }
+
+  .linea-decorativa {
+    width: 140px;
+    height: 3px;
+    margin-top: 14px;
+  }
+
+  .botones-contacto {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
+  .columna-derecha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 1;
+    pointer-events: none;
     display: block;
+  }
+  .modelo-3d-dynamic {
+    display: none !important;
+  }
+
+  .modelo-3d-static {
+    display: block !important;
+    width: auto;
+    height: auto;
+    max-width: 320px;
+    object-fit: contain;
+  }
+
+  /* Contenedor 3D centrado */
+  .pc3d {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    width: 100% !important;
+    max-width: 300px;
+    min-height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  #modelo-3d {
+    width: 480px;
+    height: 400px;
+  }
+
+  #anim-ui-ux {
+    top: 16rem;
+    right: 20px;
+    width: 220px;
+    height: 70px;
+  }
+
+  /* Slogan e scroll al fondo de la columna izquierda */
+  .contenedor-slogan-scroll {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 14px;
+    margin-top: 0;
+  }
+
+  .slogan-vidrio {
+    flex: 1;
+    width: auto;
+    max-width: 100%;
+    margin: auto 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    padding: 14px 8px;
+    border-radius: 14px;
+    top: 16rem !important;
+  }
+
+  .scrolldown {
+    margin-left: 0;
+    flex-shrink: 0;
+    align-self: flex-end;
+    top: 15rem;
+  }
+}
+
+/* MOVIL PEQUEÑO (≤ 360px) */
+
+@media (max-width: 360px) {
+  .columna-izquierda {
+    padding: 4.5rem 16px 0 16px;
+  }
+
+  .titulo-principal {
+    font-size: 1.75rem;
+  }
+
+  .subtitulo-estu {
+    font-size: 1rem;
+  }
+
+  .slogan-vidrio {
+    font-size: 0.9rem;
+    padding: 14px 8px;
+    border-radius: 14px;
+    top: 16rem !important;
+  }
+
+  .lbl-descripcion {
+    margin-top: 1rem;
+  }
+  .scrolldown {
+    margin-left: 0;
+    flex-shrink: 0;
+    align-self: flex-end;
+    top: 5.5rem;
+  }
+
+  .contenedor-slogan-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: 20rem !important;
+  }
+
+  .modelo-3d-static {
+    display: block !important;
+    width: auto;
+    height: auto;
+    max-width: 320px;
+    object-fit: contain;
+  }
+
+  /* Contenedor 3D centrado */
+  .pc3d {
+    max-width: 300px;
+  }
+
+  #modelo-3d {
+    width: 480px;
+    height: 400px;
+  }
+
+  #anim-ui-ux {
+    top: 16rem !important;
   }
 }

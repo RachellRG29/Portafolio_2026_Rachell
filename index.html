@@ -82,7 +82,7 @@
     />
 
     <!-- RESPONSIVIDAD -->
-    <link rel="stylesheet" href="css/responsividad/r-inicio.css" />
+
     <link
       rel="stylesheet"
       href="css/responsividad/r-acerca-mi.css"
@@ -615,10 +615,11 @@
 
               <div id="anim-ui-ux"></div>
 
+              <!-- Imagen y Objeto 3d -->
               <div class="pc3d">
                 <!-- Imagen estática para móvil -->
                 <img
-                  src="images/poster-modelo.png"
+                  src="images/poster-modelo.webp"
                   alt="Modelo 3D de computadora - versión estática"
                   class="modelo-3d-static"
                   loading="lazy"
@@ -630,10 +631,12 @@
                 <!-- Modelo 3D interactivo (oculto en móvil) -->
                 <model-viewer
                   id="modelo-3d"
-                  src="3d/glb-port2026-animat-compressed.glb"
+                  src="3d/glb-port2026-compressed.glb"
                   camera-controls
                   disable-pan
                   autoplay
+                  shadow-intensity="1"
+                  tone-mapping="neutral"
                   class="modelo-3d-dynamic"
                 >
                 </model-viewer>
