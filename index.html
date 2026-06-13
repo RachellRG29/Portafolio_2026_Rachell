@@ -1383,10 +1383,9 @@
       </div>
 
       <!-- ================== CERTIFICADOS ================== -->
-      <div
-        id="cert-root"
-        data-lazy-template="templates/certificados.html"
-      ></div>
+      <div class="grupo" id="grupo-certificados">
+        <div id="cert-root"></div>
+      </div>
 
       <script>
         (function () {
@@ -1404,7 +1403,18 @@
                 return r.text();
               })
               .then(function (html) {
-                certRoot.innerHTML = html;
+                var temp = document.createElement("div");
+                temp.innerHTML = html;
+
+                var grupoTemplate = temp.querySelector("#grupo-certificados");
+                certRoot.innerHTML = grupoTemplate
+                  ? grupoTemplate.innerHTML
+                  : html;
+
+                if (typeof window.aplicarIdiomaEnContenido === "function") {
+                  window.aplicarIdiomaEnContenido(certRoot);
+                }
+
                 var s = document.createElement("script");
                 s.src = "js/port-certificados.js";
                 document.body.appendChild(s);
