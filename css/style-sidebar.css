@@ -156,7 +156,7 @@ body {
   width: 40px;
   height: 40px;
   background: #dcdad6eb;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(8px);
 
   border-radius: 10px;
   justify-content: center;
@@ -224,12 +224,12 @@ body {
   top: 6px;
   color: #30313bbb;
   background-color: #dcdad68e;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(8px);
 }
 
 .icono.activo .tooltip-sb {
   background: #febd9870;
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(8px);
 }
 
 /* ================= INDICADOR VERTICAL ================= */
