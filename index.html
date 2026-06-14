@@ -40,9 +40,31 @@
       fetchpriority="high"
     />
 
+    <link
+      rel="preload"
+      href="fonts/bricolage-grotesque-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <link
+      rel="preload"
+      href="fonts/rethink-sans-regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
     <!-- CSS -->
+    <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/style-inicio.css" />
-    <link rel="stylesheet" href="css/style-sidebar.css" />
+    <link
+      rel="stylesheet"
+      href="css/style-sidebar.css"
+      media="print"
+      onload="this.media = 'all'"
+    />
     <link
       rel="stylesheet"
       href="css/style-acercami.css"
@@ -426,8 +448,8 @@
                   src="images/poster-modelo.webp"
                   alt="Modelo 3D de computadora - versión estática"
                   class="modelo-3d-static"
-                  width="600"
-                  height="500"
+                  width="466"
+                  height="511"
                   fetchpriority="high"
                   decoding="async"
                 />
@@ -1495,8 +1517,608 @@
           </div>
         </section>
 
-        <!-- Reseñas -->
-        <section class="reseña"></section>
+        <!-- Testimonios -->
+        <section
+          class="testimonios"
+          id="testimonios"
+          aria-labelledby="testimonios-titulo"
+        >
+          <div class="testimonios__header">
+            <span class="testimonios__badge">
+              <span class="testimonios__badge-dot"></span>
+              Lo que dicen de mí
+            </span>
+            <div class="testimonios__header-row">
+              <div class="testimonios__header-texto">
+                <h2 class="testimonios__titulo" id="testimonios-titulo">
+                  Testimonios
+                </h2>
+                <p class="testimonios__sub">
+                  Clientes y colegas con quienes he tenido el placer de
+                  colaborar comparten su experiencia.
+                </p>
+              </div>
+              <!-- Botones de navegación (escritorio) -->
+              <div
+                class="testimonios__nav"
+                aria-label="Navegación de testimonios"
+              >
+                <button
+                  class="testimonios__nav-btn"
+                  id="testimonios-prev"
+                  aria-label="Testimonio anterior"
+                  disabled
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 12H5M12 5l-7 7 7 7" />
+                  </svg>
+                </button>
+                <button
+                  class="testimonios__nav-btn"
+                  id="testimonios-next"
+                  aria-label="Testimonio siguiente"
+                >
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carrusel -->
+          <div class="testimonios__carrusel-wrapper">
+            <div class="testimonios__track" id="testimoniosTrack" role="list">
+              <!-- ── Testimonio 1 ── -->
+              <article class="testimonio-card" role="listitem">
+                <span class="testimonio-card__quote" aria-hidden="true"></span>
+                <div
+                  class="testimonio-card__estrellas"
+                  aria-label="5 de 5 estrellas"
+                >
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                </div>
+                <p class="testimonio-card__texto">
+                  Rachel tiene un ojo increíble para el detalle y una capacidad
+                  única para traducir ideas abstractas en interfaces claras y
+                  atractivas. El resultado superó todas nuestras expectativas.
+                  Su entrega fue puntual y el proceso de trabajo, impecable.
+                </p>
+                <div class="testimonio-card__perfil">
+                  <div
+                    class="testimonio-card__foto testimonio-card__foto--iniciales"
+                    style="
+                      --avatar-bg: linear-gradient(135deg, #8fa8e8, #3965dc);
+                    "
+                    aria-hidden="true"
+                  >
+                    CM
+                  </div>
+                  <div class="testimonio-card__info">
+                    <p class="testimonio-card__nombre">Carlos Mendoza</p>
+                    <p class="testimonio-card__rol">CEO · StartupLatam</p>
+                  </div>
+                  <a
+                    href="docs/testimonio-carlos.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="testimonio-card__btn"
+                    aria-label="Ver reseña completa de Carlos Mendoza en PDF"
+                  >
+                    PDF
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- ── Testimonio 2 ── -->
+              <article class="testimonio-card" role="listitem">
+                <span class="testimonio-card__quote" aria-hidden="true"></span>
+                <div
+                  class="testimonio-card__estrellas"
+                  aria-label="4 de 5 estrellas"
+                >
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--vacia"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                </div>
+                <p class="testimonio-card__texto">
+                  Trabajar con Rachel fue una experiencia fluida desde el primer
+                  día. Entendió el brief de inmediato y entregó diseños limpios
+                  con una identidad visual muy sólida. La comunicación durante
+                  todo el proyecto fue clara y proactiva.
+                </p>
+                <div class="testimonio-card__perfil">
+                  <div
+                    class="testimonio-card__foto testimonio-card__foto--iniciales"
+                    style="
+                      --avatar-bg: linear-gradient(135deg, #c084fc, #7c3aed);
+                    "
+                    aria-hidden="true"
+                  >
+                    SV
+                  </div>
+                  <div class="testimonio-card__info">
+                    <p class="testimonio-card__nombre">Sofía Vargas</p>
+                    <p class="testimonio-card__rol">
+                      Directora de Marketing · BrandCo
+                    </p>
+                  </div>
+                  <a
+                    href="docs/testimonio-sofia.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="testimonio-card__btn"
+                    aria-label="Ver reseña completa de Sofía Vargas en PDF"
+                  >
+                    PDF
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- ── Testimonio 3 ── -->
+              <article class="testimonio-card" role="listitem">
+                <span class="testimonio-card__quote" aria-hidden="true"></span>
+                <div
+                  class="testimonio-card__estrellas"
+                  aria-label="5 de 5 estrellas"
+                >
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                </div>
+                <p class="testimonio-card__texto">
+                  El front-end que desarrolló Rachel es impecable. Animaciones
+                  suaves, código limpio y excelente atención al responsive.
+                  Definitivamente volvería a contratarla para futuros proyectos
+                  sin dudarlo.
+                </p>
+                <div class="testimonio-card__perfil">
+                  <div
+                    class="testimonio-card__foto testimonio-card__foto--iniciales"
+                    style="
+                      --avatar-bg: linear-gradient(135deg, #6ee7b7, #0d9488);
+                    "
+                    aria-hidden="true"
+                  >
+                    AR
+                  </div>
+                  <div class="testimonio-card__info">
+                    <p class="testimonio-card__nombre">Andrés Romero</p>
+                    <p class="testimonio-card__rol">Lead Dev · TechNova</p>
+                  </div>
+                  <a
+                    href="docs/testimonio-andres.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="testimonio-card__btn"
+                    aria-label="Ver reseña completa de Andrés Romero en PDF"
+                  >
+                    PDF
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- ── Testimonio 4 ── -->
+              <article class="testimonio-card" role="listitem">
+                <span class="testimonio-card__quote" aria-hidden="true"></span>
+                <div
+                  class="testimonio-card__estrellas"
+                  aria-label="5 de 5 estrellas"
+                >
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                </div>
+                <p class="testimonio-card__texto">
+                  Contratar a Rachel para nuestra identidad de marca fue una de
+                  las mejores decisiones del año. Su propuesta visual fue
+                  exactamente lo que necesitábamos: moderna, coherente y con
+                  personalidad propia.
+                </p>
+                <div class="testimonio-card__perfil">
+                  <div
+                    class="testimonio-card__foto testimonio-card__foto--iniciales"
+                    style="
+                      --avatar-bg: linear-gradient(135deg, #fda4af, #e11d48);
+                    "
+                    aria-hidden="true"
+                  >
+                    LT
+                  </div>
+                  <div class="testimonio-card__info">
+                    <p class="testimonio-card__nombre">Luciana Torres</p>
+                    <p class="testimonio-card__rol">
+                      Fundadora · Estudio Nómada
+                    </p>
+                  </div>
+                  <a
+                    href="docs/testimonio-luciana.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="testimonio-card__btn"
+                    aria-label="Ver reseña completa de Luciana Torres en PDF"
+                  >
+                    PDF
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- ── Testimonio 5 ── -->
+              <article class="testimonio-card" role="listitem">
+                <span class="testimonio-card__quote" aria-hidden="true"></span>
+                <div
+                  class="testimonio-card__estrellas"
+                  aria-label="5 de 5 estrellas"
+                >
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                </div>
+                <p class="testimonio-card__texto">
+                  Rachel combinó el diseño 3D y la animación web de una forma
+                  que nunca había visto. Nuestra landing page ahora genera el
+                  doble de interacciones. Es una profesional completa, creativa
+                  y muy comprometida con los resultados.
+                </p>
+                <div class="testimonio-card__perfil">
+                  <div
+                    class="testimonio-card__foto testimonio-card__foto--iniciales"
+                    style="
+                      --avatar-bg: linear-gradient(135deg, #fcd34d, #d97706);
+                    "
+                    aria-hidden="true"
+                  >
+                    MP
+                  </div>
+                  <div class="testimonio-card__info">
+                    <p class="testimonio-card__nombre">Miguel Pereira</p>
+                    <p class="testimonio-card__rol">CPO · AgencyFlow</p>
+                  </div>
+                  <a
+                    href="docs/testimonio-miguel.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="testimonio-card__btn"
+                    aria-label="Ver reseña completa de Miguel Pereira en PDF"
+                  >
+                    PDF
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </div>
+            <!-- /.testimonios__track -->
+          </div>
+          <!-- /.testimonios__carrusel-wrapper -->
+
+          <!-- Indicadores / dots -->
+          <div
+            class="testimonios__dots"
+            id="testimoniosDots"
+            aria-hidden="true"
+          ></div>
+        </section>
       </div>
     </main>
 
@@ -1521,6 +2143,7 @@
     <script defer src="js/optimizacion-3d.js"></script>
     <script defer src="js/port-idioma.js"></script>
     <script defer src="js/port-contacto.js"></script>
+    <script defer src="js/port-testimonios.js"></script>
 
     <script defer src="js/port-ind-habilidades.js"></script>
     <script defer src="js/port-footer.js"></script>

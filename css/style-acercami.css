@@ -4,10 +4,6 @@
   padding: 60px 80px;
 }
 
-* {
-  outline: 1px solid red;
-}
-
 .titulo-seccion {
   font-family: var(--fuente-titulo);
   font-weight: 800 !important;

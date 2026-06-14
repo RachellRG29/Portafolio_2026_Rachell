@@ -269,7 +269,429 @@ select.contacto__input {
   padding: 12px 16px;
 }
 
+/*----------------------------------------------------------------------------------------*/
+/* ================== TESTIMONIOS ================== */
+
+.testimonios {
+  padding: 6rem 8vw 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Orbe decorativo — hereda el lenguaje visual del contacto */
+.testimonios::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(
+    circle,
+    rgba(57, 101, 220, 0.055) 0%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Cabecera ─────────────────────────────────── */
+.testimonios__header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonios__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  background: #ffffff;
+  border: 1.5px solid #dddbd5;
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-family: var(--fuente-texto);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--negro-gato);
+}
+
+.testimonios__badge-dot {
+  width: 40px;
+  height: 22px;
+  border-radius: 50px;
+  background: linear-gradient(
+    135deg,
+    var(--serenity) 0%,
+    var(--royal-blue) 100%
+  );
+  flex-shrink: 0;
+}
+
+/* Fila: título + botones nav alineados */
+.testimonios__header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.testimonios__header-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.testimonios__titulo {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: var(--negro-gato);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.testimonios__sub {
+  font-family: var(--fuente-texto);
+  font-size: 15px;
+  color: #6b6c77;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 460px;
+}
+
+/* ── Botones prev / next ──────────────────────── */
+.testimonios__nav {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.testimonios__nav-btn {
+  width: 54px;
+  height: 54px;
+  border: 1.8px solid #30313b59;
+  border-radius: 16px;
+  color: var(--negro-gato);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  padding: 0;
+}
+
+.testimonios__nav-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: var(--negro-gato);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.testimonios__nav-btn:hover:not(:disabled)::before {
+  filter: brightness(0) invert(1);
+}
+
+.testimonios__nav-btn:disabled {
+  opacity: 0.32;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ── Carrusel ─────────────────────────────────── */
+.testimonios__carrusel-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonios__track {
+  cursor: grab;
+}
+
+.testimonios__track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  padding-bottom: 0.5rem; /* espacio para sombras hover */
+}
+
+.testimonios__track::-webkit-scrollbar {
+  display: none; /* Chrome / Safari */
+}
+
+.testimonios__track.is-dragging {
+  cursor: grabbing;
+
+  user-select: none;
+}
+
+/* ── Tarjeta ──────────────────────────────────── */
+.testimonio-card {
+  background: #ffffff;
+  border: 1px solid #e5e3dd;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  position: relative;
+  /* Tamaño responsivo: 3 cols > 2 cols > 1 col */
+  flex: 0 0 calc((100% - 3rem) / 3); /* 3 visibles */
+  min-width: 0;
+  scroll-snap-align: start;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 0.68, 0, 1.2),
+    box-shadow 0.3s ease;
+  /* Entrada animada */
+  opacity: 0;
+  transform: translateY(24px);
+  animation: testimonio-cardIn 0.55s cubic-bezier(0.22, 0.68, 0, 1.2) both;
+}
+
+.testimonio-card:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.testimonio-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.testimonio-card:nth-child(3) {
+  animation-delay: 0.25s;
+}
+.testimonio-card:nth-child(4) {
+  animation-delay: 0.35s;
+}
+.testimonio-card:nth-child(5) {
+  animation-delay: 0.45s;
+}
+
+@keyframes testimonio-cardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.testimonio-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(57, 101, 220, 0.1);
+}
+
+/* Comilla decorativa SVG */
+.testimonio-card__quote {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.4rem;
+  display: block;
+  width: 36px;
+  height: 22px;
+  background: center / contain no-repeat
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 120'%3E%3Cg fill='%23e8ebf8'%3E%3Cpath d='M0 120V60C0 27 20 8 60 0l8 16C44 22 34 36 34 56h26v64H0zm110 0V60c0-33 20-52 60-60l8 16c-24 6-34 20-34 40h26v64H110z'/%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  user-select: none;
+}
+
+/* --- Estrellas --- */
+.testimonio-card__estrellas {
+  display: flex;
+  gap: 4px;
+}
+
+.estrella {
+  width: 16px;
+  height: 16px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.estrella--llena path {
+  fill: var(--royal-blue);
+}
+.estrella--vacia path {
+  fill: #dddbd5;
+}
+
+/* --- Texto --- */
+.testimonio-card__texto {
+  font-family: var(--fuente-texto);
+  font-size: 14px;
+  color: #3d3e4a;
+  line-height: 1.75;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+/* --- Perfil --- */
+.testimonio-card__perfil {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 1rem;
+  border-top: 1px solid #f0eee9;
+  margin-top: auto;
+}
+
+.testimonio-card__foto {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e8ebf8;
+  flex-shrink: 0;
+}
+
+/* Cuando es inicial (sin foto real) */
+.testimonio-card__foto--iniciales {
+  background: var(
+    --avatar-bg,
+    linear-gradient(135deg, var(--serenity), var(--royal-blue))
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-titulo);
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+.testimonio-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.testimonio-card__nombre {
+  font-family: var(--fuente-texto);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--negro-gato);
+  line-height: 1.3;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonio-card__rol {
+  font-family: var(--fuente-texto);
+  font-size: 12px;
+  color: #8a8b96;
+  margin: 2px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Botón PDF --- */
+.testimonio-card__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1.5px solid #dddbd5;
+  border-radius: 100px;
+  padding: 7px 14px;
+  font-family: var(--fuente-texto);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--negro-gato);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.testimonio-card__btn:hover {
+  border-color: var(--royal-blue);
+  background: var(--royal-blue);
+  color: #ffffff;
+}
+
+.testimonio-card__btn svg {
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.testimonio-card__btn:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Dots / indicadores ───────────────────────── */
+.testimonios__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonios__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: #dddbd5;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    width 0.3s cubic-bezier(0.22, 0.68, 0, 1.2);
+}
+.testimonios__dot--activo {
+  background: var(--royal-blue);
+  width: 24px;
+  border-radius: 100px;
+}
+
+/* ── Reduced motion ───────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .testimonio-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .testimonio-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .testimonios__track {
+    scroll-behavior: auto;
+  }
+}
+
+/*----------------------------------------------------------------------------------------*/
+
 /* ---- Responsive ---- */
+
+/* Tablet: 2 tarjetas visibles */
+@media (max-width: 1023px) {
+  .testimonio-card {
+    flex: 0 0 calc((100% - 1.5rem) / 2);
+  }
+  .testimonios {
+    padding: 4rem 6vw 4rem;
+  }
+}
+
 @media (max-width: 900px) {
   .contacto {
     grid-template-columns: 1fr;
@@ -279,6 +701,54 @@ select.contacto__input {
 
   .contacto__fila {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Móvil grande: 1 tarjeta + nav abajo */
+@media (max-width: 639px) {
+  .testimonio-card {
+    flex: 0 0 88%;
+  }
+  .testimonios {
+    padding: 3rem 5vw 3.5rem;
+  }
+  .testimonio-card {
+    padding: 1.5rem;
+  }
+  /* En móvil los botones van bajo el subtítulo */
+  .testimonios__header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.2rem;
+  }
+  /* Fade lateral más pequeño en móvil */
+  .testimonios__carrusel-wrapper {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 2%,
+      black 98%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 2%,
+      black 98%,
+      transparent 100%
+    );
+  }
+}
+
+@media (max-width: 560px) {
+  .testimonios {
+    padding: 3rem 5vw;
+  }
+  .testimonios__track {
+    grid-template-columns: 1fr;
+  }
+  .testimonio-card {
+    padding: 1.5rem;
   }
 }
 
