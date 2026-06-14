@@ -26,10 +26,17 @@
       content="https://portafolio-cindy-ramirez-2026.it.com"
     />
 
+    <!-- Precargar imagenes -->
     <link
       rel="preload"
       as="image"
       href="images/img-inicio-vidrio.webp"
+      fetchpriority="high"
+    />
+    <link
+      rel="preload"
+      as="image"
+      href="images/poster-modelo.webp"
       fetchpriority="high"
     />
 
@@ -437,10 +444,10 @@
                   src="images/poster-modelo.webp"
                   alt="Modelo 3D de computadora - versión estática"
                   class="modelo-3d-static"
-                  loading="lazy"
                   width="600"
                   height="500"
-                  fetchpriority="low"
+                  fetchpriority="high"
+                  decoding="async"
                 />
 
                 <!-- Modelo 3D interactivo (oculto en móvil) -->
@@ -1432,10 +1439,16 @@
     <div id="footer-container"></div>
 
     <!-- Librería Animacion 3d -->
-    <script
-      type="module"
-      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
-    ></script>
+
+    <script>
+      if (window.innerWidth >= 769) {
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src =
+          "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
+        document.head.appendChild(script);
+      }
+    </script>
 
     <script defer src="js/port-navegacion.js"></script>
     <script defer src="js/port-indicador.js"></script>
