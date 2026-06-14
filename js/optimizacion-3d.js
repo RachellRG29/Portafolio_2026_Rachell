@@ -7,10 +7,7 @@
   if (!modelViewer) return;
 
   function mostrarModelo() {
-    if (imgEstatica) {
-      imgEstatica.style.display = "none";
-    }
-
+    if (imgEstatica) imgEstatica.style.display = "none";
     modelViewer.style.visibility = "visible";
     modelViewer.style.opacity = "1";
     modelViewer.style.pointerEvents = "auto";
@@ -20,54 +17,40 @@
     modelViewer.style.visibility = "hidden";
     modelViewer.style.opacity = "0";
     modelViewer.style.pointerEvents = "none";
-
-    if (imgEstatica) {
-      imgEstatica.style.display = "block";
-    }
+    if (imgEstatica) imgEstatica.style.display = "block";
   }
 
-  function actualizarPorResolucion(e) {
-    const escritorio =
-      e?.matches ?? window.matchMedia("(min-width: 769px)").matches;
-
-    if (escritorio) {
+  function actualizarPorResolucion() {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      /*console.log("💻 Escritorio: modelo 3D");*/
       mostrarModelo();
     } else {
+      /*console.log("📱 Móvil: imagen estática");*/
       mostrarImagen();
     }
   }
 
-  // Solo se dispara cuando cambia entre móvil/escritorio
-  const mediaQuery = window.matchMedia("(min-width: 769px)");
+  window.addEventListener("resize", actualizarPorResolucion);
+  actualizarPorResolucion();
 
-  if (mediaQuery.addEventListener) {
-    mediaQuery.addEventListener("change", actualizarPorResolucion);
-  } else {
-    // Compatibilidad con navegadores antiguos
-    mediaQuery.addListener(actualizarPorResolucion);
-  }
+  modelViewer.addEventListener("load", () => {
+    /*console.log("🎬 Modelo 3D cargado");*/
 
-  actualizarPorResolucion(mediaQuery);
-
-  modelViewer.addEventListener(
-    "load",
-    () => {
+    setTimeout(() => {
       if (modelViewer.availableAnimations?.length > 0) {
         modelViewer.animationName = modelViewer.availableAnimations[0];
+        modelViewer.autoplay = true;
       }
 
       try {
-        modelViewer.play?.();
+        const r = modelViewer.play?.();
+        if (r?.catch) r.catch(() => {});
       } catch (_) {}
-    },
-    { once: true },
-  );
+    }, 100);
+  });
 
-  modelViewer.addEventListener(
-    "error",
-    () => {
-      mostrarImagen();
-    },
-    { once: true },
-  );
+  modelViewer.addEventListener("error", () => {
+    /*console.error("❌ Error cargando modelo 3D");*/
+    mostrarImagen();
+  });
 })();
