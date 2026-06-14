@@ -118,6 +118,7 @@ body {
 
   overflow: hidden;
   color: var(--negro-gato);
+  background-color: #f0eee9ef;
 }
 
 /* Fondo animado */
@@ -277,6 +278,153 @@ body {
   color: var(--negro-gato);
 }
 
+/* =========================================
+   ANIMACIONES 
+========================================= */
+.scale-up-tl {
+  -webkit-animation: scale-up-tl 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-tl 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes scale-up-tl {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+  }
+}
+
+/* =========================================
+   animaciones de habilidades tecnicas
+========================================= */
+
+/* estado inicial */
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.reveal-fade {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease,
+    filter 0.8s ease;
+  will-change: transform, opacity;
+  filter: blur(6px);
+}
+
+.reveal-up {
+  transform: translateY(55px);
+}
+
+.reveal-left {
+  transform: translateX(-60px);
+}
+
+.reveal-right {
+  transform: translateX(60px);
+}
+
+.reveal-scale {
+  transform: scale(0.88);
+}
+
+.reveal-fade {
+  transform: translateY(18px);
+}
+
+/* estado visible */
+.reveal-up.show,
+.reveal-left.show,
+.reveal-right.show,
+.reveal-scale.show,
+.reveal-fade.show {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  filter: blur(0);
+}
+
+/* delays */
+.delay-1 {
+  transition-delay: 0.1s;
+}
+.delay-2 {
+  transition-delay: 0.2s;
+}
+.delay-3 {
+  transition-delay: 0.3s;
+}
+.delay-4 {
+  transition-delay: 0.4s;
+}
+.delay-5 {
+  transition-delay: 0.5s;
+}
+.delay-6 {
+  transition-delay: 0.6s;
+}
+
+/* pequeño float para la imagen derecha */
+@keyframes floatSoft {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.img-prov.anim-floating {
+  animation: floatSoft 4.5s ease-in-out infinite;
+}
+
+/* barras de skill con entrada */
+.skill-bar span {
+  transform-origin: left center;
+}
+
+.skill-card.reveal-scale.show .skill-bar span {
+  animation: fillBar 0.9s ease forwards;
+}
+
+@keyframes fillBar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-fade {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .img-prov.anim-floating {
+    animation: none !important;
+  }
+}
+
 /* TABLET (≤ 768px) */
 
 @media (max-width: 768px) {
@@ -303,11 +451,19 @@ body {
   }
 
   .menu {
+    display: flex;
     flex-direction: row;
-    gap: 0;
-    width: 100%;
     justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    min-height: 0; /* importante */
     margin: 0;
+    padding: 0;
+    gap: 0;
+
+    contain: none;
   }
 
   .icono {
@@ -356,6 +512,8 @@ body {
     right: 16px !important;
     padding: 8px 12px;
     font-size: 0.85rem;
+    border-radius: 8px;
+    background-color: var(--blanco-cloud);
   }
 
   /* Contenido principal */

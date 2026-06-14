@@ -39,10 +39,14 @@
   border-radius: 10px;
 }
 
+.contenedor-slogan-scroll {
+  position: relative;
+  margin-top: 200px;
+}
+
 /* Efecto vidrio */
 .slogan-vidrio {
   position: relative;
-  margin-top: 150px;
   padding: 30px;
   width: 800px;
   background: rgba(255, 255, 255, 0.226) !important;
@@ -379,7 +383,6 @@
 
 .elementos-superpuestos {
   position: relative;
-  display: block;
 }
 
 #anim-ui-ux {
@@ -457,25 +460,25 @@
 
 /* LAPTOP  (≤ 1440px) */
 @media (max-width: 1440px) {
-  .columna-izquierda {
-    width: 50%;
-    padding-top: 6rem;
-  }
-
-  .columna-derecha {
-    width: 50%;
-    right: 0 !important;
+  .contenedor-slogan-scroll {
+    position: relative;
+    gap: 16px;
+    margin-bottom: -4rem !important;
   }
 
   .slogan-vidrio {
-    width: 100%;
-    max-width: 920px;
-    margin-top: 80px;
-    font-size: 1.2rem;
+    position: relative;
+    display: block;
+    width: 700px;
+  }
+
+  .elementos-superpuestos {
+    display: block;
+    position: relative;
+    margin-right: -5rem;
   }
 
   .pc3d {
-    right: 20px;
     max-width: 700px;
     min-height: 450px;
   }
@@ -495,19 +498,23 @@
     padding: 0 0 0 40px;
   }
 
-  .columna-izquierda {
-    width: 55%;
-    padding-top: 6rem;
+  .contenedor-slogan-scroll {
+    display: flex;
+    width: 100%;
+    align-items: flex-end;
+    gap: 16px;
+    margin-top: 25rem;
   }
 
-  .columna-derecha {
-    width: 45%;
+  .slogan-vidrio {
+    width: 100%;
+    max-width: 1000px;
   }
 
   .pc3d {
     max-width: 550px;
     min-height: 400px;
-    right: 20px;
+    margin-right: 40px;
   }
 
   #modelo-3d {
@@ -588,19 +595,20 @@
     margin-top: -40px !important;
   }
 
-  .slogan-vidrio {
-    width: 100%;
-    max-width: 100%;
-    margin-top: 21rem;
-    font-size: 1.1rem;
-    padding: 20px 22px;
-    border-radius: 20px;
-  }
-
   .contenedor-slogan-scroll {
     display: flex;
     align-items: flex-end;
     gap: 16px;
+    margin-top: 21rem;
+  }
+
+  .slogan-vidrio {
+    width: 100%;
+    max-width: 100%;
+
+    font-size: 1.1rem;
+    padding: 20px 22px;
+    border-radius: 20px;
   }
 
   .scrolldown {
