@@ -6,6 +6,10 @@
 
   if (!modelViewer) return;
 
+  cargarModelViewer().then(() => {
+    mostrarModelo();
+  });
+
   function mostrarModelo() {
     if (imgEstatica) imgEstatica.style.display = "none";
     modelViewer.style.visibility = "visible";
@@ -28,6 +32,24 @@
       /*console.log("📱 Móvil: imagen estática");*/
       mostrarImagen();
     }
+  }
+
+  function cargarModelViewer() {
+    if (window.customElements?.get("model-viewer")) {
+      return Promise.resolve();
+    }
+
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.type = "module";
+      script.src =
+        "https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js";
+
+      script.onload = resolve;
+      script.onerror = reject;
+
+      document.head.appendChild(script);
+    });
   }
 
   window.addEventListener("resize", actualizarPorResolucion);
