@@ -143,52 +143,47 @@ body {
 
 /*tooltip*/
 .tooltip-sb {
-  width: 90px;
-  min-height: 30px;
+  position: absolute;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  white-space: nowrap;
+  width: fit-content; /* Se ajusta al contenido */
+  min-width: unset;
+  max-width: max-content;
+
+  padding: 6px 12px;
   border-radius: 10px;
-}
 
-.icono .tooltip-sb {
-  position: absolute;
-
-  top: 6px;
-  left: 1px;
-
-  transform: translateX(50%) translateY(0);
+  white-space: nowrap; /* Mantiene el texto en una sola línea */
 
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
+
+  color: #30313b;
+  background: rgba(220, 218, 214, 0.9);
+  backdrop-filter: blur(8px);
 
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.icono .tooltip-sb {
+  top: 50%;
+  left: calc(100% + 12px);
+  transform: translateY(-50%);
 }
 
 .icono:hover .tooltip-sb {
   opacity: 1;
   visibility: visible;
-
-  transform: translateX(50%) translateY(0);
+  transform: translateY(-50%);
 }
-
-.icono:hover .tooltip-sb {
-  opacity: 1;
-  visibility: visible;
-  top: 6px;
-  color: #30313bbb;
-  background-color: #dcdad68e;
-  backdrop-filter: blur(8px);
-}
-
 .icono.activo .tooltip-sb {
-  background: #febd9870;
-  backdrop-filter: blur(8px);
+  background: rgba(254, 189, 152, 0.85);
 }
 
 /* ================= INDICADOR VERTICAL ================= */
@@ -432,22 +427,20 @@ body {
 
   /* Tooltip → encima del icono */
   .icono .tooltip-sb {
-    position: absolute;
-    top: auto;
-    bottom: 52px;
     left: 50%;
-    right: auto; /* cancela cualquier right heredado */
-    transform: translateX(-50%); /* centra respecto al icono */
-    width: max-content;
-    max-width: 110px;
-    text-align: center;
-  }
+    bottom: calc(100% + 8px);
+    transform: translateX(-50%);
 
+    width: fit-content;
+    max-width: fit-content;
+    white-space: nowrap;
+  }
   .icono:hover .tooltip-sb {
+    opacity: 1;
     top: auto;
-    bottom: 52px;
-    left: 50%;
-    right: auto;
+    bottom: 50px;
+
+    visibility: visible;
     transform: translateX(-50%);
   }
 
@@ -457,6 +450,14 @@ body {
 
   .icono.activo .tooltip-sb {
     background: #fac09ff3;
+  }
+
+  .tooltip-largo {
+    width: 130px !important; /* Ajusta el ancho a tu gusto */
+    white-space: normal !important; /* Permite salto de línea */
+    text-align: center;
+    line-height: 1.2;
+    padding: 8px 10px;
   }
 
   /* Indicador vertical → oculto en tablet/móvil */

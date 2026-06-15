@@ -252,7 +252,11 @@
               d="M160,112a24,24,0,1,1-24-24A24,24,0,0,1,160,112Zm64-72V216a16,16,0,0,1-16,16H64a16,16,0,0,1-16-16V192H32a8,8,0,0,1,0-16H48V136H32a8,8,0,0,1,0-16H48V80H32a8,8,0,0,1,0-16H48V40A16,16,0,0,1,64,24H208A16,16,0,0,1,224,40ZM190.4,163.2A67.88,67.88,0,0,0,163,141.51a40,40,0,1,0-53.94,0A67.88,67.88,0,0,0,81.6,163.2a8,8,0,1,0,12.8,9.6,52,52,0,0,1,83.2,0,8,8,0,1,0,12.8-9.6Z"
             ></path>
           </svg>
-          <div class="tooltip-sb" data-es="Contacto" data-en="Contact">
+          <div
+            class="tooltip-sb tooltip-largo"
+            data-es="Contacto y Testimonios"
+            data-en="Contact and Testimonials"
+          >
             contacto
           </div>
         </div>
@@ -1668,6 +1672,8 @@
                   </div>
                   <a
                     href="docs/testimonio-carlos.pdf"
+                    data-pdf-es=""
+                    data-pdf-en=""
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"
@@ -1739,7 +1745,7 @@
                     />
                   </svg>
                   <svg
-                    class="estrella estrella--vacia"
+                    class="estrella estrella--llena"
                     viewBox="0 0 16 16"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -1749,12 +1755,17 @@
                     />
                   </svg>
                 </div>
-                <p class="testimonio-card__texto">
-                  Trabajar con Rachel fue una experiencia fluida desde el primer
-                  día. Entendió el brief de inmediato y entregó diseños limpios
-                  con una identidad visual muy sólida. La comunicación durante
-                  todo el proyecto fue clara y proactiva.
-                </p>
+                <p
+                  class="testimonio-card__texto"
+                  data-es="Cindy
+                  Rachell Ramírez García quien es mi estudiante, cursando la carrera de Ingeniería en
+                  Sistemas y Redes Informáticas y conozco desde hace 4 años.
+                  Como estudiante ha mostrado respeto a los docentes y compañeros, completa
+                  dedicación a las actividades y proyectos de estudio."
+                  data-en="Cindy
+                  Rachell Ramírez García, who is my student, is studying Computer Systems and Networks Engineering and whom I have known for four years.
+                  As a student, she has shown respect for professors and classmates, and complete dedication to her studies and projects."
+                ></p>
                 <div class="testimonio-card__perfil">
                   <div
                     class="testimonio-card__foto testimonio-card__foto--iniciales"
@@ -1763,20 +1774,24 @@
                     "
                     aria-hidden="true"
                   >
-                    SV
+                    HC
                   </div>
                   <div class="testimonio-card__info">
-                    <p class="testimonio-card__nombre">Sofía Vargas</p>
-                    <p class="testimonio-card__rol">
-                      Directora de Marketing · BrandCo
-                    </p>
+                    <p class="testimonio-card__nombre">Herbert Cordero</p>
+                    <p
+                      class="testimonio-card__rol"
+                      data-es="Docente de la Facultad de Ciencia y Tecnología"
+                      data-en="Professor at the Faculty of Science and Technology."
+                    ></p>
                   </div>
                   <a
-                    href="docs/testimonio-sofia.pdf"
+                    href="testimonios/Carta-Cindy-porLicCordero-ES.pdf"
+                    data-pdf-es="testimonios/Carta-Cindy-porLicCordero-ES.pdf"
+                    data-pdf-en="testimonios/Carta-Cindy-porLicCordero-EN.pdf"
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"
-                    aria-label="Ver reseña completa de Sofía Vargas en PDF"
+                    aria-label="Ver reseña completa de Herbert Cordero en PDF"
                   >
                     PDF
                     <svg
@@ -1844,7 +1859,7 @@
                     />
                   </svg>
                   <svg
-                    class="estrella estrella--llena"
+                    class="estrella estrella--vacia"
                     viewBox="0 0 16 16"
                     xmlns="http://www.w3.org/2000/svg"
                     aria-hidden="true"
@@ -1854,12 +1869,15 @@
                     />
                   </svg>
                 </div>
-                <p class="testimonio-card__texto">
-                  El front-end que desarrolló Rachel es impecable. Animaciones
-                  suaves, código limpio y excelente atención al responsive.
-                  Definitivamente volvería a contratarla para futuros proyectos
-                  sin dudarlo.
-                </p>
+                <p
+                  class="testimonio-card__texto"
+                  data-es="CINDY RACHELL RAMIREZ GARCIA , afirmo que ella es
+                      una persona de muy buena conducta, excelente en sus estudios, honrada, intachable, responsable
+                      en todos sus actos y dispuesta a compartir todos sus conocimientos a una sociedad en progreso. "
+                  data-en="CINDY RACHELL RAMIREZ GARCIA, I affirm that she is
+                      a person of very good character, excellent in her studies, honest, irreproachable, responsible
+                      in all her actions and willing to share all her knowledge with a society in progress."
+                ></p>
                 <div class="testimonio-card__perfil">
                   <div
                     class="testimonio-card__foto testimonio-card__foto--iniciales"
@@ -1868,14 +1886,20 @@
                     "
                     aria-hidden="true"
                   >
-                    AR
+                    OT
                   </div>
                   <div class="testimonio-card__info">
-                    <p class="testimonio-card__nombre">Andrés Romero</p>
-                    <p class="testimonio-card__rol">Lead Dev · TechNova</p>
+                    <p class="testimonio-card__nombre">Oscar Torres</p>
+                    <p
+                      class="testimonio-card__rol"
+                      data-es=" Licenciado en Computación"
+                      data-en="Bachelor of Science in Computer Science"
+                    ></p>
                   </div>
                   <a
-                    href="docs/testimonio-andres.pdf"
+                    href="testimonios/recomendacion_cindy-porLicTorres-ES.pdf"
+                    data-pdf-es="testimonios/recomendacion_cindy-porLicTorres-ES.pdf"
+                    data-pdf-en="testimonios/recomendacion_cindy-porLicTorres-EN.pdf"
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"
@@ -1957,7 +1981,7 @@
                     />
                   </svg>
                 </div>
-                <p class="testimonio-card__texto">
+                <p class="testimonio-card__texto" data-es="" data-pdf-en="">
                   Contratar a Rachel para nuestra identidad de marca fue una de
                   las mejores decisiones del año. Su propuesta visual fue
                   exactamente lo que necesitábamos: moderna, coherente y con
@@ -1971,16 +1995,18 @@
                     "
                     aria-hidden="true"
                   >
-                    LT
+                    LB
                   </div>
                   <div class="testimonio-card__info">
-                    <p class="testimonio-card__nombre">Luciana Torres</p>
-                    <p class="testimonio-card__rol">
+                    <p class="testimonio-card__nombre">Luis Bonilla</p>
+                    <p class="testimonio-card__rol" data-es="" data-pdf-en="">
                       Fundadora · Estudio Nómada
                     </p>
                   </div>
                   <a
                     href="docs/testimonio-luciana.pdf"
+                    data-pdf-es=""
+                    data-pdf-en=""
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"
@@ -2084,6 +2110,8 @@
                   </div>
                   <a
                     href="docs/testimonio-miguel.pdf"
+                    data-pdf-es=""
+                    data-pdf-en=""
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"

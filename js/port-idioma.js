@@ -17,6 +17,17 @@ function aplicarIdioma(raiz) {
     if (texto) el.innerHTML = texto;
   });
 
+  contenedor.querySelectorAll("[data-pdf-es]").forEach((el) => {
+    const nuevoHref =
+      idioma === "es"
+        ? el.getAttribute("data-pdf-es")
+        : el.getAttribute("data-pdf-en");
+
+    if (nuevoHref) {
+      el.href = nuevoHref;
+    }
+  });
+
   // CV
   if (btnCV) {
     btnCV.href =
