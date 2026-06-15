@@ -91,13 +91,29 @@ document.addEventListener("DOMContentLoaded", () => {
         script.src = "js/lottie.min.js";
 
         script.onload = () => {
-          lottie.loadAnimation({
+          const animation = lottie.loadAnimation({
             container: lottieTarget,
             renderer: "svg",
             loop: true,
             autoplay: true,
             path: "lotties-anim/animac-roles.json",
           });
+
+          // Pausar/reanudar según visibilidad
+          const visibilityObserver = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                animation.play();
+              } else {
+                animation.pause();
+              }
+            },
+            {
+              threshold: 0.1,
+            },
+          );
+
+          visibilityObserver.observe(lottieTarget);
         };
         document.head.appendChild(script);
       },
