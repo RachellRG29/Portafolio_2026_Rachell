@@ -23,6 +23,7 @@
   function crearDots() {
     dotsBox.innerHTML = "";
     const n = totalPasos();
+
     for (let i = 0; i < n; i++) {
       const d = document.createElement("button");
       d.className =
@@ -36,55 +37,66 @@
   function irA(paso) {
     const max = totalPasos() - 1;
     current = Math.max(0, Math.min(paso, max));
+
     const idx = current * visibles();
     const card = cards[Math.min(idx, cards.length - 1)];
+
     track.scrollTo({
       left: card.offsetLeft - track.offsetLeft,
       behavior: "smooth",
     });
+
     actualizarUI();
   }
 
   function actualizarUI() {
     const max = totalPasos() - 1;
+
     btnPrev.disabled = current === 0;
     btnNext.disabled = current >= max;
+
     const dots = dotsBox.querySelectorAll(".testimonios__dot");
-    dots.forEach((d, i) =>
-      d.classList.toggle("testimonios__dot--activo", i === current),
-    );
+
+    dots.forEach((d, i) => {
+      d.classList.toggle("testimonios__dot--activo", i === current);
+    });
   }
 
-  /* ── Scroll táctil → sincronizar estado ── */
+  /* ───────────────── Scroll táctil ───────────────── */
   let scrollTimer;
+
   track.addEventListener(
     "scroll",
     () => {
       clearTimeout(scrollTimer);
+
       scrollTimer = setTimeout(() => {
         const gap = parseInt(getComputedStyle(track).gap) || 24;
         const cardW = cards[0].offsetWidth + gap;
+
         current = Math.round(track.scrollLeft / cardW / visibles());
+
         actualizarUI();
       }, 80);
     },
     { passive: true },
   );
 
-  /* ── Drag-to-scroll ── */
+  /* ───────────────── Drag to scroll ───────────────── */
   let isDragging = false;
   let startX = 0;
   let startScrollLeft = 0;
   let dragMoved = false;
+
   let velX = 0;
   let lastX = 0;
   let lastT = 0;
+
   let rafId = null;
 
   track.addEventListener("mousedown", (e) => {
     if (e.target.closest("a, button")) return;
 
-    // cancela cualquier inercia en curso
     if (rafId) {
       cancelAnimationFrame(rafId);
       rafId = null;
@@ -93,14 +105,16 @@
     isDragging = true;
     dragMoved = false;
     velX = 0;
+
     startX = e.clientX;
     lastX = e.clientX;
     lastT = performance.now();
+
     startScrollLeft = track.scrollLeft;
 
-    // desactiva snap para movimiento libre
     track.style.scrollSnapType = "none";
     track.classList.add("is-dragging");
+
     e.preventDefault();
   });
 
@@ -109,44 +123,64 @@
 
     const now = performance.now();
     const dt = now - lastT || 1;
-    velX = (e.clientX - lastX) / dt; // px/ms
+
+    velX = (e.clientX - lastX) / dt;
+
     lastX = e.clientX;
     lastT = now;
 
-    if (Math.abs(e.clientX - startX) > 3) dragMoved = true;
+    if (Math.abs(e.clientX - startX) > 3) {
+      dragMoved = true;
+    }
+
     track.scrollLeft = startScrollLeft - (e.clientX - startX);
   });
 
   window.addEventListener("mouseup", () => {
     if (!isDragging) return;
+
     isDragging = false;
     track.classList.remove("is-dragging");
 
-    // inercia suave post-drag
+    const huboDrag = dragMoved;
+
     const friction = 0.92;
-    let vel = -velX * 16; // convierte px/ms → px/frame aprox
+    let vel = -velX * 16;
 
     function applyInertia() {
       if (Math.abs(vel) < 0.5) {
-        // inercia terminó → reactiva snap y sincroniza estado
         track.style.scrollSnapType = "";
+
         const gap = parseInt(getComputedStyle(track).gap) || 24;
         const cardW = cards[0].offsetWidth + gap;
+
         current = Math.round(track.scrollLeft / cardW / visibles());
-        // snap nativo se encarga del ajuste fino
+
         actualizarUI();
+
         rafId = null;
+
+        // vuelve a permitir clics
+        setTimeout(
+          () => {
+            dragMoved = false;
+          },
+          huboDrag ? 50 : 0,
+        );
+
         return;
       }
+
       track.scrollLeft += vel;
       vel *= friction;
+
       rafId = requestAnimationFrame(applyInertia);
     }
 
     rafId = requestAnimationFrame(applyInertia);
   });
 
-  /* bloquea clicks si hubo drag */
+  /* ───────────────── Bloquear clic solo durante drag ───────────────── */
   track.addEventListener(
     "click",
     (e) => {
@@ -158,12 +192,17 @@
     true,
   );
 
+  /* ───────────────── Navegación ───────────────── */
+
   btnPrev.addEventListener("click", () => irA(current - 1));
   btnNext.addEventListener("click", () => irA(current + 1));
 
+  /* ───────────────── Resize ───────────────── */
   let resizeTimer;
+
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimer);
+
     resizeTimer = setTimeout(() => {
       crearDots();
       irA(0);
