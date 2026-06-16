@@ -12,28 +12,36 @@ const grupos = {
 
 const allGrupos = document.querySelectorAll(".grupo");
 
+// Guardar referencia al grupo activo para evitar recorrer todos cada vez
+let grupoActivo = document.querySelector(".grupo.grupo-activo");
+
 function mostrarGrupo(nombre) {
-  // ocultar todos
-  allGrupos.forEach((g) => g.classList.remove("grupo-activo"));
+  const nuevoGrupo = document.getElementById(grupos[nombre]);
 
-  // mostrar el seleccionado
-  const grupo = document.getElementById(grupos[nombre]);
-  if (grupo) grupo.classList.add("grupo-activo");
+  if (!nuevoGrupo || nuevoGrupo === grupoActivo) return;
 
-  // scroll arriba
-  window.scrollTo({
-    top: 0,
-    behavior: "instant",
+  // Ocultar únicamente el grupo activo
+  if (grupoActivo) {
+    grupoActivo.classList.remove("grupo-activo");
+  }
+
+  // Mostrar el nuevo
+  nuevoGrupo.classList.add("grupo-activo");
+  grupoActivo = nuevoGrupo;
+
+  // Hacer scroll en el siguiente frame
+  requestAnimationFrame(() => {
+    window.scrollTo(0, 0);
   });
 }
 
-// eventos
+// Eventos de navegación
 navLinks.forEach((link) => {
-  link.addEventListener("click", function () {
+  link.addEventListener("click", () => {
     navLinks.forEach((item) => item.classList.remove("activo"));
-    this.classList.add("activo");
+    link.classList.add("activo");
 
-    const id = this.getAttribute("data-section");
+    const id = link.dataset.section;
 
     if (grupos[id]) {
       mostrarGrupo(id);
@@ -41,27 +49,20 @@ navLinks.forEach((link) => {
   });
 });
 
-// inicio
+// Inicialización
 window.addEventListener("DOMContentLoaded", () => {
   const ultimaSeccion = localStorage.getItem("ultimaSeccion");
 
-  if (ultimaSeccion && grupos[ultimaSeccion] && ultimaSeccion !== "footer") {
-    mostrarGrupo(ultimaSeccion);
+  const seccionInicial =
+    ultimaSeccion && grupos[ultimaSeccion] && ultimaSeccion !== "footer"
+      ? ultimaSeccion
+      : "inicio";
 
-    // activar icono correcto
-    navLinks.forEach((item) => item.classList.remove("activo"));
-    const btn = document.querySelector(
-      `.icono[data-section="${ultimaSeccion}"]`,
-    );
-    if (btn) btn.classList.add("activo");
+  mostrarGrupo(seccionInicial);
 
-    // limpiar después de usar
-    localStorage.removeItem("ultimaSeccion");
-  } else {
-    // comportamiento normal
-    mostrarGrupo("inicio");
+  navLinks.forEach((item) => {
+    item.classList.toggle("activo", item.dataset.section === seccionInicial);
+  });
 
-    const btnInicio = document.querySelector('.icono[data-section="inicio"]');
-    if (btnInicio) btnInicio.classList.add("activo");
-  }
+  localStorage.removeItem("ultimaSeccion");
 });
