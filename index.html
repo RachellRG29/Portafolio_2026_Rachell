@@ -445,6 +445,7 @@
               <video
                 src="lotties-anim/animac-roles.webm"
                 class="anim-ui-ux"
+                autoplay
               ></video>
 
               <!-- Imagen y Objeto 3d -->
@@ -1529,19 +1530,25 @@
           aria-labelledby="testimonios-titulo"
         >
           <div class="testimonios__header">
-            <span class="testimonios__badge">
-              <span class="testimonios__badge-dot"></span>
-              Lo que dicen de mí
+            <span
+              class="testimonios__badge"
+              data-es='<span class="testimonios__badge-dot"></span> Lo que dicen de mí'
+              data-en='<span class="testimonios__badge-dot"></span> What they say about me'
+            >
             </span>
             <div class="testimonios__header-row">
               <div class="testimonios__header-texto">
-                <h2 class="testimonios__titulo" id="testimonios-titulo">
-                  Testimonios
-                </h2>
-                <p class="testimonios__sub">
-                  Clientes y colegas con quienes he tenido el placer de
-                  colaborar comparten su experiencia.
-                </p>
+                <h2
+                  class="testimonios__titulo"
+                  id="testimonios-titulo"
+                  data-es="Testimonios"
+                  data-en="Testimonials"
+                ></h2>
+                <p
+                  class="testimonios__sub"
+                  data-es="Docentes, Clientes y Colegas con quienes he tenido el placer de colaborar, comparten su experiencia."
+                  data-en="Teachers, Clients and Colleagues with whom I have had the pleasure of collaborating, share their experience."
+                ></p>
               </div>
               <!-- Botones de navegación (escritorio) -->
               <div
@@ -1652,12 +1659,13 @@
                     />
                   </svg>
                 </div>
-                <p class="testimonio-card__texto">
-                  Rachel tiene un ojo increíble para el detalle y una capacidad
-                  única para traducir ideas abstractas en interfaces claras y
-                  atractivas. El resultado superó todas nuestras expectativas.
-                  Su entrega fue puntual y el proceso de trabajo, impecable.
-                </p>
+                <p
+                  class="testimonio-card__texto"
+                  data-es="La estudiante Cindy Rachell Ramirez García, se destaca como una joven talentosa y comprometida dentro de la carrera de Ingeniería en Sistemas. 
+                  Su responsabilidad es evidente en la calidad y puntualidad de cada uno de sus trabajos, demostrando organización, disciplina y una firme ética académica. "
+                  data-en="Student Cindy Rachell Ramirez García stands out as a talented and committed young woman in the Systems Engineering career. 
+                  Their responsibility is evident in the quality and punctuality of each of their works, demonstrating organization, discipline and a firm academic ethic."
+                ></p>
                 <div class="testimonio-card__perfil">
                   <div
                     class="testimonio-card__foto testimonio-card__foto--iniciales"
@@ -1666,16 +1674,22 @@
                     "
                     aria-hidden="true"
                   >
-                    CM
+                    TM
                   </div>
                   <div class="testimonio-card__info">
-                    <p class="testimonio-card__nombre">Carlos Mendoza</p>
-                    <p class="testimonio-card__rol">CEO · StartupLatam</p>
+                    <p class="testimonio-card__nombre">Timotea Menjivar</p>
+                    <p
+                      class="testimonio-card__rol"
+                      data-es="Docente Universidad Gerardo Barrios"
+                      data-en="Professor Gerardo Barrios University"
+                    >
+                      Docente Universidad Gerardo Barrios
+                    </p>
                   </div>
                   <a
-                    href="docs/testimonio-carlos.pdf"
-                    data-pdf-es=""
-                    data-pdf-en=""
+                    href="testimonios/Testimonio-Cindy-porTimoteaM-ES.pdf"
+                    data-pdf-es="testimonios/Testimonio-Cindy-porTimoteaM-ES.pdf"
+                    data-pdf-en="testimonios/Testimonio-Cindy-porTimoteaM-EN.pdf"
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"
@@ -1983,38 +1997,39 @@
                     />
                   </svg>
                 </div>
-                <p class="testimonio-card__texto" data-es="" data-pdf-en="">
-                  Contratar a Rachel para nuestra identidad de marca fue una de
-                  las mejores decisiones del año. Su propuesta visual fue
-                  exactamente lo que necesitábamos: moderna, coherente y con
-                  personalidad propia.
-                </p>
+                <p
+                  class="testimonio-card__texto"
+                  data-es="Es un verdadero privilegio poder recomendar a Rachell Ramírez, una persona a quien tuve el gusto de conocer desde los primeros pasos de su formación universitaria. 
+                  Durante su recorrido académico, Rachell se ha destacado por su respeto hacia docentes y compañeros, además de un compromiso constante con cada proyecto en el que se ha involucrado. "
+                  data-en="It is a true privilege to recommend Rachell Ramírez, whom I have had the pleasure of knowing since the early stages of her university studies.
+                  Throughout her academic journey, Rachell has distinguished herself through her respect for professors and classmates, as well as her unwavering commitment to every project she has undertaken."
+                ></p>
                 <div class="testimonio-card__perfil">
                   <div
                     class="testimonio-card__foto testimonio-card__foto--iniciales"
                     style="
-                      --avatar-bg: linear-gradient(135deg, #fda4af, #e11d48);
+                      --avatar-bg: linear-gradient(135deg, #fcd34d, #d97706);
                     "
                     aria-hidden="true"
                   >
-                    LB
+                    LL
                   </div>
                   <div class="testimonio-card__info">
-                    <p class="testimonio-card__nombre">Luis Bonilla</p>
-                    <p class="testimonio-card__rol" data-es="" data-pdf-en="">
-                      Fundadora · Estudio Nómada
-                    </p>
+                    <p class="testimonio-card__nombre">José Ovidio Ramos</p>
+                    <p
+                      class="testimonio-card__rol"
+                      data-es="Vicedecano de la Facultad de Ciencia y Tecnologia de la Universidad Gerardo Barrios."
+                      data-en="Vice Dean of the Faculty of Science and Technology at Gerardo Barrios University."
+                    ></p>
                   </div>
                   <a
-                    href="docs/testimonio-luciana.pdf"
-                    data-pdf-es=""
-                    data-pdf-en=""
+                    href="testimonios/"
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"
-                    aria-label="Ver reseña completa de Luciana Torres en PDF"
+                    aria-label="Ver reseña completa de José Ovidio Ramos en PDF"
                   >
-                    PDF
+                    LinkedIn
                     <svg
                       width="12"
                       height="12"
@@ -2090,12 +2105,17 @@
                     />
                   </svg>
                 </div>
-                <p class="testimonio-card__texto">
-                  Rachel combinó el diseño 3D y la animación web de una forma
-                  que nunca había visto. Nuestra landing page ahora genera el
-                  doble de interacciones. Es una profesional completa, creativa
-                  y muy comprometida con los resultados.
-                </p>
+                <p
+                  class="testimonio-card__texto"
+                  data-es="Cindy Rachell Ramírez García, a quien conozco desde hace 8 años.
+                    Durante este tiempo he podido ser testigo del crecimiento en todas sus habilidades 
+                    y constatar las cualidades profesionales y personales de Cindy. 
+                    Destaca principalmente su disponibilidad para aprender y su capacidad para dominar áreas que le apasionan, como lo es el diseño de experiencias."
+                  data-en="Cindy Rachell Ramírez García, whom I have known for 8 years.
+                    During this time I have been able to witness the growth in all her skills and confirm 
+                    Cindy's professional and personal qualities. What stands out mainly is his willingness to learn 
+                    and his ability to master areas that he is passionate about, such as experience design."
+                ></p>
                 <div class="testimonio-card__perfil">
                   <div
                     class="testimonio-card__foto testimonio-card__foto--iniciales"
@@ -2104,20 +2124,131 @@
                     "
                     aria-hidden="true"
                   >
-                    MP
+                    LL
                   </div>
                   <div class="testimonio-card__info">
-                    <p class="testimonio-card__nombre">Miguel Pereira</p>
-                    <p class="testimonio-card__rol">CPO · AgencyFlow</p>
+                    <p class="testimonio-card__nombre">Leví López</p>
+                    <p
+                      class="testimonio-card__rol"
+                      data-es="Diseñador de Moda"
+                      data-en="Fashion Designer"
+                    ></p>
                   </div>
                   <a
-                    href="docs/testimonio-miguel.pdf"
+                    href="testimonios/Testimonio-Cindy-porLeviLopez-ES.pdf"
+                    data-pdf-es="testimonios/Testimonio-Cindy-porLeviLopez-ES.pdf"
+                    data-pdf-en="testimonios/Testimonio-Cindy-porLeviLopez-EN.pdf"
+                    target="_blank"
+                    rel="noopener"
+                    class="testimonio-card__btn"
+                    aria-label="Ver reseña completa de Leví López en PDF"
+                  >
+                    PDF
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
+              </article>
+
+              <!-- ── Testimonio 6 ── -->
+              <article class="testimonio-card" role="listitem">
+                <span class="testimonio-card__quote" aria-hidden="true"></span>
+                <div
+                  class="testimonio-card__estrellas"
+                  aria-label="5 de 5 estrellas"
+                >
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                  <svg
+                    class="estrella estrella--llena"
+                    viewBox="0 0 16 16"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M8 1l1.9 3.9L14 5.6l-3 2.9.7 4.1L8 10.4l-3.7 2.2.7-4.1L2 5.6l4.1-.7z"
+                    />
+                  </svg>
+                </div>
+                <p class="testimonio-card__texto" data-es="" data-pdf-en="">
+                  Contratar a Rachel para nuestra identidad de marca fue una de
+                  las mejores decisiones del año. Su propuesta visual fue
+                  exactamente lo que necesitábamos: moderna, coherente y con
+                  personalidad propia.
+                </p>
+                <div class="testimonio-card__perfil">
+                  <div
+                    class="testimonio-card__foto testimonio-card__foto--iniciales"
+                    style="
+                      --avatar-bg: linear-gradient(135deg, #fda4af, #e11d48);
+                    "
+                    aria-hidden="true"
+                  >
+                    LB
+                  </div>
+                  <div class="testimonio-card__info">
+                    <p class="testimonio-card__nombre">Luis Bonilla</p>
+                    <p class="testimonio-card__rol" data-es="" data-pdf-en="">
+                      Fundadora · Estudio Nómada
+                    </p>
+                  </div>
+                  <a
+                    href="docs/testimonio-luciana.pdf"
                     data-pdf-es=""
                     data-pdf-en=""
                     target="_blank"
                     rel="noopener"
                     class="testimonio-card__btn"
-                    aria-label="Ver reseña completa de Miguel Pereira en PDF"
+                    aria-label="Ver reseña completa de Luciana Torres en PDF"
                   >
                     PDF
                     <svg
