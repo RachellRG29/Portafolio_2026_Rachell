@@ -427,12 +427,12 @@
   position: relative;
 }
 
-#anim-ui-ux {
+.anim-ui-ux {
   position: absolute;
   top: 250px;
   right: 160px;
-  width: 500px;
-  height: 100px;
+  width: 400px;
+  height: auto;
   z-index: 9999;
   pointer-events: none;
 }
@@ -529,7 +529,7 @@
     width: 750px;
   }
 
-  #anim-ui-ux {
+  .anim-ui-ux {
     width: 380px;
   }
 }
@@ -563,7 +563,7 @@
     width: 550px;
   }
 
-  #anim-ui-ux {
+  .anim-ui-ux {
     right: 60px;
     width: 380px;
   }
@@ -684,7 +684,7 @@
     height: 480px;
   }
 
-  #anim-ui-ux {
+  .anim-ui-ux {
     top: 250px;
     right: 10px;
     width: 280px;
@@ -775,7 +775,7 @@
     height: 400px;
   }
 
-  #anim-ui-ux {
+  .anim-ui-ux {
     top: 16rem;
     right: 20px;
     width: 220px;
@@ -868,7 +868,7 @@
     height: 400px;
   }
 
-  #anim-ui-ux {
+  .anim-ui-ux {
     top: 16rem !important;
   }
 }
