@@ -223,8 +223,12 @@
     gap: 10px;
   }
 
-  .footer-banner {
+ .footer-banner {
     height: 200px;
+    height: 250px;
+    background: url("../images/bg-footer.webp") center / cover no-repeat;
+    background-position: center top; /* evita que corte la parte importante */
+    border-radius: 8px;
   }
 
   .footer-bottom {
@@ -239,6 +243,11 @@
   /* ── FOOTER ── */
   .footer-container {
     padding: 24px 18px 85px;
+  }
+
+   .footer-banner {
+    height: 260px;
+    border-radius: 6px;
   }
 
   .footer-header h2 {
