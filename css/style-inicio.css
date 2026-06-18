@@ -569,6 +569,8 @@
   }
 }
 
+
+
 /* TABLET (≤ 768px) */
 @media (max-width: 768px) {
   /* ── INICIO: layout tablet ── */
@@ -581,12 +583,11 @@
   }
 
   .columna-izquierda {
-    width: 100%;
-    padding: 6rem 28px 0 28px;
+    width: 100%;        
+    padding: 5rem 0 3rem 28px;
     position: relative;
     z-index: 2;
   }
-
   .titulo-principal {
     font-size: 2.2rem;
   }
@@ -595,12 +596,17 @@
     font-size: 1.2rem;
   }
 
+  .botones-contacto {
+    margin-top: 20px;
+    gap: 12px;
+  }
+
   /* Columna derecha: fondo decorativo */
- .columna-derecha {
+  .columna-derecha {
     position: absolute;
     top: 0;
     right: 0;
-    width: 55%;
+    width: 50%;
     height: 100%;
     z-index: 1;
     pointer-events: none;
@@ -610,13 +616,14 @@
     display: none !important;
   }
 
+  .anim-ui-ux { margin-top: 3rem;}
   .modelo-3d-static {
     display: block !important;
     width: auto;
     height: auto;
     max-width: 500px;
     object-fit: contain;
-    margin-top: 30px;
+    margin-top: 16rem;
   }
 
   .pc3d {
@@ -638,53 +645,29 @@
     margin-top: -40px !important;
   }
 
+  /* slogan + scroll: columna, centrado dentro de columna-izquierda */
   .contenedor-slogan-scroll {
     display: flex;
-    align-items: flex-end;
+    flex-direction: column;
+    align-items: flex-start;   /* alineado al texto, no centrado */
     gap: 16px;
-    margin-top: 21rem;
+    padding: 0;
+    padding-right: 10px;
+    position: relative;
+    z-index: 10;
+    margin-top: 33rem;
+    width: 100%;
   }
 
   .slogan-vidrio {
     width: 100%;
-    max-width: 100%;
-
-    font-size: 1.1rem;
-    padding: 20px 22px;
-    border-radius: 20px;
+    font-size: 1rem;
+    padding: 16px 14px;
+    border-radius: 16px;
   }
-
-  .scrolldown {
-    margin-top: 0;
-    flex-shrink: 0;
-  }
-
-  .botones-contacto {
-    margin-top: 20px;
-    gap: 12px;
-  }
+ 
 }
 
-@media (max-width: 540px) {
-  .modelo-3d-static {
-    display: block !important;
-    width: auto;
-    height: auto;
-    max-width: 400px;
-    object-fit: contain;
-  }
-  #modelo-3d {
-    width: 580px;
-    height: 480px;
-  }
-
-  .anim-ui-ux {
-    top: 250px;
-    right: 10px;
-    width: 280px;
-    height: 80px;
-  }
-}
 
 /* MOVIL (≤ 480px) */
 
@@ -737,47 +720,45 @@
   }
 
 
- .modelo-3d-static {
+  .anim-ui-ux { margin-top: 3rem;}
+  .modelo-3d-static {
     display: block !important;
     width: auto;
     height: auto;
-    max-width: 380px;
+    max-width: 500px;
     object-fit: contain;
-    margin-top: 100px;
+    margin-top: 16rem;
   }
   #modelo-3d {
     width: 580px;
     height: 480px;
   }
 
-  .anim-ui-ux {
-    top: 20rem;
-    right: 20px;
-    width: 220px;
-    height: 70px;
-  }
-
 
 
   /* ─── slogan + scroll ─── */
- .contenedor-slogan-scroll {
+  .contenedor-slogan-scroll {
     display: flex;
-    flex-direction: column;   /* slogan arriba, scroll abajo */
-    align-items: center;      /* centrado horizontal */
-    gap: 20px;
-    margin-top: 26rem;
-    padding: 0 11rem 2rem 0; /*t-r-b-l*/
+    flex-direction: column;
+    align-items: flex-start;   /* alineado al texto, no centrado */
+    gap: 16px;
+    padding: 0;
     position: relative;
     z-index: 10;
+    margin-top: 34rem;
+    width: 100%;
   }
 
-.scrolldown {
+  .scrolldown {
     position: relative;  /* vuelve al flujo normal */
     margin: 0 auto;      /* centrado */
-    margin-top: -5rem;
+    margin-left: 1rem;
+    margin-top: -40px;
     z-index: 999;
   }
 }
+
+
 
 @media (max-width: 390px) {
   .columna-derecha {
@@ -802,22 +783,13 @@
     transform: rotate(180deg);
   }
 
- .contenedor-slogan-scroll {
-    display: flex;
-    flex-direction: column;   /* slogan arriba, scroll abajo */
-    align-items: center;      /* centrado horizontal */
-    gap: 20px;
-    margin-top: 26rem;
-    padding: 0 16rem 2rem 0; /*t-r-b-l*/
-    position: relative;
-    z-index: 10;
+  .modelo-3d-static {
+    display: block !important;
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    object-fit: contain;
+    margin-top: 16rem;
   }
 
-  .scrolldown {
-    position: relative;  /* vuelve al flujo normal */
-    margin: 0 auto;      /* centrado */
-    margin-left: 1rem;
-    margin-top: -60px;
-    z-index: 999;
-  }
 }
