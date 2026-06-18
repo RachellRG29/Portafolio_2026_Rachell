@@ -395,6 +395,7 @@ select.contacto__input {
   transform: translateY(-2px);
   background: var(--negro-gato);
   border-color: rgba(255, 255, 255, 0.55);
+  color: #ffffff; /* ← esto cambia currentColor y la flecha se vuelve blanca */
 }
 
 .testimonios__nav-btn:hover:not(:disabled)::before {
