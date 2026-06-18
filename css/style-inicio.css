@@ -517,7 +517,7 @@
   .elementos-superpuestos {
     display: block;
     position: relative;
-    margin-right: -5rem;
+    
   }
 
   .pc3d {
@@ -542,10 +542,10 @@
 
   .contenedor-slogan-scroll {
     display: flex;
-    width: 100%;
+    width: 600px;
     align-items: flex-end;
     gap: 16px;
-    margin-top: 25rem;
+  
   }
 
   .slogan-vidrio {
@@ -556,7 +556,7 @@
   .pc3d {
     max-width: 550px;
     min-height: 400px;
-    margin-right: 40px;
+    margin-right: 0;
   }
 
   #modelo-3d {
@@ -596,7 +596,7 @@
   }
 
   /* Columna derecha: fondo decorativo */
-  .columna-derecha {
+ .columna-derecha {
     position: absolute;
     top: 0;
     right: 0;
@@ -614,17 +614,18 @@
     display: block !important;
     width: auto;
     height: auto;
-    max-width: 320px;
+    max-width: 500px;
     object-fit: contain;
+    margin-top: 30px;
   }
 
   .pc3d {
     position: absolute;
-
-    left: 0;
-    right: 0;
-    width: 100% !important;
-    max-width: 300px;
+    top: 50%;    
+    left: 50%;   
+    transform: translate(-150%, -10%); 
+    width: auto !important;           
+    max-width: 320px;
     min-height: auto;
     margin: 0 auto;
     display: flex;
@@ -665,19 +666,12 @@
 }
 
 @media (max-width: 540px) {
-  .pc3d {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    width: 100% !important;
-    max-width: 300px;
-    min-height: auto;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
+  .modelo-3d-static {
+    display: block !important;
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    object-fit: contain;
   }
   #modelo-3d {
     width: 580px;
@@ -732,54 +726,34 @@
     gap: 12px;
   }
 
-  .columna-derecha {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 50%;
-    z-index: 1;
-    pointer-events: none;
-    display: block;
-  }
-  .modelo-3d-dynamic {
-    display: none !important;
-  }
-
   .modelo-3d-static {
     display: block !important;
     width: auto;
     height: auto;
-    max-width: 320px;
+    max-width: 380px;
     object-fit: contain;
+    margin-top: 100px;
   }
-
-  /* Contenedor 3D centrado */
-  .pc3d {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    width: 100% !important;
-    max-width: 300px;
-    min-height: auto;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none;
-  }
-
   #modelo-3d {
-    width: 480px;
-    height: 400px;
+    width: 580px;
+    height: 480px;
   }
 
   .anim-ui-ux {
-    top: 16rem;
+    top: 20rem;
     right: 20px;
     width: 220px;
     height: 70px;
+  }
+
+  .columna-derecha {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
   }
 
   /* Slogan e scroll al fondo de la columna izquierda */
@@ -800,7 +774,7 @@
     font-size: 0.9rem;
     padding: 14px 8px;
     border-radius: 14px;
-    top: 16rem !important;
+    top: 22rem !important;
   }
 
   .scrolldown {
@@ -811,64 +785,3 @@
   }
 }
 
-/* MOVIL PEQUEÑO (≤ 360px) */
-
-@media (max-width: 360px) {
-  .columna-izquierda {
-    padding: 4.5rem 16px 0 16px;
-  }
-
-  .titulo-principal {
-    font-size: 1.75rem;
-  }
-
-  .subtitulo-estu {
-    font-size: 1rem;
-  }
-
-  .slogan-vidrio {
-    font-size: 0.9rem;
-    padding: 14px 8px;
-    border-radius: 14px;
-    top: 16rem !important;
-  }
-
-  .lbl-descripcion {
-    margin-top: 1rem;
-  }
-  .scrolldown {
-    margin-left: 0;
-    flex-shrink: 0;
-    align-self: flex-end;
-    top: 5.5rem;
-  }
-
-  .contenedor-slogan-scroll {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    top: 20rem !important;
-  }
-
-  .modelo-3d-static {
-    display: block !important;
-    width: auto;
-    height: auto;
-    max-width: 320px;
-    object-fit: contain;
-  }
-
-  /* Contenedor 3D centrado */
-  .pc3d {
-    max-width: 300px;
-  }
-
-  #modelo-3d {
-    width: 480px;
-    height: 400px;
-  }
-
-  .anim-ui-ux {
-    top: 16rem !important;
-  }
-}
