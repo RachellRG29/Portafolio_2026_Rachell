@@ -14,7 +14,10 @@
     />
     <meta name="author" content="Cindy Rachell Ramírez García" />
 
+    <!-- Miniatura -->
     <meta property="og:image" content="https://portafolio-cindy-ramirez-2026.it.com/images/img-foto-rachell.jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- CEO -->
     <meta property="og:title" content="Portafolio 2026 — Rachell Ramírez" />
@@ -1362,14 +1365,21 @@
         <!-- Contacto -->
         <section class="contacto" id="contacto">
           <div class="contacto__info">
-            <span class="contacto__badge">
-              <span class="contacto__badge-dot"></span>
-              Diseñadora UI/UX
+            <span
+              class="testimonios__badge"
+              data-es='<span class="testimonios__badge-dot"></span> Diseñadora Freelance UI/UX & FrontEnd'
+              data-en='<span class="testimonios__badge-dot"></span> Freelance UI/UX & FrontEnd Designer'
+            >
             </span>
-            <h2 class="contacto__titulo">Contacto</h2>
-            <p class="contacto__desc">
-              ¿Tienes un proyecto en mente?<br />
-              Escríbeme y con gusto conversamos.
+            
+            <h2 class="contacto__titulo" 
+            data-es="Contacto" 
+            data-en="Contact" ></h2>
+            <p class="contacto__desc" 
+            data-es='Tu proyecto merece una experiencia excepcional. ✦<br />
+              Escríbeme y conversemos sobre cómo transformar tu idea en una experiencia digital única.' 
+            data-en='Your project deserves an exceptional experience. ✦ <br />
+              Write to me and let´s talk about how to transform your idea into a unique digital experience.'>
             </p>
 
             <div class="contacto__imagen-wrapper">
@@ -1408,7 +1418,7 @@
 
               <div class="contacto__fila">
                 <div class="contacto__grupo">
-                  <label for="nombre" class="contacto__label">Nombre</label>
+                  <label for="nombre" class="contacto__label" data-es="Nombre" data-en="Name">Nombre</label>
                   <input
                     type="text"
                     id="nombre"
@@ -1422,7 +1432,7 @@
                 </div>
 
                 <div class="contacto__grupo">
-                  <label for="correo" class="contacto__label">Correo</label>
+                  <label for="correo" class="contacto__label" data-es="Correo" data-en="Mail">Correo</label>
                   <input
                     type="email"
                     id="correo"
@@ -1437,52 +1447,76 @@
               </div>
 
               <div class="contacto__grupo">
-                <label for="asunto" class="contacto__label">Asunto</label>
+                <label for="asunto" class="contacto__label" data-es="Asunto" data-en="Affair">Asunto</label>
                 <select id="asunto" name="asunto" class="contacto__input">
-                  <option value="" disabled selected>
+                  <option value="" disabled selected 
+                  data-es="Selecciona un servicio..." 
+                  data-en="Select a service...">
                     Selecciona un servicio...
                   </option>
                   <optgroup label="Diseño">
-                    <option value="Diseño UI/UX">Diseño UI/UX</option>
-                    <option value="Diseño gráfico freelance">
+                    <option value="Diseño UI/UX" data-es="Diseño UI/UX" data-en="UI/UX Design">Diseño UI/UX</option>
+                    <option value="Diseño gráfico freelance" 
+                    data-es="Diseño gráfico freelance" 
+                    data-en="Freelance graphic design">
                       Diseño gráfico freelance
                     </option>
-                    <option value="Diseño de identidad visual / branding">
+                    <option value="Diseño de identidad visual / branding" 
+                    data-es="Diseño de identidad visual / branding" 
+                    data-en="Visual identity design / branding">
                       Diseño de identidad visual / branding
                     </option>
                   </optgroup>
                   <optgroup label="Desarrollo">
-                    <option value="Desarrollo Front-End">
+                    <option value="Desarrollo Front-End"
+                    data-es="Desarrollo Front-End" 
+                    data-en="Front-End Development">
                       Desarrollo Front-End
                     </option>
-                    <option value="Aplicación web">Aplicación web</option>
-                    <option value="Landing page / sitio web">
+                    <option value="Aplicación web"
+                    data-es="Aplicación web" 
+                    data-en="Web application">Aplicación web</option>
+                    <option value="Landing page / sitio web"
+                    data-es="Landing page / sitio web" 
+                    data-en="Landing page / website">
                       Landing page / sitio web
                     </option>
                   </optgroup>
                   <optgroup label="Animación">
-                    <option value="Animación 3D básica">
+                    <option value="Animación 3D básica"
+                    data-es="Animación 3D básica" 
+                    data-en="Basic 3D Animation">
                       Animación 3D básica
                     </option>
-                    <option value="Animaciones e interacciones web">
+                    <option value="Animaciones e interacciones web"
+                    data-es="Animaciones e interacciones web" 
+                    data-en="Web animations and interactions">
                       Animaciones e interacciones web
                     </option>
                   </optgroup>
                   <optgroup label="Otro">
-                    <option value="Consultoría / asesoría">
+                    <option value="Consultoría / asesoría"
+                    data-es="Consultoría / asesoría" 
+                    data-en="Consulting / Advisory services">
                       Consultoría / asesoría
                     </option>
-                    <option value="Colaboración o proyecto conjunto">
+                    <option value="Colaboración o proyecto conjunto"
+                    data-es="Colaboración o proyecto conjunto" 
+                    data-en="Collaboration or joint project">
                       Colaboración o proyecto conjunto
                     </option>
-                    <option value="Otro">Otro</option>
+                    <option value="Otro"
+                    data-es="Otro" 
+                    data-en="Other">Otro</option>
                   </optgroup>
                 </select>
                 <span class="contacto__error" id="error-asunto"></span>
               </div>
 
               <div class="contacto__grupo">
-                <label for="mensaje" class="contacto__label">Mensaje</label>
+                <label for="mensaje" class="contacto__label"
+                  data-es="Mensaje" 
+                  data-en="Message">Mensaje</label>
                 <textarea
                   id="mensaje"
                   name="mensaje"
@@ -1495,7 +1529,9 @@
               </div>
 
               <button type="submit" class="contacto__btn" id="btnEnviar">
-                <span class="contacto__btn-texto">Enviar mensaje</span>
+                <span class="contacto__btn-texto"
+                  data-es="Enviar mensaje" 
+                  data-en="Send message">Enviar mensaje</span>
                 <svg
                   class="contacto__btn-icon"
                   xmlns="http://www.w3.org/2000/svg"
@@ -1547,8 +1583,8 @@
                 ></h2>
                 <p
                   class="testimonios__sub"
-                  data-es="Docentes, Clientes y Colegas con quienes he tenido el placer de colaborar, comparten su experiencia."
-                  data-en="Teachers, Clients and Colleagues with whom I have had the pleasure of collaborating, share their experience."
+                  data-es="Docentes, Clientes y Colegas con quienes he tenido el placer de trabajar y colaborar, comparten su experiencia."
+                  data-en="Teachers, clients, and colleagues with whom I have had the pleasure of working and collaborating share their experiences."
                 ></p>
               </div>
               <!-- Botones de navegación (escritorio) -->
@@ -2176,7 +2212,7 @@
                 </div>
               </article>
 
-              <!-- ── Testimonio 5 Levi── -->
+              <!-- ── Testimonio 5 Levi ✦── -->
               <article class="testimonio-card" role="listitem">
                 <span class="testimonio-card__quote" aria-hidden="true"></span>
                 <div

@@ -22,26 +22,16 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  width: fit-content;
-  background: #ffffff;
-  border: 1.5px solid #dddbd5;
-  border-radius: 100px;
-  padding: 8px 20px;
-  font-family: var(--fuente-texto);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--negro-gato);
-  z-index: 90;
 }
 
 .contacto__badge-dot {
-  width: 50px;
-  height: 28px;
-  border-radius: 50px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
   background: linear-gradient(
     135deg,
-    var(--serenity) 0%,
-    var(--royal-blue) 100%
+    var(--serenity),
+    var(--royal-blue)
   );
   flex-shrink: 0;
 }
@@ -85,6 +75,7 @@
   line-height: 1.7;
   margin: 0;
   z-index: 90;
+
 }
 
 /* --- Columna derecha: form --- */
