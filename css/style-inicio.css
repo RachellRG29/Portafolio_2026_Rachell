@@ -655,7 +655,7 @@
     padding-right: 10px;
     position: relative;
     z-index: 10;
-    margin-top: 33rem;
+    margin-top: 30rem;
     width: 100%;
   }
 
@@ -720,14 +720,22 @@
   }
 
 
-  .anim-ui-ux { margin-top: 3rem;}
+  .anim-ui-ux { 
+    display: block !important;
+    width: auto;
+    height: auto;
+    margin-top: 70px !important;
+    max-width: 400px;
+    object-fit: contain;
+  }
   .modelo-3d-static {
     display: block !important;
     width: auto;
     height: auto;
-    max-width: 500px;
+    max-width: 530px;
     object-fit: contain;
-    margin-top: 16rem;
+    margin-bottom: 2rem !important;
+    z-index: 9999 !important;
   }
   #modelo-3d {
     width: 580px;
@@ -745,8 +753,9 @@
     padding: 0;
     position: relative;
     z-index: 10;
-    margin-top: 34rem;
+    margin-bottom: 2rem !important;
     width: 100%;
+    z-index: 9999 !important;
   }
 
   .scrolldown {
@@ -754,7 +763,7 @@
     margin: 0 auto;      /* centrado */
     margin-left: 1rem;
     margin-top: -40px;
-    z-index: 999;
+    z-index: 9999 !important;
   }
 }
 
@@ -783,13 +792,29 @@
     transform: rotate(180deg);
   }
 
+   .anim-ui-ux { 
+    display: block !important;
+    width: auto;
+    height: auto;
+    margin-top: 70px !important;
+    max-width: 300px;
+    object-fit: contain;
+  }
+
   .modelo-3d-static {
     display: block !important;
     width: auto;
     height: auto;
     max-width: 400px;
     object-fit: contain;
-    margin-top: 16rem;
+    margin-top: 10rem;
+  }
+
+    /* ─── slogan + scroll ─── */
+  .contenedor-slogan-scroll {
+    margin-top: 25rem;
+    width: 100%;
+    z-index: 9999 !important;
   }
 
 }

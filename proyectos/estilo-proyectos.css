@@ -84,7 +84,8 @@ body {
   display: flex;
   z-index: 9999;
   cursor: pointer;
-
+  background-color: var(--blanco-cloud);
+  border-radius: 8px;
   overflow: hidden;
   color: var(--negro-gato);
 }
@@ -468,6 +469,22 @@ body {
 
 /* ================= RESPONSIVIDAD PROYECTOS ================= */
 
+@media (max-width: 1024px){
+    /* galería: una columna en tablet */
+  .grid-galeria-tulip{
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .item-g-tulip {
+    grid-column: 1;          /* ya no span 2 */
+    height: 260px;
+    width: 100% !important;
+  }
+
+}
+
+
 @media (max-width: 768px) {
   /* sidebar: oculta logo largo, solo el botón regresar */
   .sidebar {
@@ -521,6 +538,7 @@ body {
   .item-grande {
     grid-column: 1;          /* ya no span 2 */
     height: 260px;
+    width: 100% !important;
   }
 
   .item-mediano,
@@ -540,7 +558,7 @@ body {
 
 @media (max-width: 480px) {
   .contenido {
-    padding: 20px 16px 80px 72px;
+    padding: 20px 16px 80px 16px;
   }
 
   .proyecto-titulo {
