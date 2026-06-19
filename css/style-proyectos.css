@@ -114,3 +114,25 @@
   font-size: 0.8rem;
   opacity: 0.95;
 }
+
+@media (max-width: 1024px) {
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    max-width: 600px;
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4,
+  .div5,
+  .div6,
+  .div7 {
+    grid-area: auto;
+  }
+
+  .proyecto-item {
+    min-height: 280px;
+  }
+}
