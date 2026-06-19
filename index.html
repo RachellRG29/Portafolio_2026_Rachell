@@ -2911,7 +2911,7 @@
     <!-- footer.html -->
     <div id="footer-container"></div>
 
-    <!-- Librería Animación 3D -->
+    <!-- Librería Animación 3D 
     <script>
       if (window.innerWidth >= 769) {
         const script = document.createElement("script");
@@ -2919,9 +2919,22 @@
         script.src = "js/model-viewer.min.js";
         document.head.appendChild(script);
       }
+    </script>-->
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        if (window.innerWidth >= 769) {
+          const script = document.createElement("script");
+          script.type = "module";
+          script.src = "js/model-viewer.min.js";
+          // Usar defer en scripts dinámicos de tipo módulo refuerza su comportamiento no bloqueante
+          script.defer = true; 
+          document.body.appendChild(script);
+        }
+      });
     </script>
 
-    <script defer src="js/port-navegacion.js"></script>
+    
     <script defer src="js/port-indicador.js"></script>
     <script defer src="js/port-index.js"></script>
     <script defer src="js/optimizacion-3d.js"></script>
@@ -2930,6 +2943,6 @@
     <script defer src="js/port-testimonios.js"></script>
 
     <script defer src="js/port-ind-habilidades.js"></script>
-    <script defer src="js/port-footer.js"></script>
+    
   </body>
 </html>
