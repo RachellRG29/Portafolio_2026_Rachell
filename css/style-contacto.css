@@ -310,6 +310,7 @@ select.contacto__input {
   font-size: 14px;
   font-weight: 500;
   color: var(--negro-gato);
+  z-index: 9999;
 }
 
 .testimonios__badge-dot {
