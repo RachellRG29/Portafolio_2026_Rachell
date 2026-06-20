@@ -548,21 +548,6 @@ select.contacto__input {
   flex-shrink: 0;
 }
 
-/* Cuando es inicial (sin foto real) */
-.testimonio-card__foto--iniciales {
-  background: var(
-    --avatar-bg,
-    linear-gradient(135deg, var(--serenity), var(--royal-blue))
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--fuente-titulo);
-  font-size: 14px;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-}
 .testimonio-card__info {
   flex: 1;
   min-width: 0;
