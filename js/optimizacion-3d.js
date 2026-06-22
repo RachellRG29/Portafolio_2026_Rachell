@@ -54,17 +54,7 @@
   observer3D.observe(modelViewer);
 
   modelViewer.addEventListener("load", () => {
-    setTimeout(() => {
-      try {
-        if (modelViewer.availableAnimations?.length > 0) {
-          modelViewer.animationName = modelViewer.availableAnimations[0];
-          modelViewer.autoplay = true;
-        }
-
-        const r = modelViewer.play?.();
-        if (r?.catch) r.catch(() => {});
-      } catch (_) {}
-    }, 100);
+    mostrarModelo();
   });
 
   modelViewer.addEventListener("error", () => {
