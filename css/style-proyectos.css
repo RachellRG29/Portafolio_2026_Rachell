@@ -41,31 +41,37 @@
 }
 
 /* layout */
-.div1 {
+.div0 {
   grid-area: 1 / 1 / 2 / 3;
-} /* grande arriba */
+} /* primero */
+
+.div1 {
+  grid-area: 2 / 1 / 3 / 3;
+} /* segundo */
 
 .div2 {
-  grid-area: 2 / 1 / 4 / 2;
-} /* izquierda grande */
+  grid-area: 3 / 1 / 5 / 2;
+}
 
 .div3 {
-  grid-area: 2 / 2 / 3 / 3;
-} /* derecha arriba */
-.div4 {
   grid-area: 3 / 2 / 4 / 3;
-} /* derecha abajo */
+}
+
+.div4 {
+  grid-area: 4 / 2 / 5 / 3;
+}
 
 .div5 {
-  grid-area: 4 / 1 / 5 / 2;
-} /* abajo izquierda */
+  grid-area: 5 / 1 / 6 / 2;
+}
+
 .div6 {
-  grid-area: 4 / 2 / 5 / 3;
-} /* abajo derecha */
+  grid-area: 5 / 2 / 6 / 3;
+}
 
 .div7 {
-  grid-area: 5 / 1 / 6 / 3;
-} /* ultimo ancho */
+  grid-area: 6 / 1 / 7 / 3;
+}
 
 /* tarjeta */
 .proyecto-item {
