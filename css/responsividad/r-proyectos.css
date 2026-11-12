@@ -1,14 +1,33 @@
-/* LAPTOP  (≤ 1440px) */
-@media (max-width: 1440px) {
-}
+/* ================== PROYECTOS: RESPONSIVE ================== */
 
-/* LAPTOP  (≤ 1024px) */
+/* LAPTOP (≤ 1440px) */
+@media (max-width: 1440px) {}
+
+/* TABLET GRANDE (≤ 1024px) → 1 columna */
 @media (max-width: 1024px) {
+  .proyectos {
+    padding: 40px 32px 60px;
+  }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: 260px;
+    max-width: 640px;
+    padding: 0;
+    gap: 16px;
+  }
+
+  /* reinicia TODAS las tarjetas, incluida .div0 */
+  .grid-proyectos .proyecto-item {
+    grid-area: auto;
+    min-height: 0;
+    height: 100%;
+  }
 }
 
 /* TABLET (≤ 768px) */
 @media (max-width: 768px) {
-  /* ── PROYECTOS ── */
   .proyectos {
     padding: 40px 24px 60px;
   }
@@ -18,51 +37,51 @@
   }
 
   .grid-proyectos {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
+    grid-auto-rows: 220px;
     gap: 14px;
-    padding: 0;
     max-width: 100%;
-  }
-
-  .div1,
-  .div2,
-  .div3,
-  .div4,
-  .div5,
-  .div6,
-  .div7 {
-    grid-area: auto;
-    height: 220px;
   }
 }
 
-/* MOVIL (≤ 480px) */
+/* MÓVIL (≤ 480px) */
 @media (max-width: 480px) {
-  /* ── PROYECTOS ── */
   .proyectos {
     padding: 30px 18px 50px;
   }
 
-  .div1,
-  .div2,
-  .div3,
-  .div4,
-  .div5,
-  .div6,
-  .div7 {
-    height: 190px;
+  .grid-proyectos {
+    grid-auto-rows: 190px;
+    gap: 12px;
+  }
+
+  .proyecto-item {
+    border-radius: 16px;
   }
 
   .titulo {
+    top: 10px;
+    left: 10px;
     font-size: 0.88rem;
     padding: 8px 12px;
+    letter-spacing: 0.5px;
   }
+
   .proy-anio {
+    bottom: 10px;
+    left: 10px;
     font-size: 0.72rem;
+    padding: 5px 12px;
   }
 }
 
-/* MOVIL PEQUEÑO (≤ 360px) */
+/* MÓVIL PEQUEÑO (≤ 360px) */
 @media (max-width: 360px) {
+  .grid-proyectos {
+    grid-auto-rows: 170px;
+  }
+
+  .titulo {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }
