@@ -20,10 +20,12 @@
     transform: translateY(0);
     opacity: 0.6;
   }
+
   50% {
     transform: translateY(10px);
     opacity: 1;
   }
+
   100% {
     transform: translateY(0);
     opacity: 0.6;
@@ -43,11 +45,15 @@
 /* layout */
 .div0 {
   grid-area: 1 / 1 / 2 / 3;
-} /* primero */
+}
+
+/* primero */
 
 .div1 {
   grid-area: 2 / 1 / 3 / 3;
-} /* segundo */
+}
+
+/* segundo */
 
 .div2 {
   grid-area: 3 / 1 / 5 / 2;
@@ -119,6 +125,138 @@
   border-radius: 20px;
   font-size: 0.8rem;
   opacity: 0.95;
+}
+
+
+/* ================== SELECTOR DE VISTA (SWITCH) ================== */
+.selector-proyectos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+/* ================== PANELES ================== */
+.panel-proyectos {
+  display: none;
+}
+
+.panel-proyectos.activo {
+  display: block;
+  animation: panelEntrada 0.45s ease;
+}
+
+@keyframes panelEntrada {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.grid-simple {
+  grid-template-rows: none;
+  grid-auto-rows: 280px;
+}
+
+.grid-simple .proyecto-item {
+  grid-area: auto;
+}
+
+.filter-switch {
+  --switch-padding: 4px;
+
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  width: 440px;
+  max-width: 100%;
+  height: 50px;
+  padding: var(--switch-padding);
+  border: 2px solid var(--serenity);
+  border-radius: 30px;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* radios ocultos pero accesibles con teclado */
+.filter-switch input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.filter-switch label {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 30px;
+  font-family: var(--fuente-titulo);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--negro-gato);
+  opacity: 0.55;
+  transition: color 0.4s ease, opacity 0.4s ease;
+}
+
+.filter-switch label:hover {
+  opacity: 0.85;
+}
+
+/* fondo que se desliza */
+.filter-switch .background {
+  position: absolute;
+  top: var(--switch-padding);
+  bottom: var(--switch-padding);
+  left: var(--switch-padding);
+  width: calc((100% - var(--switch-padding) * 2) / 3);
+  background-color: var(--serenity);
+  border-radius: 30px;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#vista-reales:checked~.background {
+  transform: translateX(100%);
+}
+
+#vista-personales:checked~.background {
+  transform: translateX(200%);
+}
+
+/* opción activa */
+#vista-educativos:checked+label[for="vista-educativos"],
+#vista-reales:checked+label[for="vista-reales"],
+#vista-personales:checked+label[for="vista-personales"] {
+  color: var(--negro-gato);
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* foco con teclado */
+.filter-switch input:focus-visible+label {
+  outline: 2px solid var(--royal-blue);
+  outline-offset: -4px;
+}
+
+@media (max-width: 480px) {
+  .filter-switch {
+    height: 44px;
+  }
+
+  .filter-switch label {
+    font-size: 0.78rem;
+    letter-spacing: 0;
+  }
 }
 
 @media (max-width: 1024px) {

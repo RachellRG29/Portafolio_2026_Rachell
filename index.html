@@ -753,8 +753,32 @@
     <!-- ================== PROYECTOS EDUCATIVOS ================== -->
     <div class="grupo" id="grupo-proyectos">
       <section class="proyectos" id="proyectos">
+
+        <!-- SELECTOR DE VISTA -->
+        <div class="selector-proyectos">
+          <div class="filter-switch" role="radiogroup" aria-label="Tipo de proyectos">
+            <input checked id="vista-educativos" name="vista-proyectos" type="radio" value="educativos"
+              data-titulo-es='Proyectos <span style="color: #91A7D0"> Educativos</span>'
+              data-titulo-en='Educational <span style="color: #91A7D0"> Projects</span>' />
+            <label class="option" for="vista-educativos" data-es="Educativos" data-en="Educational">Educativos</label>
+
+            <input id="vista-reales" name="vista-proyectos" type="radio" value="reales"
+              data-titulo-es='Proyectos <span style="color: #91A7D0"> Reales</span>'
+              data-titulo-en='Real <span style="color: #91A7D0"> Projects</span>' />
+            <label class="option" for="vista-reales" data-es="Reales" data-en="Real">Reales</label>
+
+            <input id="vista-personales" name="vista-proyectos" type="radio" value="personales"
+              data-titulo-es='Proyectos <span style="color: #91A7D0"> Personales</span>'
+              data-titulo-en='Personal <span style="color: #91A7D0"> Projects</span>' />
+            <label class="option" for="vista-personales" data-es="Personales" data-en="Personal">Personales</label>
+
+            <span class="background"></span>
+          </div>
+        </div>
+
         <div class="encabezado-habilidad">
-          <h2 class="titulo-seccion" data-es='Proyectos <span style="color: #91A7D0"> Educativos</span>'
+          <h2 class="titulo-seccion" id="tituloProyectos"
+            data-es='Proyectos <span style="color: #91A7D0"> Educativos</span>'
             data-en='Educational <span style="color: #91A7D0"> Projects</span>'></h2>
 
           <div class="flecha">
@@ -766,66 +790,101 @@
           </div>
         </div>
 
-        <div class="grid-proyectos">
-          <a href="proyectos/educativos/dimusal/dimusal.html" class="proyecto-item div0">
-            <img src="proyectos/educativos/dimusal/img-dimusal1.png" alt="Dimusal" loading="lazy" decoding="async" />
 
-            <h3 class="titulo">Dimusal</h3>
-            <span class="proy-anio">2026</span>
-          </a>
 
-          <a href="proyectos/educativos/veganimo/veganimo.html" class="proyecto-item div1">
-            <img src="proyectos/educativos/veganimo/img-veg.png" alt="Veganimo" loading="lazy" decoding="async" />
 
-            <h3 class="titulo">Vegánimo</h3>
-            <span class="proy-anio">2025</span>
-          </a>
+        <div class="panel-proyectos activo" data-panel="educativos">
+          <div class="grid-proyectos">
+            <a href="proyectos/educativos/dimusal/dimusal.html" class="proyecto-item div0">
+              <img src="proyectos/educativos/dimusal/img-dimusal1.png" alt="Dimusal" loading="lazy" decoding="async" />
 
-          <a href="proyectos/educativos/consolexpress/consolexpress.html" class="proyecto-item div2">
-            <img src="proyectos/educativos/consolexpress/img-cons-exp.png" alt="ConsoleXpress" loading="lazy"
-              decoding="async" />
-            <h3 class="titulo">ConsoleXpress</h3>
-            <span class="proy-anio">2024</span>
-          </a>
+              <h3 class="titulo">Dimusal</h3>
+              <span class="proy-anio">2026</span>
+            </a>
 
-          <a href="proyectos/educativos/tulip/tulip.html" class="proyecto-item div3">
-            <img src="proyectos/educativos/tulip/img-tulip.png" loading="lazy" decoding="async" alt="Tulip" />
-            <h3 class="titulo">Tulip</h3>
-            <span class="proy-anio">2024</span>
-          </a>
+            <a href="proyectos/educativos/veganimo/veganimo.html" class="proyecto-item div1">
+              <img src="proyectos/educativos/veganimo/img-veg.png" alt="Veganimo" loading="lazy" decoding="async" />
 
-          <a href="proyectos/educativos/alquimia/alquimia.html" class="proyecto-item div4">
-            <img src="proyectos/educativos/alquimia/img-alquimia.png" alt="Alquimia" loading="lazy" decoding="async" />
-            <h3 class="titulo" data-es="Animación 3D" data-en="3D Animation">
-              Animación 3D
-            </h3>
-            <span class="proy-anio">2025</span>
-          </a>
+              <h3 class="titulo">Vegánimo</h3>
+              <span class="proy-anio">2025</span>
+            </a>
 
-          <a href="proyectos/educativos/banners/banners.html" class="proyecto-item div5">
-            <img src="proyectos/educativos/banners/bazzite.webp" alt="Banners" loading="lazy" decoding="async" />
-            <h3 class="titulo" data-es="Banners FLISOL" data-en="FLISOL Banners">
-              Banners FLISOL
-            </h3>
-            <span class="proy-anio">2026</span>
-          </a>
+            <a href="proyectos/educativos/consolexpress/consolexpress.html" class="proyecto-item div2">
+              <img src="proyectos/educativos/consolexpress/img-cons-exp.png" alt="ConsoleXpress" loading="lazy"
+                decoding="async" />
+              <h3 class="titulo">ConsoleXpress</h3>
+              <span class="proy-anio">2024</span>
+            </a>
 
-          <a href="proyectos/educativos/app-cont/app-contabilidad.html" class="proyecto-item div6">
-            <img src="proyectos/educativos/app-cont/img-app-contabilidad.png" alt="App contabilidad" loading="lazy"
-              decoding="async" />
-            <h3 class="titulo" data-es="Contabilidad" data-en="Accounting">
-              Contabilidad
-            </h3>
-            <span class="proy-anio">2026</span>
-          </a>
+            <a href="proyectos/educativos/tulip/tulip.html" class="proyecto-item div3">
+              <img src="proyectos/educativos/tulip/img-tulip.png" loading="lazy" decoding="async" alt="Tulip" />
+              <h3 class="titulo">Tulip</h3>
+              <span class="proy-anio">2024</span>
+            </a>
 
-          <a href="proyectos/educativos/quintessence/quintessence.html" class="proyecto-item div7">
-            <img src="proyectos/educativos/quintessence/img-quintessence.png" alt="Quintessence" loading="lazy"
-              decoding="async" />
-            <h3 class="titulo">Quintessence</h3>
-            <span class="proy-anio">2025</span>
-          </a>
+            <a href="proyectos/educativos/alquimia/alquimia.html" class="proyecto-item div4">
+              <img src="proyectos/educativos/alquimia/img-alquimia.png" alt="Alquimia" loading="lazy"
+                decoding="async" />
+              <h3 class="titulo" data-es="Animación 3D" data-en="3D Animation">
+                Animación 3D
+              </h3>
+              <span class="proy-anio">2025</span>
+            </a>
+
+            <a href="proyectos/educativos/banners/banners.html" class="proyecto-item div5">
+              <img src="proyectos/educativos/banners/bazzite.webp" alt="Banners" loading="lazy" decoding="async" />
+              <h3 class="titulo" data-es="Banners FLISOL" data-en="FLISOL Banners">
+                Banners FLISOL
+              </h3>
+              <span class="proy-anio">2026</span>
+            </a>
+
+            <a href="proyectos/educativos/app-cont/app-contabilidad.html" class="proyecto-item div6">
+              <img src="proyectos/educativos/app-cont/img-app-contabilidad.png" alt="App contabilidad" loading="lazy"
+                decoding="async" />
+              <h3 class="titulo" data-es="Contabilidad" data-en="Accounting">
+                Contabilidad
+              </h3>
+              <span class="proy-anio">2026</span>
+            </a>
+
+            <a href="proyectos/educativos/quintessence/quintessence.html" class="proyecto-item div7">
+              <img src="proyectos/educativos/quintessence/img-quintessence.png" alt="Quintessence" loading="lazy"
+                decoding="async" />
+              <h3 class="titulo">Quintessence</h3>
+              <span class="proy-anio">2025</span>
+            </a>
+          </div>
         </div>
+
+        <!-- PANEL REALES -->
+        <div class="panel-proyectos" data-panel="reales">
+          <div class="grid-proyectos grid-simple">
+            <a href="proyectos/reales/ejemplo/ejemplo.html" class="proyecto-item">
+              <img src="proyectos/reales/ejemplo/img.png" alt="Ejemplo" loading="lazy" decoding="async" />
+              <h3 class="titulo">Ejemplo</h3>
+              <span class="proy-anio">2026</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- PANEL PERSONALES -->
+        <div class="panel-proyectos" data-panel="personales">
+          <div class="grid-proyectos grid-simple">
+
+            <a href="proyectos/personales/vrx/vrx.html" class="proyecto-item div0">
+              <img src="proyectos/personales/vrx/logo-vrx.jpg" alt="Dimusal" loading="lazy" decoding="async" />
+
+              <h3 class="titulo">Dimusal</h3>
+              <span class="proy-anio">2026</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+
       </section>
 
       <!-- indicador pagina -->

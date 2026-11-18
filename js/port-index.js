@@ -258,3 +258,42 @@ function initFooter() {
     });
   });
 }
+
+
+/* =========================================================
+   SELECTOR DE VISTA DE PROYECTOS
+   ========================================================= */
+document.addEventListener("DOMContentLoaded", () => {
+  const selector = document.querySelector(".selector-proyectos");
+  if (!selector) return;
+
+  const radios = selector.querySelectorAll('input[name="vista-proyectos"]');
+  const titulo = document.getElementById("tituloProyectos");
+  const paneles = document.querySelectorAll(".panel-proyectos");
+
+  function cambiarVista(radio) {
+    // panel visible
+    paneles.forEach((p) =>
+      p.classList.toggle("activo", p.dataset.panel === radio.value),
+    );
+
+    // título de la sección
+    if (titulo) {
+      titulo.dataset.es = radio.dataset.tituloEs;
+      titulo.dataset.en = radio.dataset.tituloEn;
+
+      if (typeof aplicarIdioma === "function") {
+        aplicarIdioma();
+      } else {
+        const en = document.documentElement.lang === "en";
+        titulo.innerHTML = en ? radio.dataset.tituloEn : radio.dataset.tituloEs;
+      }
+    }
+  }
+
+  radios.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      if (radio.checked) cambiarVista(radio);
+    });
+  });
+});
